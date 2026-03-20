@@ -19,5 +19,5 @@
    :modules {:main {:entries [app.core]
                     :init-fn app.core/init}}
    :release {:compiler-options {:optimizations :simple}
-             :output-dir "page/js"
+             :output-dir "docs/js"
              :asset-path "/js"}}}}
