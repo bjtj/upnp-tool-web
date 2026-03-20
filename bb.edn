@@ -1,0 +1,6 @@
+{:tasks
+ {clean (shell "rm -rf page")
+  mkdir (shell "mkdir -p page")
+  copy-static (shell "cp -r public/. page/")
+  publish-js (clojure "-M:release")
+  release {:depends [clean mkdir copy-static publish-js]}}}

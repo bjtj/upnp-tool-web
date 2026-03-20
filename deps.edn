@@ -3,4 +3,5 @@
         reagent/reagent          {:mvn/version "2.0.1"}
         cider/cider-nrepl        {:mvn/version "0.58.0"}}
  :aliases
- {:dev {:main-opts ["-m" "shadow.cljs.devtools.cli" "watch" "app"]}}}
+ {:dev {:main-opts ["-m" "shadow.cljs.devtools.cli" "watch" "app"]}
+  :release {:main-opts ["-m" "shadow.cljs.devtools.cli" "release" "app"]}}}

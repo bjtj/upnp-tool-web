@@ -3,7 +3,8 @@
             [reagent.dom.client :as rdomc]))
 
 (defn app []
-  [:div])
+  [:div
+   [:h1 "UPnP Tool Web"]])
 
 (defonce root (delay (rdomc/create-root (.getElementById js/document "app"))))
 

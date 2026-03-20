@@ -17,4 +17,7 @@
    :asset-path "/js"
    :devtools {:after-load app.core/init}
    :modules {:main {:entries [app.core]
-                    :init-fn app.core/init}}}}}
+                    :init-fn app.core/init}}
+   :release {:compiler-options {:optimizations :simple}
+             :output-dir "page/js"
+             :asset-path "/js"}}}}
