@@ -4,7 +4,7 @@
 
 (defn app []
   [:div
-   [:h1 "UPnP Tool Web"]])
+   [:h1.text-2xl "UPnP Tool Web"]])
 
 (defonce root (delay (rdomc/create-root (.getElementById js/document "app"))))
 

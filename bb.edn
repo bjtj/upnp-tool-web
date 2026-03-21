@@ -1,6 +1,13 @@
 {:tasks
- {clean (shell "rm -rf docs")
+ {release {:depends [clean mkdir copy-static publish-css publish-js]}
+  clean (shell "rm -rf docs")
   mkdir (shell "mkdir -p docs")
   copy-static (shell "cp -r public/. docs/")
   publish-js (clojure "-M:release")
-  release {:depends [clean mkdir copy-static publish-js]}}}
+  publish-css (shell "npm run build:css")
+  dev {:task (run '-dev {:parallel true})}
+  -dev {:depends [dev:css dev:shadow]}
+  dev:css {:doc "tailwindcss watch"
+           :task (shell "npm run watch:css")}
+  dev:shadow {:doc "shadow-cljs dev"
+              :task (clojure "-M:dev")}}}

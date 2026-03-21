@@ -1,9 +1,18 @@
 {
-  "dependencies": {
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
-  },
-  "devDependencies": {
-    "shadow-cljs": "^3.3.6"
-  }
+	"scripts": {
+		"watch:css": "npx @tailwindcss/cli -c ./resources/tailwind.config.js -i ./resources/tailwind.css -o ./target/public/css/main.css --watch",
+		"build:css": "npx @tailwindcss/cli -c ./resources/tailwind.config.js -i ./resources/tailwind.css -o ./docs/css/main.css --minify",
+		"serve:release": "npx http-server -p 5000 ./docs"
+	},
+	"dependencies": {
+		"@tailwindcss/cli": "^4.2.2",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3",
+		"tailwindcss": "^4.2.2"
+	},
+	"devDependencies": {
+		"daisyui": "^5.5.19",
+		"http-server": "^14.1.1",
+		"shadow-cljs": "^3.3.6"
+	}
 }
