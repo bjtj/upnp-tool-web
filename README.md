@@ -13,4 +13,4 @@ bb release
 
 Deploy path:
 
-`/page`
+`/docs`
