@@ -3,48 +3,18 @@
             [reagent.dom.client :as rdomc]
             ["uuid" :as uid]
             [reitit.frontend :as rf]
-            [reitit.frontend.easy :as rfe]))
-
-(def upnpresources
-  [{:name "Basic Device_1"}
-   {:name "Cloud_1"}
-   {:name "ContentSync_1"}
-   {:name "DataStore_1"}
-   {:name "Device Security_1 and Security Console_1"}
-   {:name "DeviceManagement_2"}
-   {:name "DeviceProtection_1"}
-   {:name "Digital Security Camera_1"}
-   {:name "EnergyManagement_1"}
-   {:name "FriendlyInfoUpdate_1"}
-   {:name "HVAC_1"}
-   {:name "Internet Gateway_2"}
-   {:name "IoT Management And Control_1"}
-   {:name "Lighting Controls_1"}
-   {:name "Low Power_1"}
-   {:name "MediaServer_4 and  MediaRenderer_3"}
-   {:name "MultiScreen_1"}
-   {:name "MultiScreen_2"}
-   {:name "Printer Device and Print Basic Service_1"}
-   {:name "Printer Enhanced_1"}
-   {:name "Quality of Service_1"}
-   {:name "Quality of Service_2"}
-   {:name "Quality of Service_3"}
-   {:name "Remote UI Client_1 and Remote UI Server_1"}
-   {:name "RemoteAccess_2"}
-   {:name "Scanner1_ External_Activity1_Feeder1_Scan1_Scanner1"}
-   {:name "SolarProtectionBlind_1"}
-   {:name "Telephony_2"}
-   {:name "WLAN Access Point Device_1"}])
+            [reitit.frontend.easy :as rfe]
+            ["@heroicons/react/24/solid/Bars3Icon" :as menu-icon]
+            [app.upnpresources :as upnpresources]))
 
 (defn menu []
   (let [menu-item (fn [txt]
                     [:p.text-ellipsis.overflow-hidden txt])]
-    [:div.p-4.bg-base-200.max-w-60.overflow-hidden
-     [:a.text-2xl {:href (rfe/href ::home)} "UPnP Tool"]
-     [:div.divider]
+    [:div.p-4.bg-base-200.w-60.overflow-hidden
      [:ul
       [:li [:a.link {:href (rfe/href ::home)} "Home"]]
       [:li [:a.link {:href (rfe/href ::about)} "About"]]
+      [:li [:a.link {:href (rfe/href ::resource)} "Resource"]]
       [:li.divider]
       [:li>ul.overflow-hidden.whitespace-nowrap
        [:li.text-lg.font-bold "Tools"]
@@ -56,8 +26,10 @@
       [:li.divider]
       [:li>ul.overflow-hidden.whitespace-nowrap
        [:li.text-lg.font-bold "upnpresources"]
-       (for [{:keys [name]} upnpresources]
-         [:li (menu-item name)])]]]))
+       (map-indexed
+        (fn [idx {:keys [name]} ]
+          [:li {:key (str "li-" idx)} (menu-item name)]) 
+        upnpresources/resources)]]]))
 
 (defn home-page []
   [:div.p-2
@@ -71,31 +43,62 @@
   [:div.p-2
    [:h1.text-2xl "About"]])
 
+(defn resource-page [props]
+  [:div
+   [:a {:href "upnpresources/standardizeddcps/Basic Device_1/UPnP-basic-Basic-v1-Device-20021212.pdf" :download "UPnP-basic-Basic-v1-Device-20021212.pdf"} "pdf"]
+   [:pre.whitespace-pre-wrap.text-sm
+    (pr-str props)]])
+
 (def routes
   [["/"
     {:name ::home
      :view home-page}]
    ["/about"
     {:name ::about
-     :view about-page}]])
+     :view about-page}]
+   ["/resource"
+    {:name ::resource
+     :view resource-page}]])
 
 (defonce match (r/atom nil))
 
+(defonce drawer-is-open? (r/atom false))
+
+(defn header []
+  [:div.navbar.bg-base-300.w-full
+   [:label.btn.btn-circle.drawer-button.lg:hidden
+    {:html-for "my-drawer"}
+    [:> menu-icon {:className "h-5 h-5"}]]
+   [:a.text-2xl {:href (rfe/href ::home)} "UPnP Tool"]])
+
 (defn app []
-  [:div.flex
-   (menu)
-   (if @match
-     (let [view (get-in @match [:data :view])]
-       [view @match]))])
+  [:div.drawer.lg:drawer-open
+   [:input.drawer-toggle
+    {:id "my-drawer"
+     :type :checkbox
+     :checked @drawer-is-open?
+     :on-change (fn [e]
+                  (let [open? (.. e -target -checked)]
+                    (reset! drawer-is-open? open?)))}]
+   [:div.drawer-content.overflow-auto
+    (header)
+    (if @match
+      (let [view (get-in @match [:data :view])]
+        [view @match]))]
+   [:div.drawer-side
+    [:label.drawer-overlay
+     {:html-for "my-drawer"
+      :aria-label "close sidebar"}]
+    (menu)]])
 
 (defonce root (delay (rdomc/create-root (.getElementById js/document "app"))))
-
-
 
 (defn mount []
   (rfe/start!
    (rf/router routes)
-   (fn [m] (reset! match m))
+   (fn [m]
+     (reset! match m)
+     (reset! drawer-is-open? false))
    {:use-fragment true})
   (rdomc/render @root [app]))
 
