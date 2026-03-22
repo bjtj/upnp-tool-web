@@ -1,0 +1,738 @@
+<!--
+      Schema for the state variables in UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<schema
+	targetNamespace="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:pb2="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	xmlns:pwg="urn:schemas-pwg-org:media"
+	xmlns:mime="urn:schemas-iana-org:mime"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.91"
+	xml:lang="en">
+
+	<import namespace="urn:schemas-pwg-org:media" schemaLocation="PWG-Media.xsd"/>
+	<import namespace="urn:schemas-iana-org:mime" schemaLocation="IANA-MIME.xsd"/>
+
+	<simpleType name="A_ARG_TYPE_PrinterAbortReason">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.3.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="hardware-error"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="external-access-uri-not-found"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="external-access-object-failure"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="external-access-doc-format-error"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="external-access-http-error"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="CharRepSupported">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.4.</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="(unicode|iana|vendor)_[a-z][a-z0-9\-\._]*"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ColorSupported">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.5.</documentation>
+		</annotation>
+		<restriction base="int">
+			<enumeration value="0">
+				<annotation>
+					<documentation>FALSE</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="1">
+				<annotation>
+					<documentation>TRUE</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ContentCompleteList">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.6.</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="([1-9][0-9]*)?(,[1-9][0-9]*)*">
+				<annotation>
+					<documentation>a CSV list of unsigned integer values</documentation>
+				</annotation>
+			</pattern>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="Copies">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.7.</documentation>
+		</annotation>
+		<restriction base="int">
+			<minInclusive value="0"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DataSink">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.9.</documentation>
+		</annotation>
+		<restriction base="anyURI">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DeviceId">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.10.</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="([^:,;]+:[^:,;]*(,[^:,;])*;)+"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DocumentFormat">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.11.</documentation>
+		</annotation>
+		<union memberTypes="mime:Application mime:Audio mime:Image mime:Message mime:Model mime:Multipart mime:Text mime:Video">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="unknown"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="DocumentUTF16Supported">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.12.</documentation>
+		</annotation>
+		<union memberTypes="mime:Application mime:Audio mime:Image mime:Message mime:Model mime:Multipart mime:Text mime:Video">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="none"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="all"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="FullBleedSupported">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.13.</documentation>
+		</annotation>
+		<restriction base="int">
+			<enumeration value="0">
+				<annotation>
+					<documentation>FALSE</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="1">
+				<annotation>
+					<documentation>TRUE</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="InternetConnectState">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.14.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="unknown"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="connected"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="not-connected"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="JobEndState">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.16.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),successful"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),canceled"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="JobId">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.17.</documentation>
+		</annotation>
+		<restriction base="int">
+			<minInclusive value="0"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="JobIdList">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.18.</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="([1-9][0-9]*)?(,[1-9][0-9]*)*"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="JobMediaSheetsCompleted">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.19.</documentation>
+		</annotation>
+		<restriction base="int">
+			<minInclusive value="-1"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="JobName">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.20.</documentation>
+		</annotation>
+		<restriction base="string">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="JobOriginatingUserName">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.21.</documentation>
+		</annotation>
+		<restriction base="string">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="MediaSize">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.22.</documentation>
+		</annotation>
+		<union memberTypes="pwg:MediaSize">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="device-setting"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="none"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="MediaSizeList">
+		<annotation>
+			<documentation>A list of items whose type is pb2:MediaSize. Refer to Section 3.6.3.23.</documentation>
+		</annotation>
+		<list itemType="pb2:MediaSize"/>
+	</simpleType>
+
+	<simpleType name="MediaType">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.23.</documentation>
+		</annotation>
+		<union memberTypes="pwg:MediaType">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="device-setting"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="none"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="MediaTypeList">
+		<annotation>
+			<documentation>A list of items whose type is pb2:MediaType. Refer to Section 3.6.3.23.</documentation>
+		</annotation>
+		<list itemType="pb2:MediaType"/>
+	</simpleType>
+
+	<simpleType name="NumberUp">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.24.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="device-setting"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="2"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="4"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="OrientationRequested">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.25.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="device-setting"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="portrait"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="landscape"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="reverse-landscape"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="reverse-portrait"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="PageMargins">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.26.</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="(0|[1-9][0-9]*)?(\.[0-9]+)?(in|mm)(,(0|[1-9][0-9]*)?(\.[0-9]+)?(in|mm)){3}"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PrinterLocation">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.27.</documentation>
+		</annotation>
+		<restriction base="string">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PrinterName">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.28.</documentation>
+		</annotation>
+		<restriction base="string">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PrintQuality">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.29.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="device-setting"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="draft"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="normal"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="high"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="PrinterState">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.30.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="idle"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="processing"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stopped"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="PrinterStateReasons">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.31.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="none"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="attention-required"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="media-jam"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="paused"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="door-open"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="media-low"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="media-empty"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="output-area-almost-full"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="output-area-full"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="marker-supply-low"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="marker-supply-empty"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="marker-failure"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="media-change-request"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Sides">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.32.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="device-setting"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="one-sided"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="two-sided-long-edge"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="two-sided-short-edge"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="SourceURI">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.33.</documentation>
+		</annotation>
+		<restriction base="anyURI">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="XHTMLImageSupported">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.34.</documentation>
+		</annotation>
+		<restriction base="mime:Image">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="A_ARG_TYPE_CriticalAttribList">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.1.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<annotation>
+					<documentation>None</documentation>
+				</annotation>
+				<restriction base="string">
+					<enumeration value="none"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<annotation>
+					<documentation>The syntax of a CSV List of the strings listed in Table 2</documentation>
+				</annotation>
+				<restriction base="string">
+					<pattern value="(copies|sides|number-up|orientation-requested|media-size|media-type|print-quality|text-layout|image-layout|image-orientation|pdl-fidelity|font-family|font-size)(,(copies|sides|number-up|orientation-requested|media-size|media-type|print-quality|text-layout|image-layout|image-orientation|pdl-fidelity|font-family|font-size))*"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<complexType name="A_ARG_TYPE_MediaList">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.2.</documentation>
+		</annotation>
+		<complexContent>
+			<restriction base="anyType">
+				<choice>
+					<element name="MediaType" minOccurs="1" maxOccurs="unbounded">
+						<complexType>
+							<simpleContent>
+								<extension base="pb2:MediaTypeList">
+									<attribute name="MediaSize" type="pb2:MediaSize" use="required"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element name="MediaSize" minOccurs="1" maxOccurs="unbounded">
+						<complexType>
+							<simpleContent>
+								<extension base="pb2:MediaSizeList">
+									<attribute name="MediaType" type="pb2:MediaType" use="required"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+				</choice>
+			</restriction>
+		</complexContent>
+	</complexType>
+	
+	<simpleType name="CriticalAttributesSupported">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.8.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<annotation>
+					<documentation>None</documentation>
+				</annotation>
+				<restriction base="string">
+					<enumeration value="none"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<annotation>
+					<documentation>The syntax of a CSV List of the strings listed in Table 6</documentation>
+				</annotation>
+				<restriction base="string">
+					<pattern value="(copies|sides|number-up|orientation-requested|media-size|media-type|print-quality|text-layout|image-layout|image-orientation|pdl-fidelity|font-family|font-size)(,(copies|sides|number-up|orientation-requested|media-size|media-type|print-quality|text-layout|image-layout|image-orientation|pdl-fidelity|font-family|font-size))*"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="JobAbortState">
+		<annotation>
+			<documentation>Refer to Section 3.6.3.15.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,hardware-error"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,external-access-uri-not-found"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,external-access-object-failure"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,external-access-document-format-err"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,external-access-http-error"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,copies"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,sides"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,number-up"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,orientation-requested"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,media-size"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,media-type"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,print-quality"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,text-layout"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,image-layout"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,image-orientation"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,pdl-fidelity"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,font-family"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(0|[1-9][0-9]*),.*,.*,(-1|0|[1-9][0-9]*),aborted,font-size"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+</schema>

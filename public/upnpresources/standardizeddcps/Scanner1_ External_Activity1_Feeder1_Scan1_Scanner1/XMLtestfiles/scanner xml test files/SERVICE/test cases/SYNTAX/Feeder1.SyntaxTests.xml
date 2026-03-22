@@ -1,0 +1,58 @@
+<ServiceControlSyntaxTest>
+	<ServiceType>Feeder</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>0</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>Load</ActionName>
+			<InArgs>
+				<JobIDIn>0</JobIDIn>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>Eject</ActionName>
+			<InArgs>
+				<JobIDIn>0</JobIDIn>
+				<EntireDocumentIn>0</EntireDocumentIn>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>Reset</ActionName>
+			<InArgs>
+				<JobIDIn>0</JobIDIn>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>GetState</ActionName>
+			<InArgs/>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>SetFeederMode</ActionName>
+			<InArgs>
+				<JobIDIn>0</JobIDIn>
+				<FeederModeIn>device-setting</FeederModeIn>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>GetFeederMode</ActionName>
+			<InArgs/>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTest>

@@ -1,0 +1,38 @@
+<!--
+      Schema for the A_ARG_TYPE_MediaList datatype in UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<schema
+	targetNamespace="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:p="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.91"
+	xml:lang="en">
+
+	<include schemaLocation="PrintEnhanced-State.xsd"/>
+
+	<element name="MediaSize">
+		<complexType>
+			<simpleContent>
+				<extension base="p:MediaSizeList">
+					<attribute name="MediaType" type="p:MediaType" use="required"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+	<element name="MediaType">
+		<complexType>
+			<simpleContent>
+				<extension base="p:MediaTypeList">
+					<attribute name="MediaSize" type="p:MediaSize" use="required"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+
+</schema>

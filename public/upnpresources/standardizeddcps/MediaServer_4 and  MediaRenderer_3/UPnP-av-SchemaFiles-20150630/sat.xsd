@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="urn:schemas-upnp-org:av:sat" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:schemas-upnp-org:av:sat" elementFormDefault="qualified" attributeFormDefault="qualified" version="1-20150225">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+		Note that all schema supplied by the UPnP Forum AV WC committee are for informational use only and that the 
+		standardized DCPs describe the normative requirements for these schema. Some schema provided do not necessarily
+		embody requirements regarding number of element occurrences allowed or their ordering. 
+		
+		Schema for UPnP A/V CDS transforms Feature
+		</xsd:documentation>
+	</xsd:annotation>
+	<!--============================================================
+	list of predefined unit types
+    ============================================================-->
+	<xsd:simpleType name="unitTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="lv"/>
+			<xsd:enumeration value="dB"/>
+			<xsd:enumeration value="deg"/>
+			<xsd:enumeration value="dur"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="K"/>
+			<xsd:enumeration value="pct"/>
+			<xsd:enumeration value="px"/>
+			<xsd:enumeration value="pt"/>
+			<xsd:enumeration value="Hz"/>
+			<xsd:enumeration value="kHz"/>
+			<xsd:enumeration value="MHz"/>
+			<xsd:enumeration value="GHz"/>
+			<xsd:enumeration value="s"/>
+			<xsd:enumeration value="ms"/>
+			<xsd:enumeration value="m"/>
+			<xsd:enumeration value="cm"/>
+			<xsd:enumeration value="mm"/>
+			<xsd:enumeration value="W"/>
+			<xsd:enumeration value="kW-h"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	list of predefined transform types
+    ============================================================-->
+	<xsd:simpleType name="transformTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Resolution"/>
+			<xsd:enumeration value="MaxBitrate"/>
+			<xsd:enumeration value="Transcode"/>
+			<xsd:enumeration value="ComponentSelection"/>
+			<xsd:enumeration value="ComponentDeselection"/>
+			<xsd:enumeration value="AdaptiveStreaming"/>
+			<!-- Common with RCS transformTypes -->
+			<xsd:enumeration value="Rotation"/>
+			<xsd:enumeration value="RedEye"/>
+			<xsd:enumeration value="Zoom"/>
+			<xsd:enumeration value="HorizontalPan"/>
+			<xsd:enumeration value="VerticalPan"/>
+			<xsd:enumeration value="Equalization"/>
+			<xsd:enumeration value="SpeakerConfiguration"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  vendor defined extension definition
+    ============================================================-->
+	<xsd:simpleType name="vendorDefined">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="X_.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  transform names with extensions
+    ============================================================-->
+	<xsd:simpleType name="transformNameExceptions">
+		<xsd:restriction base="xsd:string">
+			<!-- Common with RCS transformNameExceptions -->
+			<xsd:pattern value="X_.*"/>
+			<xsd:pattern value="BandEq_.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  wc defined scale types
+    ============================================================-->
+	<xsd:simpleType name="scaleTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="LINEAR"/>
+			<xsd:enumeration value="LOGARITHMIC"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  full transformNames list definition, predefined + vendor specific
+    ============================================================-->
+	<xsd:simpleType name="transformNames">
+		<xsd:union memberTypes="transformTypes transformNameExceptions"/>
+	</xsd:simpleType>
+	<!--============================================================
+	  full transformNames list definition, predefined + vendor specific
+    ============================================================-->
+	<xsd:attribute name="unit">
+		<xsd:simpleType>
+			<xsd:union memberTypes="unitTypes transformNameExceptions"/>
+		</xsd:simpleType>
+	</xsd:attribute>
+	<!--============================================================
+	  full scale list definition, predefined + vendor specific
+    ============================================================-->
+	<xsd:attribute name="scale">
+		<xsd:simpleType>
+			<xsd:union memberTypes="scaleTypes vendorDefined"/>
+		</xsd:simpleType>
+	</xsd:attribute>
+	<!--============================================================
+	  TransformList definition, actual schema using the predefined types
+    ============================================================-->
+	<xsd:element name="TransformList">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element name="transform">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="friendlyName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="parameterList" minOccurs="1" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="parameter" minOccurs="1" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:choice>
+														<xsd:element name="allowedValueList" minOccurs="1" maxOccurs="unbounded">
+															<xsd:complexType>
+																<xsd:sequence>
+																	<xsd:element name="allowedValue" nillable="true" minOccurs="1" maxOccurs="unbounded">
+																		<xsd:complexType>
+																			<xsd:simpleContent>
+																				<xsd:extension base="xsd:string"/>
+																			</xsd:simpleContent>
+																		</xsd:complexType>
+																	</xsd:element>
+																</xsd:sequence>
+																<xsd:attribute name="unit" type="xsd:string" use="optional" form="unqualified"/>
+																<xsd:attribute name="scale" type="xsd:string" use="optional" form="unqualified"/>
+																<xsd:attribute name="info" type="xsd:string" use="optional" form="unqualified"/>
+															</xsd:complexType>
+														</xsd:element>
+														<xsd:element name="allowedValueRange" minOccurs="1" maxOccurs="unbounded">
+															<xsd:complexType>
+																<xsd:sequence>
+																	<xsd:element name="minimum" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+																	<xsd:element name="maximum" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+																	<xsd:element name="step" type="xsd:string" minOccurs="0"/>
+																</xsd:sequence>
+																<xsd:attribute name="unit" type="xsd:string" use="optional" form="unqualified"/>
+																<xsd:attribute name="scale" type="xsd:string" use="optional" form="unqualified"/>
+															</xsd:complexType>
+														</xsd:element>
+													</xsd:choice>
+													<xsd:element name="defaultValue" nillable="true" minOccurs="0" maxOccurs="1">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:string"/>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="name" type="xsd:string" use="required" form="unqualified"/>
+												<xsd:attribute name="required" type="xsd:boolean" use="required" form="unqualified"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="name" type="transformNames" use="required" form="unqualified"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

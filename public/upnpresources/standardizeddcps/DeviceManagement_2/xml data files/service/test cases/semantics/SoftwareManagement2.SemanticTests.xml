@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceSemanticTestCases>
+  <ServiceType>SoftwareManagement</ServiceType>
+  <ServiceVersion>2</ServiceVersion>
+  <TestVersion>0.8</TestVersion>
+  <TestGroupList>
+    <TestGroup>
+      <Id>0</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Software/Firmware mgmt tests</ActionInstruction>
+              <VerificationInstruction>Check that the device is turned On.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>install</ActionName>
+              <InArgs>
+                <DUURI>apt://fttest-depend</DUURI>
+                <DUType>Firmware</DUType>
+                <HandleDependencies>1</HandleDependencies>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationID dataType="ui4" SaveAs="OPID"></OperationID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>We need to wait the end of installation</ActionInstruction>
+              <VerificationInstruction>Check that installation is completed</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>3</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetOperationInfo</ActionName>
+              <InArgs>
+                <OperationID dataType="ui4" LoadAs="OPID"></OperationID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationState dataType="string" SaveAs="State">Completed</OperationState>
+                    <TargetedID dataType="string" SaveAs="DUIDs"></TargetedID>
+                    <Action dataType="string" SaveAs="Action"></Action>
+                    <ErrorDescription dataType="string" SaveAs="Result"></ErrorDescription>
+                    <AdditionalInfo dataType="string" SaveAs="AdditionalInfo"></AdditionalInfo>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>4</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Update</ActionName>
+              <InArgs>
+                <DUID>1</DUID>
+                <NewDUURI>apt://fttest</NewDUURI>
+                <HandleDependencies>1</HandleDependencies>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationID dataType="ui4" SaveAs="UpdateOPID"></OperationID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>5</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Start</ActionName>
+              <InArgs>
+                <EUID>1</EUID>
+                <HandleDependencies>1</HandleDependencies>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationID dataType="ui4" SaveAs="StartOPID"></OperationID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>6</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting daemon activity</ActionInstruction>
+              <VerificationInstruction>check some activity</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>7</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Stop</ActionName>
+              <InArgs>
+                <EUID>1</EUID>
+                <HandleDependencies>1</HandleDependencies>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationID dataType="ui4" SaveAs="StopOPID"></OperationID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>8</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Uninstall</ActionName>
+              <InArgs>
+                <DUID>1</DUID>
+                <HandleDependencies>1</HandleDependencies>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationID dataType="ui4" SaveAs="UninstallOPID"></OperationID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>9</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Uninstall</ActionName>
+              <InArgs>
+                <DUID>2</DUID>
+                <HandleDependencies>1</HandleDependencies>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <OperationID dataType="ui4" SaveAs="UninstallOPID"></OperationID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+  </TestGroupList>
+</ServiceSemanticTestCases>

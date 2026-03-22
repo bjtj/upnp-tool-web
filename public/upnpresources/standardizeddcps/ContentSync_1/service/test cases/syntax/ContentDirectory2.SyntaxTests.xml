@@ -1,0 +1,62 @@
+<!--============================================================
+Title: UPnP AV Content Directory Service (CDS) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>ContentDirectory</ServiceType>
+	<ServiceVersion>2</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSearchCapabilities</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSortCapabilities</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetFeatureList</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSystemUpdateID</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>Browse</ActionName>
+			<InArgs>
+				<ObjectID>0</ObjectID>
+				<BrowseFlag>BrowseMetadata</BrowseFlag>
+				<Filter>*</Filter>
+				<StartingIndex>0</StartingIndex>
+				<RequestedCount>0</RequestedCount>
+				<SortCriteria></SortCriteria>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

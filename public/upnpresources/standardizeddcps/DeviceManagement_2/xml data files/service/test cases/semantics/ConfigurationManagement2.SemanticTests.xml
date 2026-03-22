@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceSemanticTestCases>
+  <ServiceType>ConfigurationManagement</ServiceType>
+  <ServiceVersion>2</ServiceVersion>
+  <TestVersion>0.8</TestVersion>
+  <TestGroupList>
+    <TestGroup>
+      <Id>0</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Configuration mgmt tests</ActionInstruction>
+              <VerificationInstruction>Check that the device is turned On.</VerificationInstruction>
+              <ExpectedSuccessResponse />
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>CreateInstance</ActionName>
+              <InArgs>
+                <MultiInstanceName>/UPnP/DM/Configuration/LocalUsersAndGroups/Users/</MultiInstanceName>
+                <ChildrenInitialization>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cms:ParameterInitialValueList xmlns:cms=&quot;urn:schemas-upnp-org:dm:cms&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:schemas-upnp-org:dm:cms http://www.upnp.org/schemas/dm/cms.xsd&quot;&gt;&lt;Node&gt;&lt;ParameterInitializationPath&gt;Login&lt;/ParameterInitializationPath&gt;&lt;Value&gt;test_login&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;ParameterInitializationPath&gt;Name&lt;/ParameterInitializationPath&gt;&lt;Value&gt;test_name&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;ParameterInitializationPath&gt;Password&lt;/ParameterInitializationPath&gt;&lt;Value&gt;test_pwd&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;ParameterInitializationPath&gt;Group&lt;/ParameterInitializationPath&gt;&lt;Value&gt;test_group&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;ParameterInitializationPath&gt;Email&lt;/ParameterInitializationPath&gt;&lt;Value&gt;test_email&lt;/Value&gt;&lt;/Node&gt;&lt;/cms:ParameterInitialValueList&gt;</ChildrenInitialization>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <InstanceIdentifier dataType="string" SaveAs="identifier"></InstanceIdentifier>
+                    <Status dataType="string">ChangesApplied</Status>
+                  </OutArgsList>
+                  <RetVal />
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>DeleteInstance</ActionName>
+              <InArgs>
+                <InstanceIdentifier dataType="string" LoadAs="identifier"></InstanceIdentifier>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Status dataType="string">ChangesApplied</Status>
+                  </OutArgsList>
+                  <RetVal />
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+  </TestGroupList>
+</ServiceSemanticTestCases>

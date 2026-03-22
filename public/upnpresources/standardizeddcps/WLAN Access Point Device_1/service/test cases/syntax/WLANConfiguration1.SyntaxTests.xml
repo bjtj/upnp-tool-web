@@ -1,0 +1,392 @@
+
+<ServiceControlSyntaxTestCases>
+	<ServiceType>urn:schemas-upnp-org:service:WLANConfiguration:1</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestVersion>0.8</TestVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetInsecureOutOfBandAccessMode</ActionName>
+			<InArgs>
+				<NewInsecureOOBAccessEnabled>1</NewInsecureOOBAccessEnabled>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetInsecureOutOfBandAccessMode</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetSSID</ActionName>
+			<InArgs>
+				<NewSSID>test</NewSSID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSSID</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetBSSID</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetBeaconType</ActionName>
+			<InArgs>
+				<NewBeaconType>Basic</NewBeaconType>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetBeaconType</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>8</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetBeaconAdvertisement</ActionName>
+			<InArgs>
+				<NewBeaconAdvertisementEnabled>1</NewBeaconAdvertisementEnabled>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>9</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetBeaconAdvertisement</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>10</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetRadioMode</ActionName>
+			<InArgs>
+				<NewRadioEnabled>1</NewRadioEnabled>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>11</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetRadioMode</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>12</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetLocationDescription</ActionName>
+			<InArgs>
+				<NewLocationDescription>TestLocation</NewLocationDescription>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>13</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetLocationDescription</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>14</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetRegulatoryDomain</ActionName>
+			<InArgs>
+				<NewRegulatoryDomain>USI</NewRegulatoryDomain>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>15</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetRegulatoryDomain</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>16</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetFailureStatusInfo</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>17</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetChannel</ActionName>
+			<InArgs>
+				<NewChannel>5</NewChannel>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>18</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetChannelInfo</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>19</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetChannelsInUse</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>20</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetDeviceOperationMode</ActionName>
+			<InArgs>
+				<NewDeviceOperationMode>test</NewDeviceOperationMode>
+				<NewSSID>test</NewSSID>
+				<NewBSSID>11:22:33:44:55:66</NewBSSID>
+				<NewChannel>7</NewChannel>
+				<NewBasicDataTransmitRates>2,5.5</NewBasicDataTransmitRates>
+				<NewOperationalDataTransmitRates>2,5.5</NewOperationalDataTransmitRates>
+				<NewDistanceFromRoot>1</NewDistanceFromRoot>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>21</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetDeviceOperationMode</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>22</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetDataTransmitRates</ActionName>
+			<InArgs>
+				<NewBasicDataTransmitRates>2,5.5,11</NewBasicDataTransmitRates>
+				<NewOperationalDataTransmitRates>2,5.5,11</NewOperationalDataTransmitRates>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>23</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetDataTransmitRateInfo</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>24</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetAutoRateFallBackMode</ActionName>
+			<InArgs>
+				<NewAutoRateFallBackEnabled>1</NewAutoRateFallBackEnabled>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>25</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetAutoRateFallBackMode</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>26</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetByteStatistics</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>27</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetPacketStatistics</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>28</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetByteStatsForAssociatedDev</ActionName>
+			<InArgs>
+				<NewAssociatedDeviceMACAddress>test</NewAssociatedDeviceMACAddress>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>29</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetPacketStatsForAssociatedDev</ActionName>
+			<InArgs>
+				<NewAssociatedDeviceMACAddress>test</NewAssociatedDeviceMACAddress>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>30</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetTotalAssociations</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>31</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetGenericAssociatedDeviceInfo</ActionName>
+			<InArgs>
+				<NewAssociatedDeviceIndex>2001</NewAssociatedDeviceIndex>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>32</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSpecificAssociatedDeviceInfo</ActionName>
+			<InArgs>
+				<NewAssociatedDeviceMACAddress>test</NewAssociatedDeviceMACAddress>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>33</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSpecificAssociatedDev11iInfo</ActionName>
+			<InArgs>
+				<NewAssociatedDeviceMACAddress>test</NewAssociatedDeviceMACAddress>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>34</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetAuthenticationServiceMode</ActionName>
+			<InArgs>
+				<NewAuthenticationServiceMode>None</NewAuthenticationServiceMode>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>35</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetAuthenticationServiceMode</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>36</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetSecurityKeys</ActionName>
+			<InArgs>
+				<NewWEPKey0>6162636465</NewWEPKey0>
+				<NewWEPKey1>6162636466</NewWEPKey1>
+				<NewWEPKey2>6162636467</NewWEPKey2>
+				<NewWEPKey3>6162636468</NewWEPKey3>
+				<NewPreSharedKey>61626364681213141516</NewPreSharedKey>
+				<NewWEPKeyPassphrase>WEPTest</NewWEPKeyPassphrase>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>37</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSecurityKeys</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>38</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetDefaultWEPKeyIndex</ActionName>
+			<InArgs>
+				<NewDefaultWEPKeyIndex>0</NewDefaultWEPKeyIndex>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>39</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetDefaultWEPKeyIndex</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>40</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetPreSharedKey</ActionName>
+			<InArgs>
+				<NewPreSharedKeyIndex>0</NewPreSharedKeyIndex>
+				<NewAssociatedDeviceMACAddress>01:01:03:04:02:01</NewAssociatedDeviceMACAddress>
+				<NewPreSharedKey>PSKTest</NewPreSharedKey>
+				<NewPSKPassphrase>PSKTest</NewPSKPassphrase>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>41</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetPreSharedKey</ActionName>
+			<InArgs>
+				<NewPreSharedKeyIndex>0</NewPreSharedKeyIndex>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>42</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetBasBeaconSecurityProperties</ActionName>
+			<InArgs>
+				<NewBasicEncryptionModes>None</NewBasicEncryptionModes>
+				<NewBasicAuthenticationMode>None</NewBasicAuthenticationMode>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>43</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetBasBeaconSecurityProperties</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>44</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetWPABeaconSecurityProperties</ActionName>
+			<InArgs>
+				<NewWPAEncryptionModes>PSKEncryption</NewWPAEncryptionModes>
+				<NewWPAAuthenticationMode>PSKAuthencation</NewWPAAuthenticationMode>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>45</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetWPABeaconSecurityProperties</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>46</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>Set11iBeaconSecurityProperties</ActionName>
+			<InArgs>
+				<NewIEEE11iEncryptionModes>PSKEncryption</NewIEEE11iEncryptionModes>
+				<NewIEEE11iAuthenticationMode>PSKAuthencation</NewIEEE11iAuthenticationMode>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>47</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>Get11iBeaconSecurityProperties</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>48</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>FactoryDefaultReset</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>49</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>ResetAuthentication</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

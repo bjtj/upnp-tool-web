@@ -1,0 +1,78 @@
+<ServiceControlSyntaxTestCases>
+	<ServiceType>WANIPv6FirewallControl</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestVersion>0.9</TestVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetFirewallStatus</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetOutboundPinholeTimeout</ActionName>
+			<InArgs>
+				<RemoteHost></RemoteHost>
+				<RemotePort>1570</RemotePort>
+				<InternalClient></InternalClient>
+				<InternalPort>2000</InternalPort>
+				<Protocol>6</Protocol>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>AddPinhole</ActionName>
+			<InArgs>
+				<RemoteHost>fe80::222:dff:fe87:f000</RemoteHost>
+				<RemotePort>1570</RemotePort>
+				<InternalClient>fe80::21c:23ff:fe07:c27c</InternalClient>
+				<InternalPort>2000</InternalPort>
+				<Protocol>6</Protocol>
+				<LeaseTime>3600</LeaseTime>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode> 
+		</TestCase>
+            <TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>UpdatePinhole</ActionName>
+			<InArgs>
+				<UniqueID>0</UniqueID>
+				<NewLeaseTime>1000</NewLeaseTime>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetPinholePackets</ActionName>
+ 			<InArgs>
+				<UniqueID>0</UniqueID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>CheckPinholeWorking</ActionName>
+ 			<InArgs>
+				<UniqueID>0</UniqueID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+            <TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>DeletePinhole</ActionName>
+			<InArgs>
+				<UniqueID>0</UniqueID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

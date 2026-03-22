@@ -1,0 +1,225 @@
+<DeviceDescriptionSyntaxRegEx>
+    <root>
+        <AttributeList>
+            <Attribute Name="xmlns" RegEx="^(urn:schemas-upnp-org:device-1-0)$" />        
+        </AttributeList>
+	<TextValueList/>
+    </root>
+
+    <specVersion>
+        <AttributeList/>
+        <TextValueList/>
+    </specVersion>
+    
+    <major>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(1)$" />            
+        </TextValueList>
+    </major>
+
+    <minor>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(0)$" />            
+        </TextValueList>
+    </minor>
+
+    <URLBase>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(([^:/?#]+)://([^/?#]+)([^?#]*)(\?([^#]*))?(#(.*))?)$" />                     
+        </TextValueList>
+    </URLBase>
+
+    <device>
+        <AttributeList/>
+        <TextValueList/>
+    </device>
+
+    <deviceType>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(urn:((schemas-upnp-org)|([^/?#]*)):device:(.){1,64}:[0-9]+)$" />
+        </TextValueList>
+    </deviceType>
+
+    <friendlyName>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />
+        </TextValueList>
+    </friendlyName>
+
+    <manufacturer>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />
+        </TextValueList>
+    </manufacturer>
+
+
+    <manufacturerURL>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]+)(\?([^#\s]*))?(#(.*))?)$" />
+        </TextValueList>
+    </manufacturerURL>
+
+    <modelDescription>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />
+        </TextValueList>
+    </modelDescription>
+
+    <modelName>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />
+        </TextValueList>
+    </modelName>
+
+    <modelNumber>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />
+        </TextValueList>
+    </modelNumber>
+
+
+    <modelURL>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]+)(\?([^#\s]*))?(#(.*))?)$" />            
+        </TextValueList>
+    </modelURL>
+
+    <serialNumber>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />
+        </TextValueList>
+    </serialNumber>
+
+    <UDN>    
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(uuid:.*\w.*)$" />
+        </TextValueList>
+    </UDN>
+
+    <UPC>    
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(.*\w.*)$" />            
+        </TextValueList>
+    </UPC>
+
+    <iconList>
+        <AttributeList/>
+        <TextValueList/>
+    </iconList>
+
+    <icon>
+        <AttributeList/>
+        <TextValueList/>
+    </icon>
+
+    <mimetype>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="(image/.*)" />
+        </TextValueList>
+    </mimetype>
+
+    <width>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^([0-9]+)$" />
+        </TextValueList>
+    </width>
+
+    <height>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^([0-9]+)$" />
+        </TextValueList>
+    </height>
+
+    <depth>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^([0-9]+)$" />
+        </TextValueList>
+    </depth>
+
+    <url>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]+)(\?([^#\s]*))?(#(.*))?)$" />
+        </TextValueList>
+    </url>
+
+
+    <serviceList>
+        <AttributeList/>
+        <TextValueList/>
+    </serviceList>
+
+    <service>
+        <AttributeList/>
+        <TextValueList/>
+    </service>
+
+
+    <serviceType>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(urn:((schemas-upnp-org)|([^/?#]*)):service:(.){1,64}:[0-9]+)$" />                
+        </TextValueList>
+    </serviceType>
+
+    <serviceId>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^(urn:((upnp-org)|([^/?#]*)):serviceId:(.){1,64})$" />                        
+        </TextValueList>
+    </serviceId>
+
+    <SCPDURL>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]+)(\?([^#\s]*))?(#(.*))?)$" />
+        </TextValueList>
+    </SCPDURL>
+
+    <controlURL>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]+)(\?([^#\s]*))?(#(.*))?)$" />
+        </TextValueList>
+    </controlURL>
+
+    <eventSubURL>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]*)(\?([^#\s]*))?(#(.*))?)$" />
+        </TextValueList>
+    </eventSubURL>
+    
+
+    <deviceList>
+        <AttributeList/>
+        <TextValueList/>
+    </deviceList>
+
+
+    <presentationURL>
+        <AttributeList/>
+        <TextValueList>
+            <TextValue RegEx="^\s*((([^:/?#]+)://([^/?#]+))?([^?#\s]+)(\?([^#\s]*))?(#(.*))?)$" />          
+        </TextValueList>
+    </presentationURL>
+
+</DeviceDescriptionSyntaxRegEx>

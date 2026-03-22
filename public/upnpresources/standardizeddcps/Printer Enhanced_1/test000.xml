@@ -1,0 +1,18 @@
+<!--
+      A SOAP Envelope which contains a CancelJob request of UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<s:Envelope
+	xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+	s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<s:Body>
+		<m:CancelJob
+			xmlns:m="urn:schemas-upnp-org:service:PrintEnhanced:1"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="urn:schemas-upnp-org:service:PrintEnhanced:1 PrintEnhanced.xsd">
+			<JobId>1000</JobId>
+		</m:CancelJob>
+	</s:Body>
+</s:Envelope>

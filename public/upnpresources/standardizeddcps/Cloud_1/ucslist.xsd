@@ -1,0 +1,22 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-upnp-org:cloud:ucslist" targetNamespace="urn:schemas-upnp-org:cloud:ucslist" attributeFormDefault="unqualified" elementFormDefault="qualified">
+   <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+        UCSList schema for UPnP CloudProxy service, version 1.0.
+		December 31, 2015
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="UCSList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="UCS" maxOccurs="unbounded" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element type="xsd:string" name="UserName" maxOccurs="unbounded" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:attribute type="xsd:string" name="UCSId" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

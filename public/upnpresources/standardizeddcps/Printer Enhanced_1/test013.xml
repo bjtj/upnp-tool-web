@@ -1,0 +1,37 @@
+<!--
+      A SOAP Envelope which contains a GetMediaList response of UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<s:Envelope
+	xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+	s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<s:Body>
+		<m:GetMediaListResponse
+			xmlns:m="urn:schemas-upnp-org:service:PrintEnhanced:1"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="urn:schemas-upnp-org:service:PrintEnhanced:1 PrintEnhanced.xsd">
+			<MediaList>
+				&lt;MediaType xmlns=&quot;urn:schemas-upnp-org:service:PrintEnhanced:1&quot; MediaSize=&quot;device-setting&quot;&gt;
+					device-setting
+					stationery
+					stationery-inkjet
+					transparency
+					envelope
+					labels
+					photographic
+					photographic-glossy
+					photographic-matte
+					cardstock
+				&lt;/MediaType&gt;
+				&lt;MediaType xmlns=&quot;urn:schemas-upnp-org:service:PrintEnhanced:1&quot; MediaSize=&quot;na_letter_8.5x11in&quot;&gt;
+					none
+				&lt;/MediaType&gt;
+				&lt;MediaType xmlns:n=&quot;urn:schemas-upnp-org:service:PrintEnhanced:1&quot; MediaSize=&quot;jis_b4_257x364mm&quot;&gt;
+					none
+				&lt;/MediaType&gt;
+			</MediaList>
+		</m:GetMediaListResponse>
+	</s:Body>
+</s:Envelope>

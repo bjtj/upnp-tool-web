@@ -1,0 +1,74 @@
+<ServiceControlSyntaxTestCases>
+<ServiceType>urn:schemas-upnp-org:service:LowPowerDevice:1</ServiceType>
+<ServiceVersion>1</ServiceVersion>
+<TestCaseList> 
+  <TestCase>
+    <Id>0</Id>
+     <Category>Valid Action And Valid InArgs</Category>
+     <ActionName>GetPowerManagementInfo</ActionName>
+	<InArgs></InArgs>
+     <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+  </TestCase>
+  <TestCase>
+    <Id>1</Id>
+    <Category>Valid Action And Valid InArgs</Category>
+    <ActionName>GoToSleep</ActionName>
+    <InArgs>
+      <RecommendedSleepPeriod>60</RecommendedSleepPeriod>
+      <RecommendedPowerState>1</RecommendedPowerState>
+    </InArgs>
+    <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+  </TestCase>
+  <TestCase>
+    <Id>2</Id>
+    <Category>Valid Action And Valid InArgs</Category>
+    <ActionName>Wakeup</ActionName>
+    <InArgs></InArgs>
+    <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+  </TestCase>
+  <TestCase>
+    <Id>3</Id>
+     <Category>Valid Action And Check OutArgs</Category>
+     <ActionName>GetPowerManagementInfo</ActionName>
+     <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+     <ExpectedResponse>
+        <SuccessResponse>
+           <OutArgsList>
+             <WakeupMethod/>
+	     <PowerSupplyStatus/>
+           </OutArgsList>
+        </SuccessResponse>
+     </ExpectedResponse>
+  </TestCase>
+  <TestCase>
+    <Id>4</Id>
+     <Category>Valid Action And Check OutArgs</Category>
+     <ActionName>GoToSleep</ActionName>
+	<InArgs>
+      <RecommendedSleepPeriod>60</RecommendedSleepPeriod>
+      <RecommendedPowerState>1</RecommendedPowerState>
+    </InArgs>
+     <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+     <ExpectedResponse>
+        <SuccessResponse>
+           <OutArgsList>
+           <SleepPeriod/>
+	     <PowerState/>
+           </OutArgsList>
+        </SuccessResponse>
+     </ExpectedResponse>
+  </TestCase>
+  <TestCase>
+    <Id>5</Id>
+     <Category>Valid Action And Check OutArgs</Category>
+     <ActionName>Wakeup</ActionName>
+     <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+     <ExpectedResponse>
+        <SuccessResponse>
+           <OutArgsList>
+           </OutArgsList>
+        </SuccessResponse>
+     </ExpectedResponse>
+  </TestCase>
+</TestCaseList>
+</ServiceControlSyntaxTestCases>

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceSemanticTestCases>
+  <ServiceType>BasicManagement</ServiceType>
+  <ServiceVersion>2</ServiceVersion>
+  <TestVersion>0.8</TestVersion>
+  <TestGroupList>
+    <TestGroup>
+      <Id>0</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>We 'll start by a ping test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Ping</ActionName>
+              <InArgs>
+                <Host>"127.0.0.1"</Host>
+                <NumberOfRepetitions>2</NumberOfRepetitions>
+                <Timeout>2</Timeout>
+                <DataBlockSize>54</DataBlockSize>
+                <DSCP>16</DSCP>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <TestID dataType="ui4" SaveAs="PingID"></TestID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting Ping response</ActionInstruction>
+              <VerificationInstruction>Check that the Ping command is terminated.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>3</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetPingResult</ActionName>
+              <InArgs>
+                <TestID dataType="ui4" LoadAs="PingID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Status dataType="string">Success</Status>
+                    <AdditionalInfo dataType="string">None</AdditionalInfo>
+                    <SuccessCount dataType="ui4">2</SuccessCount>
+                    <FailureCount dataType="ui4">0</FailureCount>
+                    <AverageResponseTime dataType="ui4" SaveAs="average"></AverageResponseTime>
+                    <MinimumResponseTime dataType="ui4" SaveAs="Minimum"></MinimumResponseTime>
+                    <MaximumResponseTime dataType="ui4" SaveAs="Maximum"></MaximumResponseTime>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>1</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>Traceroute test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Traceroute</ActionName>
+              <InArgs>
+                <Host>"orange.fr"</Host>
+                <Timeout>2</Timeout>
+                <DataBlockSize>54</DataBlockSize>
+                <MaxHopCount>10</MaxHopCount>
+                <DSCP>16</DSCP>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <TestID dataType="ui4" SaveAs="TracerouteID"></TestID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting Traceroute response</ActionInstruction>
+              <VerificationInstruction>Check that the Traceroute command is terminated.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>3</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetTracerouteResult</ActionName>
+              <InArgs>
+                <TestID dataType="ui4" LoadAs="TracerouteID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Status dataType="string">Success</Status>
+                    <AdditionalInfo dataType="string"></AdditionalInfo>
+                    <ResponseTime dataType="ui4" SaveAs="Responsetime"></ResponseTime>
+                    <HopHosts dataType="string" SaveAs="HopHost"></HopHosts>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>2</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>NSLookup test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>NSLookup</ActionName>
+              <InArgs>
+                <HostName>orange.fr</HostName>
+                <DNSServer></DNSServer>
+                <NumberOfRepetitions>2</NumberOfRepetitions>
+                <Timeout>2</Timeout>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <TestID dataType="ui4" SaveAs="NSLookupID"></TestID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting NSLookup response</ActionInstruction>
+              <VerificationInstruction>Check that the NSLookup command is terminated.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>3</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetNSLookupResult</ActionName>
+              <InArgs>
+                <TestID dataType="ui4" LoadAs="NSLookupID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Status dataType="string">Success</Status>
+                    <AdditionalInfo dataType="string"></AdditionalInfo>
+                    <SuccessCount dataType="ui4">2</SuccessCount>
+                    <Result dataType="string" SaveAs="result"></Result>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>3</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>SelfTest test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>SelfTest</ActionName>
+              <InArgs/>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <TestID dataType="ui4" SaveAs="selftestID"></TestID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting selftest response</ActionInstruction>
+              <VerificationInstruction>Check that the selftest command is terminated.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>3</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetSelfTestResult</ActionName>
+              <InArgs>
+                <TestID dataType="ui4" LoadAs="selftestID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Status dataType="boolean">1</Status>
+                    <Info dataType="string" SaveAs="info"></Info>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>4</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>SequenceMode test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>SetSequenceMode</ActionName>
+              <InArgs>
+                <SequenceMode>1</SequenceMode>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList/>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetSequenceMode</ActionName>
+              <InArgs/>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <SequenceMode dataType="boolean">1</SequenceMode>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>SetSequenceMode</ActionName>
+              <InArgs>
+                <SequenceMode>0</SequenceMode>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList/>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>5</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>Test error case</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetNSLookupResult</ActionName>
+              <InArgs>
+                <TestID dataType="ui4" LoadAs="PingID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <FailureResponse>
+                  <FaultCode dataType="ui2">707</FaultCode>
+                </FailureResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>6</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>Test Cancel Operation</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Ping</ActionName>
+              <InArgs>
+                <Host>"127.0.0.1"</Host>
+                <NumberOfRepetitions>100</NumberOfRepetitions>
+                <Timeout>100</Timeout>
+                <DataBlockSize>54</DataBlockSize>
+                <DSCP>16</DSCP>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <TestID dataType="ui4" SaveAs="PingID"></TestID>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetTestInfo</ActionName>
+              <InArgs>
+                <TestID LoadAs="PingID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Type dataType="string">Ping</Type>
+                    <State dataType="string">InProgress</State>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>3</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>CancelTest</ActionName>
+              <InArgs>
+                <TestID LoadAs="PingID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList/>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>4</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetTestInfo</ActionName>
+              <InArgs>
+                <TestID LoadAs="PingID"></TestID>
+              </InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <Type dataType="string">Ping</Type>
+                    <State dataType="string">Canceled</State>
+                  </OutArgsList>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>7</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>Reboot test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>Reboot</ActionName>
+              <InArgs/>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList/>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting reboot </ActionInstruction>
+              <VerificationInstruction>Check that the reboot is completed.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+    <TestGroup>
+      <Id>8</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>Baseline Reset test</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>BaselineReset</ActionName>
+              <InArgs/>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList/>
+                  <RetVal/>
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Waiting Baseline reset </ActionInstruction>
+              <VerificationInstruction>Check that the baseline reset is completed.</VerificationInstruction>
+              <ExpectedSuccessResponse/>
+            </ManualAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+  </TestGroupList>
+</ServiceSemanticTestCases>

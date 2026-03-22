@@ -1,0 +1,158 @@
+<!-- Cert Tool v1.5 -->
+<!-- Template for Syntax Test Case Listing for Control Actions defined for a Service. -->
+<!-- File name must be SERVICETYPESERVICEVERSION.SYNTAXTESTS.XML -->
+<!-- The test case action name in this document are from different service and given here as an example only. -->
+
+<ServiceControlSyntaxTestCases>
+    <ServiceType>SyntaxTestService</ServiceType>
+    <ServiceVersion>1</ServiceVersion>
+    <TestVersion>0.8</TestVersion>
+    <TestCaseList>
+        <TestCase>
+            <Id>1</Id>
+            <Category>Valid Action And Valid InArgs</Category>
+            <ActionName>SetPowerLevel</ActionName>
+            <InArgs> 
+                <PowerLevel>10</PowerLevel>
+            </InArgs>
+            <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+        </TestCase>
+        
+        <TestCase>
+            <Id>1</Id>
+            <Category>Valid Action And Check OutArgs</Category>
+            <ActionName>AddPortMapping</ActionName>
+                <InArgs>
+                    <NewRemoteHost SaveAs='NewRemoteHostVariable' dataType='string'>157.56.32.24</NewRemoteHost> 
+                    <NewExternalPort SaveAs='NewExternalPortVariable' dataType='ui2'>157</NewExternalPort>
+                    <NewProtocol SaveAs='NewExternalProtocolVariable' dataType='string'>TCP</NewProtocol>
+                    <NewInternalPort SaveAs='InternalPort' dataType='ui2'>200</NewInternalPort>
+                    <NewInternalClient>157.156.32.24</NewInternalClient>
+                    <NewEnabled>1</NewEnabled>
+                    <NewPortMappingDescription>MyNewPortMapping</NewPortMappingDescription>
+                    <NewLeaseDuration SaveAs='LeaseDuration' dataType='ui4'>20</NewLeaseDuration>
+                </InArgs>
+            <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+            <ExpectedResponse>
+                <SuccessResponse/>
+                <OptionalAllowedFaultCodes>
+                    <FaultCode dataType="ui2">718</FaultCode> 
+                    <FaultCode dataType="ui2">725</FaultCode>
+                </OptionalAllowedFaultCodes>
+            </ExpectedResponse>
+        </TestCase>
+
+        <TestCase>
+            <Id>2</Id>
+            <Category>Valid Action And Check OutArgs</Category>
+            <ActionName>GetSpecificPortMappingEntry</ActionName>
+                <InArgs>
+                    <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>  
+                    <NewExternalPort LoadAs='NewExternalPortVariable'></NewExternalPort>
+                    <NewProtocol>TCP</NewProtocol>
+                </InArgs>
+            <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+            <ExpectedResponse>
+                <SuccessResponse>
+                    <OutArgsList>
+                        <NewInternalPort MatchWith='InternalPort'></NewInternalPort>  
+                        <NewInternalClient/>                                             
+                        <NewEnabled dataType='boolean'>1</NewEnabled>                   
+                        <NewPortMappingDescription SaveAs='PortDesc'></NewPortMappingDescription> 
+                        <NewLeaseDuration></NewLeaseDuration>           
+                    </OutArgsList>
+                    <FormatArg SaveAs='FormatVal'>
+                        <Format>Port Mapping - External: %s Internal: %s Description: %s Duration: %s</Format>
+                        <NewExternalPortVariable/>  
+                        <InternalPort/>
+                        <PortDesc/>
+                        <LeaseDuration/>
+                    </FormatArg>
+                </SuccessResponse>
+            </ExpectedResponse>
+        </TestCase>
+ 
+         <TestCase>
+            <Id>3</Id>
+            <Category>Valid Action And Check OutArgs</Category>
+            <ActionName>DeletePortMapping</ActionName>
+            <InArgs>
+                <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>
+                <NewExternalPort LoadAs='NewExternalPortVariable'></NewExternalPort>
+                <NewProtocol>TCP</NewProtocol>
+            </InArgs>
+            <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+            <ExpectedResponse>
+                <SuccessResponse/> 
+                <OptionalAllowedFaultCodes>
+                    <FaultCode dataType="ui2">714</FaultCode>
+                </OptionalAllowedFaultCodes>
+            </ExpectedResponse>
+        </TestCase>
+         <TestCase>
+            <Id>1</Id>
+            <Category>Invalid Action or Invalid Args</Category>
+            <ActionName>DeletePortMapping</ActionName>
+            <InArgs>
+                <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>
+                <NewExternalPort LoadAs='NewExternalPortVariable'></NewExternalPort>
+                <NewProtocol>TCP</NewProtocol>
+            </InArgs>
+            <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+            <ExpectedResponse>
+                <SuccessResponse/>
+                <OptionalAllowedFaultCodes>
+                    <FaultCode dataType="ui2">714</FaultCode>
+                </OptionalAllowedFaultCodes>
+            </ExpectedResponse>
+        </TestCase>
+
+        <TestCase>
+            <Id>2</Id>
+            <Category>Invalid Action or Invalid Args</Category>
+            <ActionName>DeletePortMapping</ActionName>
+            <InArgs>
+                <NewRemoteHost>257.56.32.24</NewRemoteHost>
+                <NewExternalPort>257</NewExternalPort>
+                <NewProtocol>TTT</NewProtocol>
+            </InArgs>
+            <ExpectedReturnCode>FAILURE_RESPONSE</ExpectedReturnCode>
+            <ExpectedResponse>
+                <FailureResponse>
+                    <FaultCode dataType="ui2">402</FaultCode>
+                </FailureResponse>
+                <OptionalAllowedFaultCodes>
+                    <FaultCode dataType="ui2">714</FaultCode>
+                </OptionalAllowedFaultCodes>
+            </ExpectedResponse>
+        </TestCase>
+
+        <TestCase>
+            <Id>1</Id>
+            <Category>Extra Headers And Extra Control Message</Category>
+            <ActionName>SetTarget</ActionName>
+                <ControlMessageAction>
+                    <Message>
+                        <Headers> 
+                            <Header>JUNK: Test Header!</Header> 
+                            <Header>JUNK2: Test Header!</Header>
+                        </Headers>
+                        <MessageBody> 
+                            <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" 
+                              s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                                <s:Body Id="Body">
+                                    <u:SetTarget xmlns:u="urn:schemas-upnp-org:seice:SwitchPower:1">
+                                        <newTargetValue>1</newTargetValue>
+                                    </u:SetTarget>
+                                </s:Body>
+                            </s:Envelope>
+                        </MessageBody>
+                    </Message>
+                </ControlMessageAction>
+            <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>	
+        </TestCase>
+        
+    </TestCaseList>    
+</ServiceControlSyntaxTestCases>
+
+

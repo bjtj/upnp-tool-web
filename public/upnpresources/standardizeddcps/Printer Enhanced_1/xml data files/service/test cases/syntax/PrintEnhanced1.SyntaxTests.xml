@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ServiceControlSyntaxTestCases>
+<ServiceType>PrintEnhanced</ServiceType>
+<ServiceVersion>1</ServiceVersion>
+<TestCaseList>
+<TestCase><Id>0</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>CreateJobV2</ActionName>
+<InArgs>
+<JobName>JohnDoe's Job</JobName><JobOriginatingUserName>JohnDoe</JobOriginatingUserName>
+<DocumentFormat>application/xhtml-print-e</DocumentFormat>
+<Copies>1</Copies>
+<Sides>one-sided</Sides>
+<NumberUp>1</NumberUp>
+<OrientationRequested>portrait</OrientationRequested>
+<MediaSize>device-setting</MediaSize>
+<MediaType>device-setting</MediaType>
+<PrintQuality>normal</PrintQuality>
+<CriticalAttributesList>none</CriticalAttributesList>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>1</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>CreateURIJob</ActionName>
+<InArgs>
+<JobName>JaneDoe's Job</JobName>
+<JobOriginatingUserName>JaneDoe</JobOriginatingUserName>
+<DocumentFormat>application/xhtml-print-e</DocumentFormat>
+<Copies>1</Copies>
+<Sides>one-sided</Sides>
+<NumberUp>1</NumberUp>
+<OrientationRequested>portrait</OrientationRequested>
+<MediaSize>device-setting</MediaSize>
+<MediaType>device-setting</MediaType>
+<PrintQuality>normal</PrintQuality>
+<CriticalAttributesList>none</CriticalAttributesList>
+<SourceURI>http://www.someURI.com</SourceURI>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>2</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>GetPrinterAttributesv2</ActionName>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>3</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>GetJobAttributes</ActionName>
+<InArgs>
+<JobId>10</JobId>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>4</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>CancelJob</ActionName>
+<InArgs>
+<JobId>10</JobId>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>5</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>GetMargins</ActionName>
+<InArgs>
+<MediaSize>device-setting</MediaSize>
+<MediaType>device-setting</MediaType>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>6</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>GetMediaList</ActionName>
+<InArgs>
+<MediaSize>device-setting</MediaSize>
+<MediaType>none</MediaType>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>7</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>CreateJob</ActionName>
+<InArgs>
+<JobName>JohnDoe's Job</JobName>
+<JobOriginatingUserName>JohnDoe</JobOriginatingUserName>
+<DocumentFormat>application/xhtml-print-e</DocumentFormat>
+<Copies>1</Copies>
+<Sides>one-sided</Sides>
+<NumberUp>1</NumberUp>
+<OrientationRequested>portrait</OrientationRequested>
+<MediaSize>device-setting</MediaSize>
+<MediaType>device-setting</MediaType>
+<PrintQuality>normal</PrintQuality>
+</InArgs>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+<TestCase><Id>8</Id>
+<Category>Valid Action And Valid InArgs</Category>
+<ActionName>GetPrinterAttributes</ActionName>
+<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+</TestCase>
+</TestCaseList>
+</ServiceControlSyntaxTestCases>

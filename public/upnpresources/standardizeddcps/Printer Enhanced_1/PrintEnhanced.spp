@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project SCCKind="MS" SCCParam0="Software\Microsoft\SourceSafe" SCCParam1="&quot;$/PrintEnhanced&quot;, OAAAAAAA" SCCParam2="C:\Program Files\Microsoft Visual Studio\VSS,">
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;mtx;rdf;smil;svg;wml">
+		<File FilePath=".\test000.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test001.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test002.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test003.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test004.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test005.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test006.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test007.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test008.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test009.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test010.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test011.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test012.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test013.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test014.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test015.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test016.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test017.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test018.xml" HomeFolder="Yes"/>
+		<File FilePath=".\test019.xml" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt"/>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath=".\IANA-MIME.xsd" HomeFolder="Yes"/>
+		<File FilePath=".\MediaList.xsd" HomeFolder="Yes"/>
+		<File FilePath=".\PrintEnhanced-State.xsd" HomeFolder="Yes"/>
+		<File FilePath=".\PrintEnhanced.xsd" HomeFolder="Yes"/>
+		<File FilePath=".\PWG-Media.xsd" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="Entities" ExtStr="ent"/>
+</Project>

@@ -1,0 +1,13 @@
+<ServiceControlSyntaxTestCases>
+	<ServiceType>DeviceProtection</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestVersion>0.1</TestVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSupportedProtocols</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

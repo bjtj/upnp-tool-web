@@ -1,0 +1,24 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-upnp-org:cloud:devlist" targetNamespace="urn:schemas-upnp-org:cloud:devlist" attributeFormDefault="unqualified" elementFormDefault="qualified">
+   <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+        DeviceList schema for UPnP CloudProxy service, version 1.0.
+		December 31, 2015
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="DeviceList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Device" maxOccurs="unbounded" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element type="xsd:string" name="DeviceType" minOccurs="1" maxOccurs="1"/>
+							<xsd:element type="xsd:boolean" name="DeviceProt" minOccurs="1" maxOccurs="1"/>
+							<xsd:element type="xsd:boolean" name="DeviceProtStatus" minOccurs="1" maxOccurs="1"/>
+						</xsd:sequence>
+						<xsd:attribute type="xsd:string" name="DevId" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

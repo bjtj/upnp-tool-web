@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceSemanticTestCases>
+  <ServiceType>DeviceProtection</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestVersion>0.8</TestVersion>
+  <TestGroupList>
+    <TestGroup>
+      <Id>0</Id>
+      <TestCaseList>
+        <TestCase>
+          <Id>0</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Device Protection tests</ActionInstruction>
+              <VerificationInstruction>Check that the device is turned On.</VerificationInstruction>
+              <ExpectedSuccessResponse />
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>1</Id>
+          <Action>
+            <ManualAction>
+              <ActionInstruction>Turn Device on</ActionInstruction>
+              <VerificationInstruction>We 'll start by a GetSupportedProtocols test</VerificationInstruction>
+              <ExpectedSuccessResponse />
+            </ManualAction>
+          </Action>
+        </TestCase>
+        <TestCase>
+          <Id>2</Id>
+          <Action>
+            <UPnPAction>
+              <ActionName>GetSupportedProtocols</ActionName>
+              <InArgs></InArgs>
+              <ExpectedResponse>
+                <SuccessResponse>
+                  <OutArgsList>
+                    <ProtocolList dataType="string">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;SupportedProtocols xmlns="urn:schemas-upnp-org:gw:DeviceProtection" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:schemas-upnp-org:gw:DeviceProtection http://www.upnp.org/schemas/gw/DeviceProtection-v1.xsd"&gt;&lt;Introduction&gt;&lt;Name&gt;WPS&lt;/Name&gt;&lt;/Introduction&gt;&lt;Login&gt;&lt;Name&gt;PKCS5&lt;/Name&gt;&lt;/Login&gt;&lt;/SupportedProtocols&gt;</ProtocolList>
+                  </OutArgsList>
+                  <RetVal />
+                </SuccessResponse>
+              </ExpectedResponse>
+            </UPnPAction>
+          </Action>
+        </TestCase>
+      </TestCaseList>
+    </TestGroup>
+  </TestGroupList>
+</ServiceSemanticTestCases>

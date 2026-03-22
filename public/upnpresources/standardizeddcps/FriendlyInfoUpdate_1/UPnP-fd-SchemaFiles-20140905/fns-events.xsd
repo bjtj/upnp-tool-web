@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:fns="urn:schemas-upnp-org:fd:fns-events"
+	xmlns="urn:schemas-upnp-org:fd:fns-events"
+	targetNamespace="urn:schemas-upnp-org:fd:fns-events"
+	version="1-20130515"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+      FriendlyNameStatus schema for UPnP FriendlyDevice service, version 1.0.
+      This schema describes the content of the FriendlyNameStatus state variable of FriendlyDevice:1.
+    </xsd:documentation>
+	</xsd:annotation>
+	
+	<xsd:element name="FriendlyNameStatus">
+		<xsd:complexType mixed="true">
+			<xsd:sequence>
+				<xsd:element ref="fns:friendlyName"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="friendlyName">
+	
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				This element contains either:
+				- the advertised DDD friendlyName value with a status value of DDD
+				- or a new friendlyName input from the FriendlyDevice service with a status value of PENDING.
+			There is always only one element present.
+      </xsd:documentation>
+		</xsd:annotation>
+		
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="fns:friendlyName.type">
+					<xsd:attribute name="status" use="required">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="DDD"/>
+								<xsd:enumeration value="PENDING"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="friendlyName.type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+</xsd:schema>

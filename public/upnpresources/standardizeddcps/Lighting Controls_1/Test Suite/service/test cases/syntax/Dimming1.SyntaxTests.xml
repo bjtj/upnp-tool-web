@@ -1,0 +1,152 @@
+<ServiceControlSyntaxTestCases>
+  <ServiceType>Dimming</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestVersion>0.9</TestVersion>
+  <TestCaseList>
+    <TestCase>
+      <Id>0</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetLoadLevelTarget</ActionName>
+      <InArgs>
+        <NewTargetValue>100</NewTargetValue>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>1</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetLoadLevelTarget</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>2</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetLoadLevelStatus</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>3</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetOnEffectLevel</ActionName>
+      <InArgs>
+        <newOnEffectLevel>50</newOnEffectLevel>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>4</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetOnEffect</ActionName>
+      <InArgs>
+        <newOnEffect>Default</newOnEffect>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>5</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetOnEffectParameters</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>6</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StepUp</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>7</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StepDown</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>8</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StartRampUp</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>9</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StartRampDown</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>10</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StopRamp</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>11</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StartRampToLevel</ActionName>
+      <InArgs>
+        <newLoadLevelTarget>90</newLoadLevelTarget>
+        <newRampTime>10</newRampTime>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>12</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetStepDelta</ActionName>
+      <InArgs>
+        <newStepDelta>5</newStepDelta>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>13</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetStepDelta</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>14</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetRampRate</ActionName>
+      <InArgs>
+        <newRampRate>5</newRampRate>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>15</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetRampRate</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>16</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>PauseRamp</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>17</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>ResumeRamp</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>18</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetIsRamping</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>19</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetRampPaused</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>20</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetRampTime</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+  </TestCaseList>
+</ServiceControlSyntaxTestCases>

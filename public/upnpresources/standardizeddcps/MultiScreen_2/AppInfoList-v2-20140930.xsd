@@ -1,0 +1,161 @@
+﻿<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns="urn:schemas-upnp-org:ms:AppInfoList" targetNamespace="urn:schemas-upnp-org:ms:AppInfoList"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2-20140930">
+	<xs:element name="AppInfoList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="application" maxOccurs="unbounded"> <!-- mandatory & multiple -->
+					<xs:complexType>
+						<xs:choice minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="marketAppID" minOccurs="0"> 
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:string" name="market" use="required" />
+											<xs:attribute type="xs:string" name="version" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="friendlyName" maxOccurs="unbounded"> <!-- mandatory & multiple -->
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:string" name="language" use="optional" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="alternativeID" maxOccurs="unbounded" minOccurs="0"> <!-- multiple -->
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:string" name="org" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="function" maxOccurs="unbounded" minOccurs="0"> <!-- multiple -->
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:string" name="org" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="runningStatus" > <!-- mandatory -->
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Inactive" />
+										<xs:enumeration value="Transitioning" />
+										<xs:enumeration value="Transitioning_Pending_Input" />
+										<xs:enumeration value="Running" />
+										<xs:enumeration value="Unknown" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="startURI" maxOccurs="unbounded" minOccurs="0"> <!-- multiple -->
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="deviceType" use="required">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="Both" />
+														<xs:enumeration value="Main_Screen_Device" />
+														<xs:enumeration value="Companion_Screen_Device" />
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+              <xs:element name="installationStatus" minOccurs="0"> >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Not_Downloaded" />
+										<xs:enumeration value="Downloading" />
+										<xs:enumeration value="Downloading_Pending_Input" />
+										<xs:enumeration value="Not_Installed" />
+										<xs:enumeration value="Installing" />
+										<xs:enumeration value="Installing_Pending_Input" />
+										<xs:enumeration value="Installed" />
+										<xs:enumeration value="Unknown" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+              <xs:element type="xs:unsignedShort" name="downloadProgress" minOccurs="0"/>
+              <xs:element type="xs:unsignedShort" name="installationProgress" minOccurs="0"/>
+							<xs:element name="installURI" maxOccurs="unbounded" minOccurs="0"> <!-- multiple -->
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="deviceType" use="required">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="Both" />
+														<xs:enumeration value="Main_Screen_Device" />
+														<xs:enumeration value="Companion_Screen_Device" />
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="usagePolicy" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="No_Restriction" />
+										<xs:enumeration value="Purchase_Required" />
+										<xs:enumeration value="Trial_Only" />
+										<xs:enumeration value="Parental_Consent_Required" />
+										<xs:enumeration value="Sign-in_Required" />
+										<xs:enumeration value="Unknown" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="apptoAppInfo" maxOccurs="unbounded" minOccurs="0"> <!-- multiple -->
+								<xs:complexType>
+									<xs:all>
+										<xs:element type="xs:string" name="matchingProtocolName" /> <!-- mandatory -->
+										<xs:element name="protocol"> <!-- mandatory -->
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute type="xs:string" name="required" use="required" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element type="xs:string" name="connectionAddress" minOccurs="0" />
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="iconList" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="icon" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:choice>
+                          <xs:element type="xs:string" name="mimetype"/>
+                          <xs:element type="xs:unsignedInt" name="width"/>
+                          <xs:element type="xs:unsignedInt" name="height"/>
+                          <xs:element type="xs:unsignedInt" name="depth"/>
+                          <xs:element type="xs:string" name="url"/>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+						</xs:choice>
+						<xs:attribute type="xs:string" name="id" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

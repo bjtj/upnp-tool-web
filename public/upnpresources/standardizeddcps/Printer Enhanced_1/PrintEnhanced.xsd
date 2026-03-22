@@ -1,0 +1,246 @@
+<!--
+      Schema for the actions in UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<schema
+	targetNamespace="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:p="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	elementFormDefault="unqualified"
+	attributeFormDefault="unqualified"
+	version="0.911"
+	xml:lang="en">
+
+	<include schemaLocation="PrintEnhanced-State.xsd"/>
+	<include schemaLocation="MediaList.xsd"/>
+
+	<element name="CancelJob">
+		<annotation>
+			<documentation>Refer to Section 3.8.1.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobId" type="p:JobId"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="CancelJobResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.1.</documentation>
+		</annotation>
+	</element>
+
+	<element name="CreateJob">
+		<annotation>
+			<documentation>Refer to Section 3.8.2.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobName" type="p:JobName"/>
+				<element name="JobOriginatingUserName" type="p:JobOriginatingUserName"/>
+				<element name="DocumentFormat" type="p:DocumentFormat"/>
+				<element name="Copies" type="p:Copies"/>
+				<element name="Sides" type="p:Sides"/>
+				<element name="NumberUp" type="p:NumberUp"/>
+				<element name="OrientationRequested" type="p:OrientationRequested"/>
+				<element name="MediaSize" type="p:MediaSize"/>
+				<element name="MediaType" type="p:MediaType"/>
+				<element name="PrintQuality" type="p:PrintQuality"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="CreateJobResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.2.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobId" type="p:JobId"/>
+				<element name="DataSink" type="p:DataSink"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="CreateJobV2">
+		<annotation>
+			<documentation>Refer to Section 3.8.3.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobName" type="p:JobName"/>
+				<element name="JobOriginatingUserName" type="p:JobOriginatingUserName"/>
+				<element name="DocumentFormat" type="p:DocumentFormat"/>
+				<element name="Copies" type="p:Copies"/>
+				<element name="Sides" type="p:Sides"/>
+				<element name="NumberUp" type="p:NumberUp"/>
+				<element name="OrientationRequested" type="p:OrientationRequested"/>
+				<element name="MediaSize" type="p:MediaSize"/>
+				<element name="MediaType" type="p:MediaType"/>
+				<element name="PrintQuality" type="p:PrintQuality"/>
+				<element name="CriticalAttributesList" type="p:A_ARG_TYPE_CriticalAttribList"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="CreateJobV2Response">
+		<annotation>
+			<documentation>Refer to Section 3.8.3.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobId" type="p:JobId"/>
+				<element name="DataSink" type="p:DataSink"/>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="CreateURIJob">
+		<annotation>
+			<documentation>Refer to Section 3.8.4.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobName" type="p:JobName"/>
+				<element name="JobOriginatingUserName" type="p:JobOriginatingUserName"/>
+				<element name="DocumentFormat" type="p:DocumentFormat"/>
+				<element name="Copies" type="p:Copies"/>
+				<element name="Sides" type="p:Sides"/>
+				<element name="NumberUp" type="p:NumberUp"/>
+				<element name="OrientationRequested" type="p:OrientationRequested"/>
+				<element name="MediaSize" type="p:MediaSize"/>
+				<element name="MediaType" type="p:MediaType"/>
+				<element name="PrintQuality" type="p:PrintQuality"/>
+				<element name="CriticalAttributesList" type="p:A_ARG_TYPE_CriticalAttribList"/>
+				<element name="SourceURI" type="p:SourceURI"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="CreateURIJobResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.4.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobId" type="p:JobId"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetJobAttributes">
+		<annotation>
+			<documentation>Refer to Section 3.8.5.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobId" type="p:JobId"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetJobAttributesResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.5.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="JobName" type="p:JobName"/>
+				<element name="JobOriginatingUserName" type="p:JobOriginatingUserName"/>
+				<element name="JobMediaSheetsCompleted" type="p:JobMediaSheetsCompleted"/>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="GetMargins">
+		<annotation>
+			<documentation>Refer to Section 3.8.6.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MediaSize" type="p:MediaSize"/>
+				<element name="MediaType" type="p:MediaType"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetMarginsResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.6.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PageMargins" type="p:PageMargins"/>
+				<element name="FullBleedSupported" type="p:FullBleedSupported"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetMediaList">
+		<annotation>
+			<documentation>Refer to Section 3.8.7.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MediaSize" type="p:MediaSize"/>
+				<element name="MediaType" type="p:MediaType"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetMediaListResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.7 and Section 3.4.2.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MediaList" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetPrinterAttributes">
+		<annotation>
+			<documentation>Refer to Section 3.8.8.</documentation>
+		</annotation>
+	</element>
+
+	<element name="GetPrinterAttributesResponse">
+		<annotation>
+			<documentation>Refer to Section 3.8.8.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PrinterState" type="p:PrinterState"/>
+				<element name="PrinterStateReasons" type="p:PrinterStateReasons"/>
+				<element name="JobIdList" type="p:JobIdList"/>
+				<element name="JobId" type="p:JobId"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="GetPrinterAttributesV2">
+		<annotation>
+			<documentation>Refer to Section 3.8.9.</documentation>
+		</annotation>
+	</element>
+
+	<element name="GetPrinterAttributesV2Response">
+		<annotation>
+			<documentation>Refer to Section 3.8.9.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PrinterState" type="p:PrinterState"/>
+				<element name="PrinterStateReasons" type="p:PrinterStateReasons"/>
+				<element name="JobIdList" type="p:JobIdList"/>
+				<element name="JobId" type="p:JobId"/>
+				<element name="InternetConnectState" type="p:InternetConnectState"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

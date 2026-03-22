@@ -1,0 +1,83 @@
+<!--============================================================
+Title: UPnP Remote Access InboundConnectionConfig service (ICC) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>InboundConnectionConfig</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetDynamicDNSSupportedProtocols</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+      			<ActionName>SetDynamicDNSConfigInfo</ActionName>
+      			<InArgs>
+				<NewDynamicDNSConfigInfo>
+					&lt;?xml version="1.0"?&gt;
+					&lt;iccds xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xmlns="urn:schemas-upnp-org:ra:iccds"
+					xsi:schemaLocation="
+					urn:schemas-upnp-org:ra:iccds
+					http://www.upnp.org/schemas/ra/iccds-v1.xsd"&gt;
+					&lt;dynamicDNSConfiguration&gt;
+					&lt;dynDNSProtocol&gt;dynamic DNS protocol name&lt;/dynDNSProtocol&gt;
+					&lt;updateConfiguration&gt;
+					&lt;server&gt;ip address or FQDN of dynamic DNS server&lt;/server&gt;
+					&lt;username&gt;username&lt;/username&gt;
+					&lt;password&gt;password&lt;/password&gt;
+					&lt;domain&gt;domain that will be updated&lt;/domain&gt;
+					&lt;/updateConfiguration&gt;
+					&lt;policy&gt;
+					&lt;slaURI&gt;URI to SLA of the dynamic DNS provider&lt;/slaURI&gt;
+					&lt;forceUpdate&gt;time interval between force updates&lt;/forceUpdate&gt;
+					&lt;/policy&gt;
+					&lt;/dynamicDNSConfiguration&gt;
+					&lt;/iccds&gt;
+				</NewDynamicDNSConfigInfo>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetSTUNServerAddress</ActionName>
+			<InArgs>
+				<NewSTUNServerAddress>stun_server.co.kr</NewSTUNServerAddress>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetSTUNServerAddress</ActionName>
+			<InArgs>
+				<NewSTUNServerAddress>21.122.89.33</NewSTUNServerAddress>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetNetworkTopologyInfo</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>    
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

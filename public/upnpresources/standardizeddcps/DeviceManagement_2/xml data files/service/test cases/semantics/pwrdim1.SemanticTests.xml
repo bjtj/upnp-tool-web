@@ -1,0 +1,110 @@
+<ServiceSemanticTestCases>
+    <ServiceType>PwrDim</ServiceType>
+    <ServiceVersion>1</ServiceVersion>
+    <TestVersion>0.8</TestVersion>
+    <TestGroupList>
+        <TestGroup>
+            <Id>0</Id>
+            <TestCaseList>
+                <TestCase>
+                    <Id>0</Id>
+                    <Action>
+                        <ManualAction>
+                            <ActionInstruction>Turn Device on</ActionInstruction>
+                            <VerificationInstruction>Verify that the device is really turned On.</VerificationInstruction>
+                            <ExpectedSuccessResponse/>
+                        </ManualAction>
+                    </Action>
+                </TestCase>
+                <TestCase>
+                    <Id>1</Id>
+                    <Action>
+                        <UPnPAction>
+                            <ActionName>PowerOn</ActionName>
+                            <InArgs/>
+                            <ExpectedResponse>
+                                <SuccessResponse>
+                                    <OutArgsList/>
+                                    <RetVal/>
+                                </SuccessResponse>
+                            </ExpectedResponse>
+                        </UPnPAction>
+                    </Action>
+                    <ExpectedUPnPEventResponse>
+                        <MaxWaitTimeToRecvEventsInSecs dataType="ui2">10</MaxWaitTimeToRecvEventsInSecs>
+                        <EventedStateVariablesList>
+                            <Power dataType="Boolean">1</Power>
+                            <Level dataType="i4">10</Level>
+                        </EventedStateVariablesList>
+                    </ExpectedUPnPEventResponse>
+                </TestCase>
+
+                <TestCase>
+                    <Id>2</Id>
+                    <Action>
+                        <UPnPAction>
+                            <ActionName>DecreaseLevel</ActionName>
+                            <ExpectedResponse>
+                                <SuccessResponse>
+                                    <OutArgsList/>
+                                    <RetVal/>
+                                </SuccessResponse>
+                            </ExpectedResponse>
+                        </UPnPAction>
+                    </Action>
+                    <ExpectedUPnPEventResponse>
+                        <MaxWaitTimeToRecvEventsInSecs dataType="ui2">10</MaxWaitTimeToRecvEventsInSecs>
+                        <EventedStateVariablesList>
+                            <Level dataType="i4">9</Level>
+                        </EventedStateVariablesList>
+                    </ExpectedUPnPEventResponse>
+                </TestCase>
+                <TestCase>
+                    <Id>3</Id>
+                    <Action>
+                        <UPnPAction>
+                            <ActionName>IncreaseLevel</ActionName>
+                            <InArgs/>
+                            <ExpectedResponse>
+                                <SuccessResponse>
+                                    <OutArgsList/>
+                                    <RetVal/>
+                                </SuccessResponse>
+                            </ExpectedResponse>
+                        </UPnPAction>
+                    </Action>
+                    <ExpectedUPnPEventResponse>
+                        <MaxWaitTimeToRecvEventsInSecs dataType="ui2">10</MaxWaitTimeToRecvEventsInSecs>
+                        <EventedStateVariablesList>
+                            <Level dataType="i4">10</Level>
+                        </EventedStateVariablesList>
+                    </ExpectedUPnPEventResponse>
+                </TestCase>
+
+                <TestCase>
+                    <Id>4</Id>
+                    <Action>
+                        <UPnPAction>
+                            <ActionName>PowerOff</ActionName>
+                            <InArgs/>
+                            <ExpectedResponse>
+                                <SuccessResponse>
+                                    <OutArgsList/>
+                                    <RetVal/>
+                                </SuccessResponse>
+                            </ExpectedResponse>
+                        </UPnPAction>
+                    </Action>
+                    <ExpectedUPnPEventResponse>
+                        <MaxWaitTimeToRecvEventsInSecs dataType="ui2">10</MaxWaitTimeToRecvEventsInSecs>
+                        <EventedStateVariablesList>
+                            <Power dataType="Boolean">0</Power>
+                            <Level dataType="i4">0</Level>
+                        </EventedStateVariablesList>
+                    </ExpectedUPnPEventResponse>
+                </TestCase>
+
+            </TestCaseList>
+        </TestGroup>
+    </TestGroupList>
+</ServiceSemanticTestCases>

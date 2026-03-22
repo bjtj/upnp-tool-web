@@ -1,0 +1,37 @@
+<ServiceControlSyntaxTestCases>
+  <ServiceType>SwitchPower</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestVersion>0.9</TestVersion>
+  <TestCaseList>
+    <TestCase>
+      <Id>0</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetTarget</ActionName>
+      <InArgs>
+        <NewTargetValue>0</NewTargetValue>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>1</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetTarget</ActionName>
+      <InArgs>
+        <NewTargetValue>1</NewTargetValue>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>2</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetTarget</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>3</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetStatus</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+  </TestCaseList>
+</ServiceControlSyntaxTestCases>

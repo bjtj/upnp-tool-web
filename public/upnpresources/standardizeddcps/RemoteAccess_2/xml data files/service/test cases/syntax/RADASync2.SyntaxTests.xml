@@ -1,0 +1,95 @@
+<!--============================================================
+Title: UPnP Remote Access Discovery Agent Sync service (RADASync) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>RADASync</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>AddRemoteDevices</ActionName>
+			<InArgs>
+				<DeviceList>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;deviceInfoList&gt;
+					&lt;deviceInfo
+					uuid=" 140925a0-156b-11dc-b8d5-0002a5d5c511"
+					cache-control=" max-age=1800 "
+					descriptionDocument=" http://10.89.43.193:9001/DeviceDescription.xml "
+					server=" Windows NT/5.0, UPnP/1.0, Intel UPnP SDK/1.0 "/&gt;
+					&lt;/deviceInfoList&gt;
+					&lt;/dads&gt;
+				</DeviceList>
+				<ID>0</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>RemoveRemoteDevices</ActionName>
+			<InArgs>
+				<DeviceList>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;deviceInfoList&gt;
+					&lt;deviceInfo
+					uuid=" 140925a0-156b-11dc-b8d5-0002a5d5c511"
+					cache-control=" max-age=1800 "
+					descriptionDocument=" http://10.89.43.193:9001/DeviceDescription.xml "
+					server=" Windows NT/5.0, UPnP/1.0, Intel UPnP SDK/1.0 "/&gt;
+					&lt;/deviceInfoList&gt;
+					&lt;/dads&gt;
+				</DeviceList>
+				<ID>0</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetDDDLocation</ActionName>
+			<InArgs>
+				<DDDLocation>http://10.89.43.193:9001/DeviceDescription.xml</DDDLocation>
+				<ID>0</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>HeartbeatUpdate</ActionName>
+			<InArgs>
+				<ID>0</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>    
+
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetLocalNetworkAddressInfo</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>    
+
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

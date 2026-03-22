@@ -1,0 +1,8 @@
+<device>
+    <serviceList>
+       <service>
+           <serviceType>urn:schemas-upnp-org:service:TwoWayMotionMotor:1</serviceType>
+           <serviceId>urn:upnp-org:serviceId:TwoWayMotionMotor.1</serviceId>
+       </service>
+    </serviceList>
+</device>

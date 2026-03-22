@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="urn:schemas-upnp-org:av:strr" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:schemas-upnp-org:av:strr" elementFormDefault="qualified" version="1-20150225">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+		Note that all schema supplied by the UPnP Forum AV WC committee are for informational use only and that the 
+		standardized DCPs describe the normative requirements for these schema. Some schema provided do not necessarily
+		embody requirements regarding number of element occurrences allowed or their ordering.
+		
+		Schema for UPnP A/V CDS transforms Feature
+		</xsd:documentation>
+	</xsd:annotation>
+	<!--============================================================
+	  vendor defined extension definition
+    ============================================================-->
+	<xsd:simpleType name="vendorDefined">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="X_.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	list of predefined transform task statuses
+    ============================================================-->
+	<xsd:simpleType name="statusTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Active"/>
+			<xsd:enumeration value="Completed"/>
+			<xsd:enumeration value="Pending"/>
+			<xsd:enumeration value="Error"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	list of predefined transform task errors
+    ============================================================-->
+	<xsd:simpleType name="errorTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NOT_FOUND"/>
+			<xsd:enumeration value="NOT_SUPPORTED"/>
+			<xsd:enumeration value="MODIFIED"/>
+			<xsd:enumeration value="ROLLBACK_NOT_POSSIBLE"/>
+			<xsd:enumeration value="UNKNOWN"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  full errorReasons list definition, predefined + vendor specific
+    ============================================================-->
+	<xsd:simpleType name="errorReasons">
+		<xsd:union memberTypes="errorTypes vendorDefined"/>
+	</xsd:simpleType>
+	<!--============================================================
+	  the TransformTaskResult schema 
+    ============================================================-->
+	<xsd:element name="TransformTaskResult">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="transformTaskID" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="transformTaskState" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="transformTaskPercentage" type="xsd:unsignedInt" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="transformTaskProgressMessage" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="transformObjectList" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="transformObject" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent>
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="objectID" type="xsd:string" use="required" form="unqualified"/>
+											<xsd:attribute name="resID" type="xsd:string" use="required" form="unqualified"/>
+											<xsd:attribute name="componentIDs" type="xsd:string" use="optional" form="unqualified"/>
+											<xsd:attribute name="status" type="statusTypes" use="required" form="unqualified"/>
+											<xsd:attribute name="errorReason" type="errorReasons" use="optional" form="unqualified"/>
+											<xsd:attribute name="resultObjectID" type="xsd:string" use="optional" form="unqualified"/>
+											<xsd:attribute name="resultResID" type="xsd:string" use="optional" form="unqualified"/>
+											<xsd:attribute name="resultComponentIDs" type="xsd:string" use="optional" form="unqualified"/>
+											<xsd:attribute name="resultLength" type="xsd:string" use="optional" form="unqualified"/>
+											<xsd:attribute name="resultPercentage" type="xsd:unsignedInt" use="optional" form="unqualified"/>
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>				
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
