@@ -2,7 +2,8 @@
  :deps {thheller/shadow-cljs     {:mvn/version "3.1.7"}
         reagent/reagent          {:mvn/version "2.0.1"}
         cider/cider-nrepl        {:mvn/version "0.58.0"}
-        metosin/reitit-frontend  {:mvn/version "0.10.1"}}
+        metosin/reitit-frontend  {:mvn/version "0.10.1"}
+        metosin/reitit-spec      {:mvn/version "0.10.1"}}
  :aliases
  {:dev {:main-opts ["-m" "shadow.cljs.devtools.cli" "watch" "app"]}
   :release {:main-opts ["-m" "shadow.cljs.devtools.cli" "release" "app"]}}}
