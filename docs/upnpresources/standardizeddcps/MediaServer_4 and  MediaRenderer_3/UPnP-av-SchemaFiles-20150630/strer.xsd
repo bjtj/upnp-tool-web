@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="urn:schemas-upnp-org:av:strer" xmlns:av="urn:schemas-upnp-org:av:av" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:schemas-upnp-org:av:strer" elementFormDefault="qualified" version="1-20150225">
+	<xsd:import namespace="urn:schemas-upnp-org:av:av" schemaLocation="http://www.upnp.org/schemas/av/av.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+		Note that all schema supplied by the UPnP Forum AV WC committee are for informational use only and that the 
+		standardized DCPs describe the normative requirements for these schema. Some schema provided do not necessarily
+		embody requirements regarding number of element occurrences allowed or their ordering.
+		
+		Schema for UPnP A/V CDS transforms Feature
+		</xsd:documentation>
+	</xsd:annotation>
+	<!--============================================================
+	list of predefined transform evaluation results
+    ============================================================-->
+	<xsd:simpleType name="resultTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Success"/>
+			<xsd:enumeration value="Error"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	list of predefined transform evaluation errors
+    ============================================================-->
+	<xsd:simpleType name="errorTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NOT_FOUND"/>
+			<xsd:enumeration value="NOT_SUPPORTED"/>
+			<xsd:enumeration value="MODIFIED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  the TransformEvaluationResult schema 
+    ============================================================-->
+	<xsd:element name="TransformEvaluationResult">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="objectIDList" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="objectID" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent>
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="resID" type="xsd:string" use="required" form="unqualified"/>
+											<xsd:attribute name="componentIDs" type="av:csv.0_.string.len.1_" use="optional" form="unqualified"/>
+											<xsd:attribute name="objectUpdateID" type="xsd:string" use="optional" form="unqualified"/>
+											<xsd:attribute name="expectedResult" type="resultTypes" use="optional" form="unqualified"/>
+											<xsd:attribute name="errorReason" type="errorTypes" use="optional" form="unqualified"/>
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>	
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

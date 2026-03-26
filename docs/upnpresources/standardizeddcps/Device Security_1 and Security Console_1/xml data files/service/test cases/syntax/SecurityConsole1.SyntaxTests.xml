@@ -1,0 +1,56 @@
+<ServiceControlSyntaxTestCases>
+	<ServiceType>UPnP_Security_SecurityConsole1</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestVersion>0.9</TestVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>PresentKey</ActionName>
+   			<InArgs>
+				<HashAlgorithm>SHA1</HashAlgorithm>
+                <Key>&lt;RSAKeyValue&gt;&lt;Modulus&gt;AJxUGfCyBCaESY3G1/VBOxDworJMfrt/SruwsvZWdC06BDnGDM4a2e3zGYJScTRCLWNiiVklfN65wG1UhJNx4/yCOFjOmswIgtH8jZycLePCVb9NKJqYYCye+KebPGPfXNu5jDyGst0orNazqfk2D+QbzzyM7RKCfgYVhIbdawgP&lt;/Modulus&gt;&lt;Exponent&gt;AQAB&lt;/Exponent&gt;&lt;/RSAKeyValue&gt;</Key>
+                <PreferredName>SecurityConsole Certification Tool</PreferredName>
+                <IconDesc>&lt;icon&gt;&lt;mimetype&gt;image/format&lt;/mimetype&gt;&lt;width&gt;123&lt;/width&gt;&lt;height&gt;456&lt;/height&gt;&lt;depth&gt;1024&lt;/depth&gt;&lt;url&gt;http://thisicon.com/doesnt/exist.jpg&lt;/url&gt;&lt;/icon&gt;</IconDesc>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>PresentKey</ActionName>
+   			<InArgs>
+				<HashAlgorithm>SHA1</HashAlgorithm>
+                <Key>&lt;RSAKeyValue&gt;&lt;Modulus&gt;AKjExDezNboxMC/5qA2UFMIP+m0uVIo1vbjP0NFI/XSFTZV9lYwEZynNp1MBh//FyKZxsOwg/Wh4EDJqUD/bsui+n6/5bv5FumMvM8CsHPXjNfGxHHCV4qgYXZMkLY9ygxbayzaI8A1feC7h4waNzDb3f1vz/Qjn3mMPXAfJLBVx&lt;/Modulus&gt;&lt;Exponent&gt;AQAB&lt;/Exponent&gt;&lt;/RSAKeyValue&gt;</Key>
+                <PreferredName>SecurityConsole Certification Tool</PreferredName>
+                <IconDesc></IconDesc>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetNameList</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetMyCertificates</ActionName>
+   			<InArgs>
+				<HashAlgorithm>SHA1</HashAlgorithm>
+                <Hash>AhhprY0hsT98k/CHStcjcgk1210=</Hash>
+			</InArgs>
+			<ExpectedReturnCode>732</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>RenewCertificate</ActionName>
+   			<InArgs>
+                            <OldCertificate>&lt;cert ID="ABC"&gt;&lt;issuer&gt;&lt;hash&gt;&lt;algorithm&gt;SHA1&lt;/algorithm&gt;&lt;value&gt;lOUlMPOdW7beuVsFdl9t7etVuXQ=&lt;/value&gt;&lt;/hash&gt;&lt;/issuer&gt;&lt;subject&gt;&lt;hash&gt;&lt;algorithm&gt;SHA1&lt;/algorithm&gt;&lt;value&gt;AhhprY0hsT98k/CHStcjcgk1210=&lt;/value&gt;&lt;/hash&gt;&lt;/subject&gt;&lt;tag&gt;&lt;device&gt;&lt;hash&gt;&lt;algorithm&gt;SHA1&lt;/algorithm&gt;&lt;value&gt;HIBOB&lt;/value&gt;&lt;/hash&gt;&lt;/device&gt;&lt;access&gt;&lt;all&gt;&lt;/all&gt;&lt;/access&gt;&lt;/tag&gt;&lt;valid&gt;&lt;not-before&gt;2002-10-22_00:00:00&lt;/not-before&gt;&lt;not-after&gt;2010-10-22_00:00:00&lt;/not-after&gt;&lt;renew&gt;&lt;/renew&gt;&lt;/valid&gt;&lt;/cert&gt;</OldCertificate>
+			</InArgs>
+			<ExpectedReturnCode>734</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

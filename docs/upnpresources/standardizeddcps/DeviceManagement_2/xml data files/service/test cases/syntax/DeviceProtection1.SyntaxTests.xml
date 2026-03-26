@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<ServiceControlSyntaxTestCases>
+  <ServiceType>DeviceProtection</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestCaseList>
+    <TestCase>
+      <Id>0</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SendSetupMessage</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <ProtocolType></ProtocolType>
+        <InMessage></InMessage>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>1</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSupportedProtocols</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>2</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetAssignedRoles</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>3</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetRolesForAction</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <DeviceUDN></DeviceUDN>
+        <ServiceId></ServiceId>
+        <ActionName></ActionName>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>4</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetUserLoginChallenge</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <ProtocolType></ProtocolType>
+        <Name></Name>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>5</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>UserLogin</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <ProtocolType></ProtocolType>
+        <Challenge></Challenge>
+        <Authenticator></Authenticator>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>6</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>UserLogout</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>7</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetACLData</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>8</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>AddIdentityList</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <IdentityList></IdentityList>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>9</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>RemoveIdentity</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Identity></Identity>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>10</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetUserLoginPassword</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <ProtocolType></ProtocolType>
+        <Name></Name>
+        <Stored></Stored>
+        <Salt></Salt>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>11</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>AddRolesForIdentity</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Identity></Identity>
+        <RoleList></RoleList>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>12</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>RemoveRolesForIdentity</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Identity></Identity>
+        <RoleList></RoleList>
+      </InArgs>
+    </TestCase>
+  </TestCaseList>
+</ServiceControlSyntaxTestCases>

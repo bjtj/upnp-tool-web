@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<ServiceControlSyntaxTestCases>
+  <ServiceType>SoftwareManagement</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestCaseList>
+    <TestCase>
+      <Id>0</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Install</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <DUURI>http://localhost/xinetd-2.3.14-18.fc9.i386.rpm</DUURI>
+        <DUType>Application</DUType>
+        <HandleDependencies>1</HandleDependencies>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>1</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Update</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <DUID>1</DUID>
+        <NewDUURI>http://localhost/xinetd-2.3.14-20.fc9.i386.rpm</NewDUURI>
+        <HandleDependencies>1</HandleDependencies>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>2</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Uninstall</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <DUID>1</DUID>
+        <HandleDependencies>1</HandleDependencies>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>3</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Start</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <EUID>1</EUID>
+        <HandleDependencies>1</HandleDependencies>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>4</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Stop</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <EUID>1</EUID>
+        <HandleDependencies>1</HandleDependencies>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>5</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetDUIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>6</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetEUIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>7</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetActiveEUIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>8</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetRunningEUIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>9</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetOperationInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <OperationID>0</OperationID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>10</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetOperationIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>11</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetErrorEUIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>12</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetDUInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <DUID>0</DUID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>13</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetEUInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <EUID>0</EUID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>14</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetACLData</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+  </TestCaseList>
+</ServiceControlSyntaxTestCases>

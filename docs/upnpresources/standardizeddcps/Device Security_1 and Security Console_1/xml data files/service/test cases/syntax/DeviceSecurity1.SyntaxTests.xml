@@ -1,0 +1,274 @@
+<ServiceSecuritySyntaxTestCases>
+   <ServiceType>DeviceSecurity</ServiceType>
+   <ServiceVersion>1</ServiceVersion>
+   <TestVersion>0.8</TestVersion>
+   <TestCaseList>
+      <TestCase>
+         <Id>1</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetPublicKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>2</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetAlgorithmsAndProtocols</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>3</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetLifetimeSequenceBase</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>4</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>TakeOwnership</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>5</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetLifetimeSequenceBase</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>6</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetSessionKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>7</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ListOwners</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>8</Id>
+         <Instance>0</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GrantOwnership</ActionName>
+         <InArgs>
+            <KeyHashInstance>1</KeyHashInstance>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>9</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetLifetimeSequenceBase</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>10</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetPublicKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>11</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetSessionKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>12</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>RevokeOwnership</ActionName>
+         <InArgs>
+            <KeyHashInstance>0</KeyHashInstance>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>13</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetDefinedPermissions</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>14</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetDefinedProfiles</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>15</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetACLSizes</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>16</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>AddACLEntry</ActionName>
+         <InArgs>
+            <Entry>&lt;entry&gt;&lt;subject&gt;&lt;hash&gt;&lt;algorithm&gt;SHA1&lt;/algorithm&gt;&lt;value&gt;%s&lt;/value&gt;&lt;/hash&gt;&lt;/subject&gt;&lt;access&gt;&lt;all&gt;&lt;/all&gt;&lt;/access&gt;&lt;/entry&gt;</Entry>
+            <KeyHashInstance>2</KeyHashInstance>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>17</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReadACL</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>18</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReadACL</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+         <DefectiveSignature>DuplicateSecurityInfo</DefectiveSignature>
+      </TestCase>
+      <TestCase>
+         <Id>19</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReadACL</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+         <DefectiveSignature>DuplicateId</DefectiveSignature>
+      </TestCase>
+      <TestCase>
+         <Id>20</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReadACL</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+         <DefectiveSignature>InvalidMustUnderstand</DefectiveSignature>
+      </TestCase>
+      <TestCase>
+         <Id>21</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>WriteACL</ActionName>
+         <InArgs>
+            <ACL>&lt;acl&gt;&lt;entry&gt;&lt;subject&gt;&lt;hash&gt;&lt;algorithm&gt;SHA1&lt;/algorithm&gt;&lt;value&gt;%s&lt;/value&gt;&lt;/hash&gt;&lt;/subject&gt;&lt;access&gt;&lt;all&gt;&lt;/all&gt;&lt;/access&gt;&lt;/entry&gt;&lt;/acl&gt;</ACL>
+            <KeyHashInstance>2</KeyHashInstance>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>22</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReadACL</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>23</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReplaceACLEntry</ActionName>
+         <InArgs>
+            <Index>0</Index>
+            <Entry>&lt;entry&gt;&lt;subject&gt;&lt;hash&gt;&lt;algorithm&gt;SHA1&lt;/algorithm&gt;&lt;value&gt;%s&lt;/value&gt;&lt;/hash&gt;&lt;/subject&gt;&lt;access&gt;&lt;all&gt;&lt;/all&gt;&lt;/access&gt;&lt;/entry&gt;</Entry>
+            <KeyHashInstance>2</KeyHashInstance>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>24</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>CacheCertificate</ActionName>
+         <InArgs>
+            <Certificate>&lt;cert us:Id="%s"&gt;&lt;issuer&gt;&lt;hash&gt;&lt;algorithm&gt;%s&lt;/algorithm&gt;&lt;value&gt;%s&lt;/value&gt;&lt;/hash&gt;&lt;/issuer&gt;&lt;subject&gt;&lt;hash&gt;&lt;algorithm&gt;%s&lt;/algorithm&gt;&lt;value&gt;%s&lt;/value&gt;&lt;/hash&gt;&lt;/subject&gt;&lt;tag&gt;&lt;device&gt;&lt;hash&gt;&lt;algorithm&gt;%s&lt;/algorithm&gt;&lt;value&gt;%s&lt;/value&gt;&lt;/hash&gt;&lt;/device&gt;&lt;access&gt;&lt;all&gt;&lt;/all&gt;&lt;/access&gt;&lt;/tag&gt;&lt;/cert&gt;</Certificate>
+            <KeyHashInstance>2</KeyHashInstance>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>25</Id>
+         <Instance>2</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetLifetimeSequenceBase</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>26</Id>
+         <Instance>2</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetPublicKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>27</Id>
+         <Instance>2</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetSessionKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>28</Id>
+         <Instance>2</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>DecryptAndExecute</ActionName>
+         <InArgs>
+            <Instance>2</Instance>
+            <ActionName>GetPublicKeys</ActionName>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>29</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetTimeHint</ActionName>
+         <InArgs>
+            <TimeHint>2002-12-24T18:13:10Z</TimeHint>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>30</Id>
+         <Instance>2</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ExpireSessionKeys</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>31</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>ReadACL</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>32</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>DeleteACLEntry</ActionName>
+         <InArgs>
+            <Index>0</Index>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>33</Id>
+         <Instance>1</Instance>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>FactorySecurityReset</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+   </TestCaseList>
+</ServiceSecuritySyntaxTestCases>

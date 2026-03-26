@@ -1,0 +1,59 @@
+<ServiceControlSyntaxTestCases>
+   <ServiceType>ControlValve</ServiceType>
+   <ServiceVersion>1</ServiceVersion>
+   <TestVersion>0.9</TestVersion>
+   <TestCaseList>
+      <TestCase>
+         <Id>0</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetMode</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>1</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetMode</ActionName>
+         <InArgs>
+            <NewControlMode>AUTO</NewControlMode>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>2</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetPositionTarget</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>3</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetPosition</ActionName>
+         <InArgs>
+            <NewPositionTarget>50</NewPositionTarget>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>4</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetPosition</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>5</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetMinMax</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>6</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetMinMax</ActionName>
+         <InArgs>
+            <NewMinPosition>10</NewMinPosition>
+            <NewMaxPosition>90</NewMaxPosition>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+   </TestCaseList>
+</ServiceControlSyntaxTestCases>

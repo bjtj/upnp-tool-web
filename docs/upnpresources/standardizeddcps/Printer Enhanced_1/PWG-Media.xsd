@@ -1,0 +1,253 @@
+<!--
+      Schema for the media types and the self-describing media sizes in IEEE-ISTO 5101.1-2001,
+      The Printer Working Group Standard for Media Standardized Names (26 February 2002).
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<schema targetNamespace="urn:schemas-pwg-org:media" xmlns:pwg="urn:schemas-pwg-org:media" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.91" xml:lang="en">
+	<simpleType name="MediaType">
+		<annotation>
+			<documentation>Refer to Section 3.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-coated"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-inkjet"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-preprinted"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-letterhead"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-prepunched"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-fine"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-heavyweight"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="stationery-lightweight"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="transparency"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="envelope"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="envelope-plain"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="envelope-window"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="continuous"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="continuous-long"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="continuous-short"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="tab-stock"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="pre-cut-tabs"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="full-cut-tabs"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multi-part-form"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="labels"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multi-layer"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="screen"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="screen-paged"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic-glossy"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic-high-gloss"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic-semi-gloss"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic-satin"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic-matte"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="photographic-film"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="back-print-film"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="cardstock"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="roll"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="custom-media-type-[a-z][a-z0-9\-]*"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+	<simpleType name="MediaSize">
+		<annotation>
+			<documentation>Refer to Section 5.</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="na_letter_8.5x11in"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="na_legal_8.5x14in"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="iso_a4_210x297mm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="iso_c5_162x229mm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="iso_dl_110x220mm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="jis_b4_257x364mm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(custom|na|asme|roc|oe)_[a-z0-9][a-z0-9\-]*_([1-9][0-9]*(\.[0-9]*[1-9])?|0\.[0-9]*[1-9])x([1-9][0-9]*(\.[0-9]*[1-9])?|0\.[0-9]*[1-9])in"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="(custom|iso|jis|jpn|prc|om)_[a-z0-9][a-z0-9\-]*_([1-9][0-9]*(\.[0-9]*[1-9])?|0\.[0-9]*[1-9])x([1-9][0-9]*(\.[0-9]*[1-9])?|0\.[0-9]*[1-9])mm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="custom_min_[1-9][0-9]*(\.[0-9]*[1-9])?x[1-9][0-9]*(\.[0-9]*[1-9])?(in|mm)"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<pattern value="custom_max_[1-9][0-9]*(\.[0-9]*[1-9])?x[1-9][0-9]*(\.[0-9]*[1-9])?(in|mm)"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="om_small-photo_100x150mm"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+</schema>

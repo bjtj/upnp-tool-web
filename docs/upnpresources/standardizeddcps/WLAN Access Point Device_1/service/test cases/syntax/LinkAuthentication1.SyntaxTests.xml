@@ -1,0 +1,89 @@
+
+<ServiceControlSyntaxTestCases>
+	<ServiceType>urn:schemas-upnp-org:service:LinkAuthentication:1</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestVersion>0.8</TestVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>AddEntry</ActionName>
+			<InArgs>
+				<NewIdentifier>test</NewIdentifier>
+				<NewSecret>test</NewSecret>
+				<NewSecretType>TextPassword</NewSecretType>
+				<NewAuthType>SharedSecret</NewAuthType>
+				<NewAuthState>Succeeded</NewAuthState>
+				<NewCredentialState>Accepted</NewCredentialState>
+				<NewDescription>This is a test</NewDescription>
+				<NewMACAddress>00:11:00:22:11:33</NewMACAddress>
+				<NewCredentialDuration>4000</NewCredentialDuration>
+				<NewLinkedIdentifier>test</NewLinkedIdentifier>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetGenericEntry</ActionName>
+			<InArgs>
+				<NewIndex>0</NewIndex>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSpecificEntry</ActionName>
+			<InArgs>
+				<NewIdentifierKey>test</NewIdentifierKey>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>UpdateEntry</ActionName>
+			<InArgs>
+				<NewIdentifier>test</NewIdentifier>
+				<NewSecret>ChangedSecret</NewSecret>
+				<NewSecretType>TextPassword</NewSecretType>
+				<NewAuthType>SharedSecret</NewAuthType>
+				<NewAuthState>Succeeded</NewAuthState>
+				<NewCredentialState>Accepted</NewCredentialState>
+				<NewDescription>This is a test</NewDescription>
+				<NewMACAddress>00:11:00:22:11:33</NewMACAddress>
+				<NewCredentialDuration>4000</NewCredentialDuration>
+				<NewLinkedIdentifier>test</NewLinkedIdentifier>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>DeleteEntry</ActionName>
+			<InArgs>
+				<NewIdentifier>test</NewIdentifier>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetNumberOfEntries</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>FactoryDefaultReset</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>8</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>ResetAuthentication</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

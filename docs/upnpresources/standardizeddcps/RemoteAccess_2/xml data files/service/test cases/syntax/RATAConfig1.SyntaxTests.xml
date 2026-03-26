@@ -1,0 +1,171 @@
+<!--============================================================
+Title: UPnP Remote Access Transport Agent Config service (RATAConfig) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>RATAConfig</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetTransportAgentCapabilities</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSupportedCredentialDelivery</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetCredentialsList</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetProfileList</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+      			<ActionName>AddProfile</ActionName>
+			<InArgs>
+				<NewProfileConfigInfo>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;tads
+					xmlns="urn:schemas-upnp-org:ra:tads"
+					xmlns:cfg="urn:schemas-upnp-org:ra:tacfg:openvpn"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:tads 			http://www.upnp.org/schemas/ra/tads-v1.xsd
+					urn:schemas-upnp-org:ra:tacfg:openvpn						http://www.upnp.org/schemas/ra/tacfg-openvpn-v1.xsd"&gt;
+					&lt;profileConfig dataStructureType="server"&gt;
+					&lt;profileInfo id="" transportAgentName="OpenVPN"&gt;
+					OpenVPN Server configuration
+					&lt;/profileInfo&gt;
+					&lt;profileData&gt;
+					&lt;cfg:openvpnCFG configurationType="server"&gt;
+					&lt;cfg:protocol type="UDP"&gt;
+					&lt;cfg:dev&gt;tap0&lt;/cfg:dev&gt;
+					&lt;/cfg:protocol&gt;
+					&lt;cfg:sslTls&gt;
+					&lt;cfg:ca&gt;MyCA.crt&lt;/cfg:ca&gt;
+					&lt;cfg:cert&gt;MyCert.crt&lt;/cfg:cert&gt;
+					&lt;cfg:key&gt;MyKey.key&lt;/cfg:key&gt;
+					&lt;cfg:dh&gt;dh2048.pem&lt;/cfg:dh&gt;
+					&lt;/cfg:sslTls&gt;
+					&lt;cfg:server listeningPort="1194"&gt;
+					&lt;cfg:persistPool&gt;pool.txt&lt;/cfg:persistPool&gt;
+					&lt;cfg:bridge 
+					ip="10.1.1.10" 
+					netMask="255.255.255.0" 
+					startingIP="10.1.1.20" endingIP="10.1.1.30"/&gt;
+					&lt;cfg:push&gt;	
+					&lt;cfg:gateway redirect="1"/&gt;
+					&lt;/cfg:push&gt;
+					&lt;cfg:clientToClient&gt;1&lt;/cfg:clientToClient&gt;
+					&lt;/cfg:server&gt;
+					&lt;cfg:options&gt;
+					&lt;cfg:keepAlive interval="10" timeout="120"/&gt;
+					&lt;cfg:enableCompression&gt;1&lt;/cfg:enableCompression&gt;
+					&lt;/cfg:options&gt;
+					&lt;/cfg:openvpnCFG&gt;
+					&lt;/profileData&gt;
+					&lt;/profileConfig&gt;
+					&lt;/tads&gt;
+				</NewProfileConfigInfo>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditProfile</ActionName>
+			<InArgs>
+				<ProfileID>0</ProfileID>
+				<UpdatedProfileConfigInfo>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;tads
+					xmlns="urn:schemas-upnp-org:ra:tads"
+					xmlns:cfg="urn:schemas-upnp-org:ra:tacfg:openvpn"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:tads 			http://www.upnp.org/schemas/ra/tads-v1.xsd
+					urn:schemas-upnp-org:ra:tacfg:openvpn						http://www.upnp.org/schemas/ra/tacfg-openvpn-v1.xsd"&gt;
+	      			&lt;profileConfig dataStructureType="server"&gt;
+					&lt;profileInfo id="0" transportAgentName="OpenVPN"&gt;OpenVPN Server configuration
+					&lt;/profileInfo&gt;
+		    		&lt;profileData&gt;
+					&lt;cfg:openvpnCFG configurationType="server"&gt;
+					&lt;cfg:protocol type="UDP"&gt;
+					&lt;cfg:dev&gt;tap0&lt;/cfg:dev&gt;
+					&lt;/cfg:protocol&gt;
+					&lt;cfg:sslTls&gt;
+					&lt;cfg:ca&gt;MyCA.crt&lt;/cfg:ca&gt;
+					&lt;cfg:cert&gt;MyCert.crt&lt;/cfg:cert&gt;
+					&lt;cfg:key&gt;MyKey.key&lt;/cfg:key&gt;
+					&lt;cfg:dh&gt;dh2048.pem&lt;/cfg:dh&gt;
+					&lt;/cfg:sslTls&gt;
+					&lt;cfg:server listeningPort="1194"&gt;
+					&lt;cfg:persistPool&gt;pool.txt&lt;/cfg:persistPool&gt;
+					&lt;cfg:bridge 
+					ip="10.1.1.10" 
+					netMask="255.255.255.0" 
+					startingIP="10.1.1.40" endingIP="10.1.1.50"/&gt;
+					&lt;cfg:push&gt;	
+					&lt;cfg:gateway redirect="1"/&gt;
+					&lt;/cfg:push&gt;
+					&lt;cfg:clientToClient&gt;1&lt;/cfg:clientToClient&gt;
+					&lt;/cfg:server&gt;
+					&lt;cfg:options&gt;
+					&lt;cfg:keepAlive interval="10" timeout="120"/&gt;
+					&lt;cfg:enableCompression&gt;1&lt;/cfg:enableCompression&gt;
+					&lt;/cfg:options&gt;
+					&lt;/cfg:openvpnCFG&gt;
+					&lt;/profileData&gt;
+					&lt;/profileConfig&gt;
+					&lt;/tads&gt;
+				</UpdatedProfileConfigInfo>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>DeleteProfile</ActionName>
+			<InArgs>
+				<ProfileID>0</ProfileID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>8</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetProfileConfigInfo</ActionName>
+			<InArgs>
+				<ProfileID>0</ProfileID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>  
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

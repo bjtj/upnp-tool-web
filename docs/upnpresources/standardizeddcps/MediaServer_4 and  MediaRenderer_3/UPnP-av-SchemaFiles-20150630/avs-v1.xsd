@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="urn:schemas-upnp-org:av:avs"
+	xmlns:avs="urn:schemas-upnp-org:av:avs"
+	xmlns:av="urn:schemas-upnp-org:av:av"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1-20060531">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+			Schema for stateVariableValuePairs in UPnP A/V
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:import namespace="urn:schemas-upnp-org:av:av"
+		schemaLocation="http://www.upnp.org/schemas/av/av-v1-20060531.xsd"/>
+	
+	<!--============================================================
+
+							Global elements
+	
+	Elements that are allowed as root elements for any document
+	based on this schema.
+
+    ============================================================-->
+	
+	<xsd:element name="stateVariableValuePairs" type="avs:stateVariableValuePairs.type"/>
+	<xsd:element name="Features" type="avs:Features.type"/>
+	
+	<!--============================================================
+
+	'StateVariableValuePairs' is the root element of any UPnP AV
+		document that contains a list of service state variables and
+		their values.
+	It contains 1 or more occurrences of the element 'stateVariable'.
+
+    ============================================================-->
+	<xsd:complexType name="stateVariableValuePairs.type">
+		<xsd:sequence>
+			<xsd:element name="stateVariable" type="avs:stateVariable.type" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--============================================================
+
+     'stateVariable' elements identify an individual statevariable name and value.
+
+    ============================================================-->
+	<xsd:complexType name="stateVariable.type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="variableName" type="xsd:NCName" use="required"/>
+				<xsd:attribute name="channel" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+			Schema for UPnP A/V ContentDirectory Service FeatureList
+		</xsd:documentation>
+	</xsd:annotation>
+	
+	<!--============================================================
+
+	'Features' is the root element of any UPnP AV document that
+		contains a list of service-supported features.
+	It contains 0 or more occurrences of the element 'Feature'.
+
+    ============================================================-->
+	<xsd:complexType name="Features.type">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Feature" type="avs:Feature.type"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<!--============================================================
+
+	'Feature' elements signify support for and give other relevant
+		information about an individual feature.
+	Attributes:
+		name		Name of the Feature
+		version		Integer version number of the Feature.
+
+		============================================================-->
+	<xsd:simpleType name="featureNames.base.type">
+		<xsd:restriction base="xsd:NCName"/>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="featureNames.wc.type">
+		<xsd:restriction base="avs:featureNames.base.type">
+			<xsd:enumeration value="BOOKMARK"/>
+			<xsd:enumeration value="EPG"/>
+			<xsd:enumeration value="TUNER"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="featureNames.vx.type">
+		<xsd:restriction base="avs:featureNames.base.type"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="featureNames.type">
+		<xsd:union memberTypes="avs:featureNames.wc.type avs:featureNames.vx.type"/>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="Feature.type">
+		<xsd:annotation>
+			<xsd:documentation>
+				The existence of a Feature element indicates support for the
+				feature whose name and version are given by the values of the
+				'name' and 'version' attributes, respectively.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:group ref="avs:allowedUnderFeature.wc.group" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:choice>
+		<xsd:attribute name="name" type="avs:featureNames.type" use="required"/>
+		<xsd:attribute name="version" type="xsd:unsignedInt" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:group name="allowedUnderFeature.wc.group">
+		<xsd:annotation>
+			<xsd:documentation>
+				All AV Working Committee defined Feature elements MUST contain one or
+				more occurrences of the element 'objectIDs', optionally followed by any
+				vendor-defined elements.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="objectIDs" type="av:csv.0_.string.len.1_"/>
+			<xsd:group ref="avs:allowedUnderFeature.vx.group" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:group name="allowedUnderFeature.vx.group">
+		<xsd:annotation>
+			<xsd:documentation>
+				Currently the content of a Feature element may include zero or
+				more of the occurrences of the element 'objectIDs' and/or any
+				vendor-defined element.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

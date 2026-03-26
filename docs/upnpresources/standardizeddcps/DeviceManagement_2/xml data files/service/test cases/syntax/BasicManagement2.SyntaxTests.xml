@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<ServiceControlSyntaxTestCases>
+  <ServiceType>BasicManagement</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestCaseList>
+    <TestCase>
+      <Id>0</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Reboot</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>1</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>BaselineReset</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>2</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetDeviceStatus</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>3</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetSequenceMode</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <NewSequenceMode>0</NewSequenceMode>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>4</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSequenceMode</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>5</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Ping</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Host>10.194.11.21</Host>
+        <NumberOfRepetitions>5</NumberOfRepetitions>
+        <Timeout>1000</Timeout>
+        <DataBlockSize>0</DataBlockSize>
+        <DSCP>0</DSCP>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>6</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetPingResult</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>1</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>7</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>NSLookup</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <HostName>www.google.com</HostName>
+        <DNSServer>10.194.11.21</DNSServer>
+        <NumberOfRepetitions>5</NumberOfRepetitions>
+        <Timeout>1000</Timeout>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>8</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetNSLookupResult</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>2</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>9</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>Traceroute</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Host>10.194.11.21</Host>
+        <Timeout>1000</Timeout>
+        <DataBlockSize>0</DataBlockSize>
+        <MaxHopCount>10</MaxHopCount>
+        <DSCP>0</DSCP>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>10</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetTracerouteResult</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>3</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>11</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetBandwidthTestInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>12</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>BandwidthTest</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <BandwidthTestSpec><![CDATA[<BandwidthTestSpec><Protocol Name="Iperf" Version="2"><Transport>UDP</Transport><Port>5001</Port><Interval>1000</Interval><Threads>2</Threads><ExitWhenDone>1</ExitWhenDone><Client><Host>localhost</Host><Port>5002</Port><Direction>PutEcho</Direction><Time>2000</Time></Client></Protocol></BandwidthTestSpec>]]></BandwidthTestSpec>
+        <TestEndpoint>Client</TestEndpoint>
+        <TestSchedule></TestSchedule>
+        <TestSessID></TestSessID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>13</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetBandwidthTestResult</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>1</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>14</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>InterfaceReset</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Interfaces>AllInterfaces</Interfaces>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>15</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetInterfaceResetResult</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>4</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>16</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SelfTest</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>17</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSelfTestResult</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>5</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>18</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetTestIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>19</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetActiveTestIDs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>20</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetTestInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>1</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>21</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>CancelTest</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <TestID>1</TestID>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>22</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetLogURIs</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>23</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetLogInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <LogURI>http://www.francetelecom.com</LogURI>
+        <Enabled>0</Enabled>
+        <LogLevel>Informational</LogLevel>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>24</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetLogInfo</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <LogURI>http://www.francetelecom.com</LogURI>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>25</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetACLData</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+  </TestCaseList>
+</ServiceControlSyntaxTestCases>

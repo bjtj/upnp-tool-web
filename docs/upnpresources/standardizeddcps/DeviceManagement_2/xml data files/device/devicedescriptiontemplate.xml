@@ -1,0 +1,25 @@
+[File should be named of the form, deviceType followed by version number and .xml.
+Example powerdevice22.xml, where powerdevice is the device type and 22 is the version number]
+
+<device>  [Reqd]
+
+    <serviceList> [Optional if the device has embedded services. Else this element should not be present] 
+
+        <service> [Reqd for every embedded service]
+			<Optional/> [Optional. Must be present if the Working committee defines this service as an optional device]
+            <serviceType>            </serviceType> [Reqd for every embedded service. Must not be empty]
+            <serviceId>            </serviceId> [Reqd for every embedded service. Must not be empty]
+        </service>
+
+    </serviceList>
+
+    <deviceList> [Optional if the device has embedded devices. Else this element should not be present] 
+
+		<device> [Reqd for every embedded device]
+			<Optional/> [Optional. Must be present if the Working committee defines this embedded device as an optional device]
+			<deviceType>        </deviceType> [Reqd for every embedded device. Must not be empty]
+		</device>
+
+    </deviceList>
+
+</device>

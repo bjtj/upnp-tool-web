@@ -1,0 +1,60 @@
+
+<ServiceControlSyntaxTestCases>
+	<ServiceType>urn:schemas-upnp-org:service:RadiusClient:1</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestVersion>0.8</TestVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>AddAuthServerEntry</ActionName>
+			<InArgs>
+				<NewAuthServerIPAddress>test</NewAuthServerIPAddress>
+				<NewAuthServerPortNumber>2001</NewAuthServerPortNumber>
+				<NewAuthServerSharedSecret>test</NewAuthServerSharedSecret>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetGenericAuthServerEntry</ActionName>
+			<InArgs>
+				<NewAuthServerIndex>0</NewAuthServerIndex>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSpecificAuthServerEntry</ActionName>
+			<InArgs>
+				<NewAuthServerIPAddress>192.168.0.1</NewAuthServerIPAddress>
+				<NewAuthServerPortNumber>2001</NewAuthServerPortNumber>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>DeleteAuthServerEntry</ActionName>
+			<InArgs>
+				<NewAuthServerIPAddress>test</NewAuthServerIPAddress>
+				<NewAuthServerPortNumber>2001</NewAuthServerPortNumber>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>FactoryDefaultReset</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>ResetAuthentication</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

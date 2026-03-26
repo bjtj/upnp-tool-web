@@ -1,0 +1,61 @@
+Rules for creating Semantic test case description.
+
+The header must have the following elements.
+<ServiceSemanticTestCases>
+    <ServiceType>Type</ServiceType>
+    <ServiceVersion>version</ServiceVersion>
+    <TestVersion>suite version</TestVersion>
+
+
+
+there must be one or more TestGroup elements within a TestGroupList.
+
+A TestGroup element must have an Id and a TestCaseList element.
+A TestCaseList element must have one or more TestCase elements.
+
+A TestCase element must have a Id, Action element. It may have a ExpectedUPnPEventResponse element, if a UPnP Event response is expected.
+
+An Action element may have either a ManualAction element or a UPnPAction element, but not both.
+
+
+A ManualAction element must have a ActionInstruction element, VerificationInstruction element and either a ExpectedSuccessResponse or a ExpectedFailureResponse element (but not both) to denote the expected response for a manual action.
+
+A UPNPAction element, must have a ActionName, InArgs and ExpectedResponse elements.
+
+
+InArgs element may contain one or more elements representing InArgs of the following format.
+<InArgumentName>ArgumentValue</InArgumentName>
+
+ExpectedResponse element must contain either a SuccessResponse or a FailureResponse element, but not both.
+
+SuccessResponse element may contain OutArgsList and a RetVal element.
+
+
+OutArgList must contain one or more elements representing OutArgs of the following format
+<OutArgName dataType="OutArgDataType">ExpectedOutArgValue</OutArgName>
+note that dataType of the OutArg can be obtained from the SCPD for that service.
+OutArgName can be obtained from the SCPD of that service.
+
+
+RetVal must contain one element representing the expected Ret Val.
+<RetValName dataType="RetValDataType">ExpectedValue</RetValName>
+note that dataType of the RetVal can be obtained from the SCPD for that service.
+RetValName can be obtained from the SCPD of that service.
+
+
+FailureResponse must contain a FaultCode element of the following format.
+<FaultCode dataType="ui2">Unsigned Integer Value</FaultCode>
+Value is the response expected when an action fails.
+
+
+
+ExpectedUPnPEventResponse element must contain MaxWaitTimeToRecvEventsInSecs element and EventedStateVariablesList element.
+
+MaxWaitTimeToRecvEventsInSecs  must be of the following format.
+<MaxWaitTimeToRecvEventsInSecs dataType="ui2">Unsigned Integer Value</MaxWaitTimeToRecvEventsInSecs>
+
+
+EventedStateVariablesList  must contain one or more elements representing the evented state variables in the following format.
+<EventedVariableName dataType="EventedVariableName">ExpectedOutArgValue</EventedVariableName>
+EventedVariableName can be obtained from the SCPD of that service.
+note that dataType of the EventedVariableName can be obtained from the SCPD for that service.

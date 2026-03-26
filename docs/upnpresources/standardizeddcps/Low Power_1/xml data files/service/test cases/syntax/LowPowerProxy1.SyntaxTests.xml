@@ -1,0 +1,52 @@
+<ServiceControlSyntaxTestCases>
+<ServiceType>urn:schemas-upnp-org:service:LowPowerProxy:1</ServiceType>
+<ServiceVersion>1</ServiceVersion>
+<TestCaseList> 
+  <TestCase> 
+    <Id>0</Id>
+    <Category>Valid Action And Valid InArgs</Category> 
+    <ActionName>SearchSleepingDevices</ActionName>
+    <InArgs> 
+    	<SearchCriteria>ssdp:all</SearchCriteria>
+	<PowerState>6</PowerState>
+    </InArgs>
+    <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+  </TestCase>
+  <TestCase> 
+    <Id>1</Id>
+    <Category>Valid Action And Valid InArgs</Category> 
+    <ActionName>SearchSleepingDevices</ActionName>
+    <InArgs> 
+    	<SearchCriteria>ssdp:all</SearchCriteria>
+	<PowerState>2</PowerState>
+    </InArgs>
+    <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+  </TestCase>
+  <TestCase>
+    <Id>2</Id>
+    <Category>Valid Action And Valid InArgs</Category>
+    <ActionName>WakeupDevice</ActionName>
+    <InArgs> 
+    	<Uuid>1234</Uuid>
+    </InArgs>
+    <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+  </TestCase>
+  <TestCase>
+    <Id>3</Id>
+     <Category>Valid Action And Check OutArgs</Category>
+     <ActionName>SearchSleepingDevices</ActionName>
+      <InArgs>
+      	<SearchCriteria>ssdp:all</SearchCriteria>
+	<PowerState>6</PowerState>
+      </InArgs>
+     <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+     <ExpectedResponse>
+        <SuccessResponse>
+           <OutArgsList>
+	     <DeviceList/>
+           </OutArgsList>
+        </SuccessResponse>
+     </ExpectedResponse>
+  </TestCase>
+</TestCaseList>
+</ServiceControlSyntaxTestCases>

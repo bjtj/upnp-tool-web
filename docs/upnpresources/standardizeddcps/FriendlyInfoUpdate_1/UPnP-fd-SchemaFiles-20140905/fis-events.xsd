@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fis="urn:schemas-upnp-org:fd:fis-events" targetNamespace="urn:schemas-upnp-org:fd:fis-events" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1-20130515">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+			 FriendlyIconListStatus schema for UPnP FriendlyInfoUpdate service, version 1.0.
+			 This schema describes the content of the FiendlyIconListStatus state variable of FriendlyInfoUpdate:1.
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="FriendlyIconListStatus" type="fis:FriendlyIconListStatus.type"/>
+	<xsd:complexType name="FriendlyIconListStatus.type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				An FriendlyIconListStatus is the state variable wrapper (and XML document) containing 1 iconList element.
+			 </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="iconList" type="fis:iconList.type" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="iconList.type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				An iconList contains an array of zero or more icons. It is similar to the DDD iconList element but contains
+				additional status and image limiting data for open icon slots.
+			 </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="icon" type="fis:icon.type" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="icon.type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				An icon element contains status, url, mimetype, height, width, depth, getToken and postToken.
+
+				The mimetype element conveys the MIME image type of an image that is or can be uploaded.
+
+				url must be present when the icon status is DDD, PENDING or DELETED.
+				url must be omitted when the icon status is OPEN.
+
+				When the icon status is DDD or PENDING, the height, width and depth elements must be present
+				and their values must be greater than 0.
+				The height, width and depth elements must be omitted when the icon status is OPEN or DELETED.
+				If the maxBytes, maxHeight, maxWidth, or maxDepth elements are present they indicate restrictions
+				on the icon binary that can be uploaded.
+
+				getToken is mandatory and will always be presenton on all icons with a status of OPEN.
+				postToken are optional
+				getToken and postToken are not be present when the icon status is DDD, PENDING or DELETED.
+
+				Not all combinations of icon elements are allowed, however the schema DOES NOT ENFORCE the valid permutaions
+        
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="mimetype" type="fis:imageformat.type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="height" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="width" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="depth" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="url" type="xsd:anyURI" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="getToken" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="postToken" type="fis:postToken.type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="status" type="fis:icon.status.type" use="required"/>
+		<xsd:attribute name="maxBytes" type="xsd:positiveInteger"/>
+		<xsd:attribute name="maxHeight" type="xsd:positiveInteger"/>
+		<xsd:attribute name="maxWidth" type="xsd:positiveInteger"/>
+		<xsd:attribute name="maxDepth" type="xsd:positiveInteger"/>
+	</xsd:complexType>
+	<xsd:simpleType name="icon.status.type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				icon status = DDD or DELETED or OPEN or PENDING
+		  </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DDD"/>
+			<xsd:enumeration value="DELETED"/>
+			<xsd:enumeration value="OPEN"/>
+			<xsd:enumeration value="PENDING"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="imageformat.type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				imageformat = any valid image/png, image/jpg or image/*
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="image/.+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="postToken.type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				postToken contains a url attribute and an element.
+				The element value is a device unique tag used by a control point to authorize
+				an HTTP-POST (upload) of an icon binary. This value is only used for replacing or
+				creating an icon binary
+			 </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="postUri" type="xsd:anyURI" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

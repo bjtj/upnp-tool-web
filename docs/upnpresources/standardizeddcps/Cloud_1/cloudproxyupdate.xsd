@@ -1,0 +1,17 @@
+<xsd:schema xmlns="urn:schemas-upnp-org:cloud:cloudproxyupdate" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:schemas-upnp-org:cloud:cloudproxyupdate" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+        CloudProxyUpdate schema for UPnP CloudProxy service, version 1.0.
+		December 31, 2015
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="CloudProxyUpdate">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element type="xsd:integer" name="ProxyUpdateId" minOccurs="1" maxOccurs="1"/>
+				<xsd:element type="xsd:integer" name="DeviceUpdateId" minOccurs="1" maxOccurs="1"/>
+				<xsd:element type="xsd:integer" name="UCSUpdateId" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,148 @@
+<!--============================================================
+Title: UPnP Remote Access Discovery Agent Config service (RADAConfig) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>RADAConfig</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSystemInfo</ActionName>
+			<InArgs>
+				<ID>*</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+      			<ActionName>GetSystemInfo</ActionName>
+			<InArgs>
+				<ID>12338B2A-AC78-4766-82D5-D53C64806ABC</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSystemInfo</ActionName>
+			<InArgs>
+				<ID>31638B2A-AC78-4766-82D5-D53C6480638A</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A"
+					controlMode="denyList" updateType="edit"&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A"
+					controlMode="allowList" updateType="add"&gt;
+					&lt;deviceInfo
+					uuid="12338B2A-AC78-4766-82D5-D53C64806ABC"&gt;
+					&lt;accessControl&gt;
+					&lt;access credentialID="David MP3 Player"&gt;&lt;/access&gt;
+					&lt;/accessControl&gt;
+					&lt;/deviceInfo&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A" controlMode="denyList"
+ 					updateType="edit"&gt;
+					&lt;deviceInfo 
+					uuid="12338B2A-AC78-4766-82D5-D53C64806ABC"&gt;
+					&lt;accessControl&gt;
+					&lt;access credentialID="David MP3 Player"&gt;&lt;/access&gt;
+					&lt;/accessControl&gt;
+					&lt;/deviceInfo&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A"
+					controlMode="denyList" updateType="edit"&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

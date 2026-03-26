@@ -1,0 +1,46 @@
+<ServiceSemanticTestCases>
+    <ServiceType>TwoWayMotionMotor</ServiceType>
+    <ServiceVersion>1</ServiceVersion>
+    <TestVersion>0.9</TestVersion>
+    <TestGroupList>
+        <TestGroup>
+            <Id>0</Id>
+            <TestCaseList>
+                <TestCase>
+                    <Id>0</Id>
+                    <Action>
+                        <UPnPAction>
+                            <ActionName>Open</ActionName>
+                            <InArgs/>
+                            <VerificationInstruction>Verify that the device is really in open position.</VerificationInstruction>
+                            <ExpectedResponse>
+                                <SuccessResponse>
+                                    <OutArgsList/>
+                                    <RetVal/>
+                                </SuccessResponse>
+                            </ExpectedResponse>
+                        </UPnPAction>
+                    </Action>
+                </TestCase>
+
+                <TestCase>
+                    <Id>1</Id>
+                    <Action>
+                        <UPnPAction>
+                            <ActionName>Close</ActionName>
+                            <InArgs/>
+                            <VerificationInstruction>Verify that the device is really in close position.</VerificationInstruction>
+                            <ExpectedResponse>
+                                <SuccessResponse>
+                                    <OutArgsList/>
+                                    <RetVal/>
+                                </SuccessResponse>
+                            </ExpectedResponse>                            
+                        </UPnPAction>
+                    </Action>
+                </TestCase>
+
+            </TestCaseList>
+        </TestGroup>
+    </TestGroupList>
+</ServiceSemanticTestCases>

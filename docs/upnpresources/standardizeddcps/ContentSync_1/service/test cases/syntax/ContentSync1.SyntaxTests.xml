@@ -1,0 +1,226 @@
+<!--============================================================
+Title: UPnP CS Content Synchronization Service (CSS) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>ContentSync</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+      <!-- This test needs two media server with CSS -->
+      <!-- Modify partner::deviceUDN to your own deviceUDN values -->
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>AddSyncData</ActionName>
+			<InArgs>
+				<ActionCaller></ActionCaller>
+				<SyncID></SyncID>
+				<SyncData>
+          &lt;syncRelationship id="" active ="1" xmlns="urn:schemas-upnp-org:cs"&gt;
+            &lt;title&gt;Sync1&lt;/title&gt;
+            &lt;partnership id="" active="1" updateID="0"&gt;
+              &lt;partner id="1"&gt;
+                &lt;deviceUDN&gt;uuid:383b6d00-155e-11dc-bb44-0002a5d5c51b&lt;/deviceUDN&gt;
+                &lt;serviceID&gt;urn:upnp-org:serviceId:SamsungContentSync&lt;/serviceID&gt;
+              &lt;/partner&gt;
+              &lt;partner id="2"&gt;
+                &lt;deviceUDN&gt;uuid:140925a0-156b-11dc-b8d5-0002a5d5c51b&lt;/deviceUDN&gt;
+                &lt;serviceID&gt;urn:upnp-org:serviceId:SamsungContentSync&lt;/serviceID&gt;
+              &lt;/partner&gt;
+              &lt;policy&gt;
+                &lt;syncType&gt;merge&lt;/syncType&gt;
+                &lt;priority&gt;1&lt;/priority&gt;
+              &lt;/policy&gt;
+              &lt;pairGroup id="" active="1"/&gt;
+            &lt;/partnership&gt;
+          &lt;/syncRelationship&gt;
+        </SyncData>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>2</Id>
+      <!-- This test modifies the existing synchronization data structure because the Test tool does not know syncID of TestCase 1 -->
+      <!-- The value of the <SyncID> element must be the value of the synchronization relationship ID -->
+      <!-- See PreSyncDataStruct.xml for an example of the existing synchronization data structure -->
+			<Category>Valid Action And Valid InArgs</Category>
+      <ActionName>ModifySyncData</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+        <SyncData>
+          &lt;syncRelationship active ='1' xmlns="urn:schemas-upnp-org:cs"&gt;
+            &lt;title&gt;Changed Sync Title&lt;/title&gt;
+          &lt;/syncRelationship&gt;
+        </SyncData>
+      </InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSyncData</ActionName>
+      <InArgs>
+        <SyncID></SyncID>
+      </InArgs>      
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+    <TestCase>
+      <Id>4</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>ExchangeSyncData</ActionName>
+      <InArgs>
+        <LocalSyncData></LocalSyncData>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+		<TestCase>
+			<Id>5</Id>
+      <!-- This test adds new synchronization pair on the root object of both CDSs -->
+      <!-- The synchronization relationship for this synchronization pair is the existing one as explained in TestCase 2 -->
+			<Category>Valid Action And Valid InArgs</Category>
+      <ActionName>AddSyncPair</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <ObjectID>0</ObjectID>
+        <SyncPair>
+          &lt;upnp:pair syncRelationshipID="140925a0-156b-11dc-b8d5-0002a5d5c511" partnershipID="140925a0-156b-11dc-b8d5-0002a5d5c512" pairGroupID="140925a0-156b-11dc-b8d5-0002a5d5c513" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"&gt;
+            &lt;upnp:remoteObjID&gt;0&lt;/upnp:remoteObjID&gt;
+          &lt;/upnp:pair&gt;
+        </SyncPair>
+      </InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>6</Id>
+      <!-- This test modifies the synchronization pair of the root object of both CDSs -->
+      <!-- The synchronization relationship for this synchronization pair is the existing one as explained in TestCase 2 -->
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>ModifySyncPair</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <ObjectID>0</ObjectID>
+        <SyncPair>
+          &lt;upnp:pair syncRelationshipID="140925a0-156b-11dc-b8d5-0002a5d5c511" partnershipID="140925a0-156b-11dc-b8d5-0002a5d5c512" pairGroupID="140925a0-156b-11dc-b8d5-0002a5d5c513" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"&gt;
+          &lt;upnp:remoteObjID&gt;A1&lt;/upnp:remoteObjID&gt;
+          &lt;upnp:policy&gt;
+            &lt;upnp:syncType&gt;blend&lt;/upnp:syncType&gt;
+            &lt;upnp:priority&gt;2&lt;/upnp:priority&gt;
+          &lt;/upnp:policy&gt;
+          &lt;/upnp:pair&gt;
+        </SyncPair>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+    <TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+      <ActionName>DeleteSyncPair</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <ObjectID>0</ObjectID>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    
+    <TestCase>
+      <Id>8</Id>
+      <!-- This test calls the GetChangeLog() action which is not invoked by a control point (i.e. Internal action call) -->
+      <!-- So, this test must be done prior-to the StartSync() action test because there is no change log -->
+      <!-- when the StartSync() action is called since all objects are synchronization by the StartSync() action -->
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetChangeLog</ActionName>
+      <InArgs>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+        <StartingIndex>0</StartingIndex>
+        <RequestedCount>0</RequestedCount>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    
+    <TestCase>
+      <Id>9</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>StartSync</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+    <TestCase>
+      <Id>10</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>ResetChangeLog</ActionName>
+      <InArgs>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+        <ObjectIDs>
+          &lt;ResetObjectList&gt;
+            &lt;object id="0" remoteObjID="0" updateID="0"/&gt;
+          &lt;/ResetObjectList&gt;
+        </ObjectIDs>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+    <TestCase>
+      <Id>11</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>ResetStatus</ActionName>
+      <InArgs>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+    <TestCase>
+      <Id>12</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSyncStatus</ActionName>
+      <InArgs>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+    <TestCase>
+      <Id>13</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>DeleteSyncData</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+
+        <TestCase>
+      <Id>14</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>AbortSync</ActionName>
+      <InArgs>
+        <ActionCaller></ActionCaller>
+        <SyncID>140925a0-156b-11dc-b8d5-0002a5d5c511</SyncID>
+      </InArgs>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

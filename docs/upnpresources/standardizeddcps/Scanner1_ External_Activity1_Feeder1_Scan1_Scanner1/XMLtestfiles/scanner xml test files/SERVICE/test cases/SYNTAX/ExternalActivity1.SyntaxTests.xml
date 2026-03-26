@@ -1,0 +1,17 @@
+<ServiceControlSyntaxTest>
+	<ServiceType>ExternalActivity</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>0</Id>
+			<Category>Valid Action and Valid InArgs</Category>
+			<ActionName>Register</ActionName>
+			<InArgs>
+				<ButtonNameIn>All</ButtonNameIn>
+				<DisplayStringIn>Mine</DisplayStringIn>
+				<DurationIn>10</DurationIn>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTest>

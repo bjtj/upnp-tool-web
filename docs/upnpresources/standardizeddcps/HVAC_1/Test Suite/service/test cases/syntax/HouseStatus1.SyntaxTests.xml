@@ -1,0 +1,52 @@
+<ServiceControlSyntaxTestCases>
+   <ServiceType>HouseStatus</ServiceType>
+   <ServiceVersion>1</ServiceVersion>
+   <TestVersion>0.9</TestVersion>
+   <TestCaseList>
+      <TestCase>
+         <Id>0</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetOccupancyState</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>1</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetOccupancyState</ActionName>
+         <InArgs>
+            <NewOccupancyState>Unoccupied</NewOccupancyState>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>2</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetActivityLevel</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>3</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetActivityLevel</ActionName>
+         <InArgs>
+            <NewActivityLevel>Asleep</NewActivityLevel>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>4</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetDormancyLevel</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>5</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetDormancyLevel</ActionName>
+         <InArgs>
+            <NewDormancyLevel>Vacation</NewDormancyLevel>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+   </TestCaseList>
+</ServiceControlSyntaxTestCases>

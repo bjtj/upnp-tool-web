@@ -1,0 +1,33 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-upnp-org:cloud:proxylist" targetNamespace="urn:schemas-upnp-org:cloud:proxylist" attributeFormDefault="unqualified" elementFormDefault="qualified">
+   <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+        ProxyList schema for UPnP CloudProxy service, version 1.0.
+		December 31, 2015
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="ProxyList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Proxy" maxOccurs="unbounded" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element type="xsd:string" name="DeviceJID" maxOccurs="1" minOccurs="1"/>
+							<xsd:element name="Device" maxOccurs="1" minOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element type="xsd:string" name="DeviceType" maxOccurs="1" minOccurs="1"/>
+										<xsd:element type="xsd:boolean" name="connected" maxOccurs="1" minOccurs="1"/>
+										<xsd:element type="xsd:boolean" name="DeviceProt" maxOccurs="1" minOccurs="1"/>
+										<xsd:element type="xsd:boolean" name="DeviceProtStatus" maxOccurs="1" minOccurs="1"/>
+									</xsd:sequence>
+									<xsd:attribute type="xsd:string" name="DevId" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute type="xsd:string" name="ProxyId" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

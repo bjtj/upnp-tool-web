@@ -1,0 +1,28 @@
+<!--
+      A SOAP Envelope which contains a CreateJobV2 request of UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<s:Envelope
+	xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+	s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<s:Body>
+		<m:CreateJobV2
+			xmlns:m="urn:schemas-upnp-org:service:PrintEnhanced:1"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="urn:schemas-upnp-org:service:PrintEnhanced:1 PrintEnhanced.xsd">
+			<JobName>Test</JobName>
+			<JobOriginatingUserName>Hironori Bouno</JobOriginatingUserName>
+			<DocumentFormat>text/html</DocumentFormat>
+			<Copies>1</Copies>
+			<Sides>device-setting</Sides>
+			<NumberUp>device-setting</NumberUp>
+			<OrientationRequested>device-setting</OrientationRequested>
+			<MediaSize>device-setting</MediaSize>
+			<MediaType>device-setting</MediaType>
+			<PrintQuality>device-setting</PrintQuality>
+			<CriticalAttributesList>none</CriticalAttributesList>
+		</m:CreateJobV2>
+	</s:Body>
+</s:Envelope>

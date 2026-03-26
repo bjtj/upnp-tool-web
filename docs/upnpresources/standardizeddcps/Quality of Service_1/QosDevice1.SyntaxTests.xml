@@ -1,0 +1,96 @@
+<ServiceControlSyntaxTestCases>
+	<ServiceType>QosDevice</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+  <TestVersion>0.9</TestVersion>
+	<TestCaseList>
+			<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetPathInformation</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+			</TestCase>		
+			<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetQosDeviceCapabilities</ActionName>
+			<InArgs>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+			</TestCase>
+			<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetQosState</ActionName>
+			<InArgs>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+			</TestCase>
+			<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>SetupTrafficQos</ActionName>
+			<InArgs>						
+			<SetupTrafficDescriptor>&lt;TrafficDescriptor&gt;
+			&lt;TrafficHandle&gt;any-string&lt;/TrafficHandle&gt;
+			&lt;TrafficId&gt;
+			&lt;SourceAddress&gt;
+			&lt;Ipv4&gt;192.168.1.104&lt;/Ipv4&gt;
+			&lt;PrefixLength&gt;24&lt;/PrefixLength&gt;
+			&lt;/SourceAddress&gt;
+			&lt;/TrafficId&gt;
+			&lt;AvailableOrderedTspecList&gt;
+			&lt;Tspec&gt;
+			&lt;TspecIndex&gt;2&lt;/TspecIndex&gt;
+			&lt;MeanDataRate&gt;10000&lt;/MeanDataRate&gt;
+			&lt;PeakDataRate&gt;20000&lt;/PeakDataRate&gt;
+			&lt;TrafficClass&gt;Gaming&lt;/TrafficClass&gt;
+			&lt;/Tspec&gt;
+			&lt;/AvailableOrderedTspecList&gt;
+			&lt;ActiveTspecIndex&gt;2&lt;/ActiveTspecIndex&gt;
+			&lt;TrafficImportanceNumber&gt;3&lt;/TrafficImportanceNumber&gt;
+			&lt;TrafficLeaseTime&gt;6666&lt;/TrafficLeaseTime&gt;
+			&lt;/TrafficDescriptor&gt;</SetupTrafficDescriptor>
+			<QosStateId>mingus.co.intel.com-QoSDevice-0000</QosStateId></InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+			</TestCase>
+				<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetQosDeviceInfo</ActionName>
+			<InArgs>			
+			<TrafficDescriptor>&lt;TrafficDescriptor&gt;
+			&lt;TrafficHandle&gt;any-string&lt;/TrafficHandle&gt;
+			&lt;TrafficId&gt;
+			&lt;SourceAddress&gt;
+			&lt;Ipv4&gt;192.168.1.104&lt;/Ipv4&gt;
+			&lt;PrefixLength&gt;24&lt;/PrefixLength&gt;
+			&lt;/SourceAddress&gt;
+			&lt;/TrafficId&gt;
+			&lt;AvailableOrderedTspecList&gt;
+			&lt;Tspec&gt;
+			&lt;TspecIndex&gt;2&lt;/TspecIndex&gt;
+			&lt;MeanDataRate&gt;10000&lt;/MeanDataRate&gt;
+			&lt;PeakDataRate&gt;20000&lt;/PeakDataRate&gt;
+			&lt;TrafficClass&gt;Gaming&lt;/TrafficClass&gt;
+			&lt;/Tspec&gt;
+			&lt;/AvailableOrderedTspecList&gt;
+			&lt;ActiveTspecIndex&gt;2&lt;/ActiveTspecIndex&gt;
+			&lt;TrafficImportanceNumber&gt;3&lt;/TrafficImportanceNumber&gt;
+			&lt;TrafficLeaseTime&gt;6666&lt;/TrafficLeaseTime&gt;
+			&lt;/TrafficDescriptor&gt;
+			</TrafficDescriptor>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+			</TestCase>
+			<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>ReleaseTrafficQos</ActionName>
+			<InArgs>
+				<ReleaseTrafficHandle>any-string</ReleaseTrafficHandle>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

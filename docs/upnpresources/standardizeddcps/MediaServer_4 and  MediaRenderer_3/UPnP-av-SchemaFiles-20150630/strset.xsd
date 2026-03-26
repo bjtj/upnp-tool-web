@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="urn:schemas-upnp-org:av:strset" xmlns:av="urn:schemas-upnp-org:av:av" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:schemas-upnp-org:av:strset" elementFormDefault="qualified" version="1-20150225">
+	<xsd:import namespace="urn:schemas-upnp-org:av:av" schemaLocation="http://www.upnp.org/schemas/av/av.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+		Note that all schema supplied by the UPnP Forum AV WC committee are for informational use only and that the 
+		standardized DCPs describe the normative requirements for these schema. Some schema provided do not necessarily
+		embody requirements regarding number of element occurrences allowed or their ordering.
+		
+		Schema for UPnP A/V CDS transforms Feature
+		</xsd:documentation>
+	</xsd:annotation>
+	<!--============================================================
+	  list of predefined transform types
+    ============================================================-->
+	<xsd:simpleType name="transformTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Resolution"/>
+			<xsd:enumeration value="MaxBitrate"/>
+			<xsd:enumeration value="Transcode"/>
+			<xsd:enumeration value="ComponentSelection"/>
+			<xsd:enumeration value="ComponentDeselection"/>
+			<xsd:enumeration value="AdaptiveStreaming"/>
+			<!-- Common with RCS transformTypes -->
+			<xsd:enumeration value="Rotation"/>
+			<xsd:enumeration value="RedEye"/>
+			<xsd:enumeration value="Zoom"/>
+			<xsd:enumeration value="HorizontalPan"/>
+			<xsd:enumeration value="VerticalPan"/>
+			<xsd:enumeration value="Equalization"/>
+			<xsd:enumeration value="SpeakerConfiguration"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  vendor defined extension definition
+    ============================================================-->
+	<xsd:simpleType name="vendorDefined">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="X_.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  transform names with extensions
+    ============================================================-->
+	<xsd:simpleType name="transformNameExceptions">
+		<xsd:restriction base="xsd:string">
+			<!-- Common with RCS transformNameExceptions -->
+			<xsd:pattern value="X_.*"/>
+			<xsd:pattern value="BandEq_.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  full transformNames list definition, predefined + vendor specific
+    ============================================================-->
+	<xsd:simpleType name="transformNames">
+		<xsd:union memberTypes="transformTypes transformNameExceptions"/>
+	</xsd:simpleType>
+	<!--============================================================
+	  the TransformSettings schema 
+    ============================================================-->
+	<xsd:element name="TransformSettings">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="transform" minOccurs="1" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="transformName" type="transformNames" minOccurs="1" maxOccurs="1"/>
+							<xsd:element name="parameterValueList" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="parameter" minOccurs="1" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence minOccurs="1" maxOccurs="1">
+													<xsd:element name="value">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:string">
+																	<xsd:attribute name="index" type="xsd:string" use="optional"/>
+																</xsd:extension>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="name" type="av:pName" use="required" form="unqualified"/>
+											</xsd:complexType>			
+										</xsd:element>
+									</xsd:sequence>	
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

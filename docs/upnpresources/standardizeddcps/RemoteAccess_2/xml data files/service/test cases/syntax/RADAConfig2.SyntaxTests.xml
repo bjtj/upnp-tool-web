@@ -1,0 +1,271 @@
+<!--============================================================
+Title: UPnP Remote Access Discovery Agent Config service (RADAConfig) Syntax Tests
+
+Purpose:
+To define the individual syntax tests used to verify the
+symantic integrity of a device that advertises this service.
+
+Note:
+This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+================================================================-->
+<ServiceControlSyntaxTestCases>
+	<ServiceType>RADAConfig</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSystemInfo</ActionName>
+			<InArgs>
+				<ID>*</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+      			<ActionName>GetSystemInfo</ActionName>
+			<InArgs>
+				<ID>12338B2A-AC78-4766-82D5-D53C64806ABC</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSystemInfo</ActionName>
+			<InArgs>
+				<ID>31638B2A-AC78-4766-82D5-D53C6480638A</ID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>4</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A"
+					controlMode="denyList" updateType="edit"&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>5</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A"
+					controlMode="allowList" updateType="add"&gt;
+					&lt;deviceInfo
+					uuid="12338B2A-AC78-4766-82D5-D53C64806ABC"&gt;
+					&lt;accessControl&gt;
+					&lt;access credentialID="David MP3 Player"&gt;&lt;/access&gt;
+					&lt;/accessControl&gt;
+					&lt;/deviceInfo&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>6</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A" controlMode="denyList"
+ 					updateType="edit"&gt;
+					&lt;deviceInfo 
+					uuid="12338B2A-AC78-4766-82D5-D53C64806ABC"&gt;
+					&lt;accessControl&gt;
+					&lt;access credentialID="David MP3 Player"&gt;&lt;/access&gt;
+					&lt;/accessControl&gt;
+					&lt;/deviceInfo&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+
+		<TestCase>
+			<Id>7</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>EditFilter</ActionName>
+			<InArgs>
+				<Filter>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="urn:schemas-upnp-org:ra:dads 					http://www.upnp.org/schemas/ra/dads-v1.xsd"&gt;
+					&lt;filterList&gt;
+					&lt;filter 
+					target="31638B2A-AC78-4766-82D5-D53C6480638A"
+					controlMode="denyList" updateType="edit"&gt;
+					&lt;/filter&gt;
+					&lt;/filterList&gt;
+					&lt;/dads&gt;
+				</Filter>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>8</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>CreateVirtualDevice</ActionName>
+			<InArgs>
+				<VirtualDeviceDescr>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:schemaLocation="urn:schemas-upnp-org:ra:dads
+						http://www.upnp.org/schemas/ra/dads-v2.xsd"&gt;
+					&lt;virtualDevice&gt;
+						&lt;virtualDeviceType&gt;
+							MERGE
+						&lt;/virtualDeviceType&gt;
+						&lt;rootDeviceType&gt;
+							urn:schemas-upnp-org:device:MediaServer:1
+						&lt;/rootDeviceType&gt;
+						&lt;physicalDevice&gt;
+							&lt;UDN&gt;
+								uuid:425bfb29-0ee3-4d6f-ad44-de4d08a1e9c9
+							&lt;/UDN&gt;
+						&lt;/physicalDevice&gt;
+						&lt;physicalDevice&gt;
+							&lt;UDN&gt;
+								uuid:65843d7f-f814-4a42-b8dc-7a40fa3afa2a
+							&lt;/UDN&gt;
+						&lt;/physicalDevice&gt;
+					&lt;/virtualDevice&gt;
+					&lt;/dads&gt;
+				</VirtualDeviceDescr>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>9</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>CreateVirtualDevice</ActionName>
+			<InArgs>
+				<VirtualDeviceDescr>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:schemaLocation="urn:schemas-upnp-org:ra:dads
+						http://www.upnp.org/schemas/ra/dads-v2.xsd"&gt;
+					&lt;virtualDevice&gt;
+						&lt;virtualDeviceType&gt;
+							AGGREGATE
+						&lt;/virtualDeviceType&gt;
+						&lt;rootDeviceType&gt;
+							urn:schemas-upnp-org:device:MediaServer:1
+						&lt;/rootDeviceType&gt;
+						&lt;physicalDevice&gt;
+							&lt;UDN&gt;
+								uuid:3b1eb2fb-821d-4a46-8f97-b72757b9197e
+							&lt;/UDN&gt;
+						&lt;/physicalDevice&gt;
+						&lt;physicalDevice&gt;
+							&lt;UDN&gt;
+								uuid:6a4f9984-175d-4225-9777-d6177f6de3f6
+							&lt;/UDN&gt;
+						&lt;/physicalDevice&gt;
+					&lt;/virtualDevice&gt;
+					&lt;/dads&gt;
+				</VirtualDeviceDescr>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>10</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>CreateVirtualDevice</ActionName>
+			<InArgs>
+				<VirtualDeviceDescr>
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+					&lt;dads xmlns="urn:schemas-upnp-org:ra:dads"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:schemaLocation="urn:schemas-upnp-org:ra:dads
+						http://www.upnp.org/schemas/ra/dads-v2.xsd"&gt;
+					&lt;virtualDevice&gt;
+						&lt;virtualDeviceType&gt;
+							FILTER
+						&lt;/virtualDeviceType&gt;
+						&lt;rootDeviceType&gt;
+							urn:schemas-upnp-org:device:MediaServer:1
+						&lt;/rootDeviceType&gt;
+						&lt;physicalDevice&gt;
+							&lt;UDN&gt;
+								uuid:48e9be00-9efc-11ef-1000-00137727062c
+							&lt;/UDN&gt;
+							&lt;allowedUSN&gt;
+								uuid:48e9be00-9efc-11ef-1000-00137727062c::upnp:rootdevice
+							&lt;/allowedUSN&gt;
+						&lt;/physicalDevice&gt;
+						&lt;physicalDevice&gt;
+							&lt;UDN&gt;
+								uuid:6a4f9984-175d-4225-9777-d6177f6de3f6
+							&lt;/UDN&gt;
+							&lt;allowedUSN&gt;
+								uuid:48e9be00-9efc-11ef-1000-00137727062c::urn:schemas-upnp-org:device:MediaRenderer:1
+							&lt;/allowedUSN&gt;
+						&lt;/physicalDevice&gt;
+					&lt;/virtualDevice&gt;
+					&lt;/dads&gt;
+				</VirtualDeviceDescr>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>11</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetVirtualDevices</ActionName>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>12</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>DestroyVirtualDevice</ActionName>
+			<InArgs>
+				<VirtualDeviceID>*</VirtualDeviceID>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTestCases>

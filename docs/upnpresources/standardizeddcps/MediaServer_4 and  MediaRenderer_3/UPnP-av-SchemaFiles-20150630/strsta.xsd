@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="urn:schemas-upnp-org:av:strsta" xmlns:av="urn:schemas-upnp-org:av:av" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:schemas-upnp-org:av:strsta" elementFormDefault="qualified" version="1-20150225">
+	<xsd:import namespace="urn:schemas-upnp-org:av:av" schemaLocation="http://www.upnp.org/schemas/av/av.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+		Note that all schema supplied by the UPnP Forum AV WC committee are for informational use only and that the 
+		standardized DCPs describe the normative requirements for these schema. Some schema provided do not necessarily
+		embody requirements regarding number of element occurrences allowed or their ordering.
+		
+		Schema for UPnP A/V CDS transforms Feature
+		</xsd:documentation>
+	</xsd:annotation>
+	<!--============================================================
+	list of predefined transform states
+    ============================================================-->
+	<xsd:simpleType name="stateTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NOT_STARTED"/>
+			<xsd:enumeration value="IN_PROGRESS"/>
+			<xsd:enumeration value="STOPPED"/>
+			<xsd:enumeration value="PAUSED"/>
+			<xsd:enumeration value="ERROR"/>
+			<xsd:enumeration value="COMPLETED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--============================================================
+	  the TransformStatus schema 
+    ============================================================-->
+	<xsd:element name="TransformStatus">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="transformTaskIDList" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="transformTaskID" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent>
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="state" type="stateTypes" use="required" form="unqualified"/>
+											<xsd:attribute name="objectIDs" type="av:csv.0_.string.len.1_" use="optional" form="unqualified"/>
+											<xsd:attribute name="progressMessage" type="xsd:string" use="optional" form="unqualified"/>
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>	
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

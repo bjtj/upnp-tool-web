@@ -1,0 +1,3055 @@
+<!--
+      Schema for IANA Registered MIME Types (25 November 2004).
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<schema
+	targetNamespace="urn:schemas-iana-org:mime"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:mime="urn:schemas-iana-org:mime"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0.91"
+	xml:lang="en">
+
+	<simpleType name="Application">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/application/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/activemessage"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/andrew-inset"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/applefile"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/atomicmail"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/batch-SMTP"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/beep+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/cals-1840"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/cnrp+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/commonground"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/cpl+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/cybercash"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/dca-rft"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/dec-dx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/dicom"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/dns"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/dvcs"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/EDI-Consent"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/EDIFACT"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/EDI-X12"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/epp+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/eshop"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/fits"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/font-tdpfr"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/http"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/hyperstudio"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/iges"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/im-iscomposing+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/index"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/index.cmd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/index.obj"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/index.response"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/index.vnd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/iotp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/ipp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/isup"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/mac-binhex40"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/macwriteii"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/marc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/mathematica"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/mikey"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/mpeg4-generic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/msword"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/news-message-id"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/news-transmission"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/ocsp-request"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/ocsp-response"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/octet-stream"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/oda"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/ogg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/parityfec"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pdf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pgp-encrypted"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pgp-keys"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pgp-signature"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pidf+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkcs10"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkcs7-mime"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkcs7-signature"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkix-cert"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkixcmp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkix-crl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/pkix-pkipath"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/postscript"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/prs.alvestrand.titrax-sheet"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/prs.cww"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/prs.nprend"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/prs.plucker"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/rdf+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/qsig"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/reginfo+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/remote-printing"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/riscos"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/rtf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/sbml+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/sdp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/set-payment"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/set-payment-initiation"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/set-registration"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/set-registration-initiation"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/sgml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/sgml-open-catalog"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/sieve"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/simple-message-summary"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/slate"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/soap+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/spirits-event+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/timestamp-query"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/timestamp-reply"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/tve-trigger"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vemmi"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.3gpp.pic-bw-large"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.3gpp.pic-bw-small"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.3gpp.pic-bw-var"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.3gpp.sms"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.3M.Post-it-Notes"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.accpac.simply.aso"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.accpac.simply.imp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.acucobol"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.acucorp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.adobe.xfdf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.aether.imp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.amiga.ami"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.anser-web-certificate-issue-initiation"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.anser-web-funds-transfer-initiation"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.audiograph"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.blueice.multipass"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.bmi"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.businessobjects"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.canon-cpdl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.canon-lips"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.cinderella"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.claymore"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.commerce-battelle"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.commonspace"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.cosmocaller"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.contact.cmsg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.criticaltools.wbs+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ctc-posml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.cups-postscript"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.cups-raster"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.cups-raw"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.curl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.cybank"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.data-vision.rdz"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.dna"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.dpgraph"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.dreamfactory"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.dxr"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecdis-update"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecowin.chart"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecowin.filerequest"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecowin.fileupdate"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecowin.series"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecowin.seriesrequest"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ecowin.seriesupdate"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.enliven"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.epson.esf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.epson.msf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.epson.quickanime"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.epson.salt"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.epson.ssf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ericsson.quickcall"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.eudora.data"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fdf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ffsns"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fints"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.FloGraphIt"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.framemaker"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fsc.weblaunch"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujitsu.oasys"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujitsu.oasys2"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujitsu.oasys3"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujitsu.oasysgp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujitsu.oasysprs"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujixerox.ddd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujixerox.docuworks"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fujixerox.docuworks.binder"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.fut-misnet"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.genomatix.tuxedo"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.grafeq"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-account"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-help"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-identity-message"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-injector"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-tool-message"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-tool-template"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.groove-vcard"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hbci"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hcl-bireports"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hhe.lesson-player"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hp-HPGL"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hp-hpid"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hp-hps"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hp-PCL"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hp-PCLXL"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.httphone"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.hzn-3d-crossword"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ibm.afplinedata"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ibm.electronic-media"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ibm.MiniPay"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ibm.modcap"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ibm.rights-management"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ibm.secure-container"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.informix-visionary"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.intercon.formnet"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.intertrust.digibox"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.intertrust.nncp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.intu.qbo"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.intu.qfx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ipunplugged.rcprofile"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.irepository.package+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.is-xpr"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-directory-service"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-jpnstore-wakeup"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-payment-wakeup"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-registration"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-registration-wakeup"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-setstore-wakeup"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-verification"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.japannet-verification-wakeup"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.jisp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.karbon"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kchart"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kformula"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kivio"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kontour"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kpresenter"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kspread"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kde.kword"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kenameaapp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.kidspiration"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Kinar"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.koan"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.liberty-request+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.llamagraphics.life-balance.desktop"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.llamagraphics.life-balance.exchange+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-1-2-3"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-approach"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-freelance"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-notes"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-organizer"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-screencam"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.lotus-wordpro"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mcd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mediastation.cdkey"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.meridian-slingshot"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mfmp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.micrografx.flo"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.micrografx.igx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mif"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.minisoft-hp3000-save"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mitsubishi.misty-guard.trustweb"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.DAF"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.DIS"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.MBK"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.MQY"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.MSL"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.PLC"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Mobius.TXF"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mophun.application"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mophun.certificate"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite.adsi"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite.fis"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite.gotap"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite.kmr"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite.ttc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.motorola.flexsuite.wem"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mozilla.xul+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-artgalry"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-asf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.mseq"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-excel"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.msign"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-lrm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-powerpoint"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-project"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-tnef"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-works"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ms-wpl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.musician"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.music-niff"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.nervana"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.netfpx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.noblenet-directory"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.noblenet-sealer"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.noblenet-web"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.nokia.landmark+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.nokia.landmark+wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.nokia.landmarkcollection+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.nokia.radio-preset"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.nokia.radio-presets"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.novadigm.EDM"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.novadigm.EDX"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.novadigm.EXT"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.obn"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.omads-email+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.omads-file+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.omads-folder+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.osa.netdeploy"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.palm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.paos.xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.pg.format"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.picsel"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.pg.osasli"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.powerbuilder6"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.powerbuilder6-s"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.powerbuilder7"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.powerbuilder75"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.powerbuilder75-s"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.powerbuilder7-s"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.previewsystems.box"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.publishare-delta-tree"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.pvi.ptid1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.pwg-multiplexed"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.pwg-xhtml-print+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.Quark.QuarkXPress"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.rapid"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.RenLearn.rlprint"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.s3sms"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealed.doc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealed.eml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealed.mht"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealed.net"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealed.ppt"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealed.xls"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealedmedia.softseal.html"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sealedmedia.softseal.pdf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.seemail"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.shana.informed.formdata"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.shana.informed.formtemplate"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.shana.informed.interchange"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.shana.informed.package"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.smaf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sss-cod"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sss-dtf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sss-ntf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.street-stream"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.sus-calendar"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.svd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.swiftview-ics"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.syncml.ds.notification"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.syncml.+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.triscape.mxs"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.trueapp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.truedoc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.ufdl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uiq.theme"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.alert"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.alert-wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.bearer-choice"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.bearer-choice-wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.cacheop"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.cacheop-wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.channel"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.channel-wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.list"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.listcmd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.listcmd-wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.list-wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.uplanet.signal"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.vcx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.vectorworks"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.vidsoft.vidconference"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.visio"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.visionary"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.vividence.scriptfile"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.vsf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wap.sic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wap.slc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wap.wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wap.wmlc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wap.wmlscriptc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.webturbo"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wordperfect"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wqd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wrq-hp3000-labelled"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wt.stf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wv.csp+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wv.csp+wbxml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.wv.ssp+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.xara"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.xfdl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.yamaha.hv-dic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.yamaha.hv-script"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.yamaha.hv-voice"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.yamaha.smaf-audio"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.yamaha.smaf-phrase"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/vnd.yellowriver-custom-menu"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/watcherinfo+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/whoispp-query"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/whoispp-response"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/wita"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/wordperfect5.1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/x400-bp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/xhtml+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/xml-dtd"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/xml-external-parsed-entity"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/xmpp+xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="application/zip"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Audio">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/audio/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/32kadpcm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/3gpp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/AMR"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/AMR-WB"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/basic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/clearmode"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/CN"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/DAT12"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/dsr-es201108"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/dsr-es202050"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/dsr-es202211"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/dsr-es202212"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/DVI4"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/EVRC"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/EVRC0"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/EVRC-QCP"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G722"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G.722.1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G723"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G726-16"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G726-24"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G726-32"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G726-40"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G728"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G729"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G729D"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/G729E"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/GSM"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/GSM-EFR"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/iLBC"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/L8"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/L16"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/L20"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/L24"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/LPC"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/MPA"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/MP4A-LATM"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/mpa-robust"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/mpeg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/mpeg4-generic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/parityfec"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/PCMA"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/PCMU"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/prs.sid"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/QCELP"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/RED"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/SMV"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/SMV0"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/SMV-QCP"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/telephone-event"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/tone"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/VDVI"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.3gpp.iufp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.audiokoz"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.cisco.nse"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.cns.anp1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.cns.inf1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.digital-winds"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.everad.plj"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.lucent.voice"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.nokia.mobile-xmf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.nortel.vbk"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.nuera.ecelp4800"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.nuera.ecelp7470"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.nuera.ecelp9600"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.octel.sbc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.qcelp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.rhetorex.32kadpcm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.sealedmedia.softseal.mpeg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="audio/vnd.vmx.cvsd"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Image">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/image/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/cgm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/g3fax"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/gif"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/ief"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/jp2"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/jpeg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/jpm"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/jpx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/naplps"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/png"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/prs.btif"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/prs.pti"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/t38"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/tiff"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/tiff-fx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.cns.inf2"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.djvu"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.dwg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.dxf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.fastbidsheet"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.fpx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.fst"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.fujixerox.edmics-mmr"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.fujixerox.edmics-rlc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.globalgraphics.pgb"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.microsoft.icon"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.mix"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.ms-modi"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.net-fpx"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.sealed.png"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.sealedmedia.softseal.gif"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.sealedmedia.softseal.jpg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.svf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.wap.wbmp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="image/vnd.xiff"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Message">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/message/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/CPIM"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/delivery-status"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/disposition-notification"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/external-body"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/http"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/news"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/partial"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/rfc822"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/s-http"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/sip"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/sipfrag"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="message/tracking-status"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Model">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/model/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/iges"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/mesh"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.dwf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.flatland.3dml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.gdl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.gs-gdl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.gtw"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.mts"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.parasolid.transmit.binary"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.parasolid.transmit.text"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vnd.vtu"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="model/vrml"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Multipart">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/multipart/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/alternative"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/appledouble"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/byteranges"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/digest"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/encrypted"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/form-data"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/header-set"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/mixed"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/parallel"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/related"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/report"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/signed"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="multipart/voice-message"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Text">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/text/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/calendar"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/css"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/directory"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/dns"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/enriched"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/html"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/parityfec"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/plain"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/prs.fallenstein.rst"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/prs.lines.tag"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/rfc822-headers"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/richtext"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/rtf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/sgml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/t140"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/tab-separated-values"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/uri-list"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.abc"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.curl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.DMClientScript"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.fly"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.fmi.flexstor"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.in3d.3dml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.in3d.spot"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.IPTC.NewsML"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.IPTC.NITF"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.latex-z"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.motorola.reflex"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.ms-mediapackage"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.net2phone.commcenter.command"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.sun.j2me.app-descriptor"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.wap.si"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.wap.sl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.wap.wml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/vnd.wap.wmlscript"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/xml"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="text/xml-external-parsed-entity"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="Video">
+		<annotation>
+			<documentation>Refer to the URL "http://www.iana.org/assignments/media-types/video/".</documentation>
+		</annotation>
+		<union>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/3gpp"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/BMPEG"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/BT656"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/CelB"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/DV"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/H261"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/H263"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/H263-1998"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/H263-2000"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/JPEG"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/MJ2"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/MP1S"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/MP2P"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/MP2T"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/MP4V-ES"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/MPV"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/mpeg"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/mpeg4-generic"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/nv"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/parityfec"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/pointer"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/quicktime"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/SMPTE292M"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.fvt"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.motorola.video"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.motorola.videop"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.mpegurl"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.nokia.interleaved-multimedia"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.objectvideo"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.sealed.mpeg1"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.sealed.mpeg4"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.sealed.swf"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.sealedmedia.softseal.mov"/>
+				</restriction>
+			</simpleType>
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="video/vnd.vivo"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+</schema>

@@ -1,0 +1,456 @@
+Syntax Test Case Rules Document. (Cert Tool v1.5)
+
+Rules for creating Template for Syntax Test Case Listing for Control Actions defined for a Standard Service:
+    Each standard service whose Control Action needs to be verified must supply a syntax test case file. 
+    This file must be placed @ (%CertToolInstallPath%)\xml data files\service\test cases\syntax\
+    The file name must be SERVICETYPESERVICEVERSION.SYNTAXTESTS.XML
+
+    
+
+Syntax Test Case Template:
+
+The following template applies to a syntax test case with any category_name 
+ except "Extra Headers And Extra Control Message".
+    Attributes are denoted with [] notation in the template which are optional.
+    Required attributes are specified explicitly.
+    "..." represent one or more similar Tag/element as an ordered list.
+    'variableName' is any user defined variable name.
+    'X' is any valid allowed dataType. [like string, ui1, ui2, ...]
+    category_name - replace with one of the allowed categories 
+                     except "Extra Headers And Extra Control Message".
+    action_name - replace with actual ActionName from SCPD.
+    argument_name - replace with actual argument name from SCPD.
+    argument_value - replace with actual argument value that been passed or compared.
+    fault_code - replace with actual fault code defined by SC or vendor defined fault code.
+    expected_return_code - replace with one of the allowed expected return code.
+    header:value represents used define additional HTTP Headers.
+
+<ServiceControlSyntaxTestCases>
+    <ServiceType>SyntaxTestService</ServiceType>
+    <ServiceVersion>1</ServiceVersion>
+    <TestVersion>0.8</TestVersion>
+    <TestCaseList>
+        <TestCase>
+            <Id>1</Id>
+            <Category>category_name</Category> 
+            <ActionName>action_name</ActionName>
+            <InArgs> 
+                <argument_name [[LoadAs='variableName'] 
+                                [SaveAs='variableName' dataType='X']]>argument_value</argument_name>
+            </InArgs>
+            <ExpectedReturnCode>expected_return_code</ExpectedReturnCode>
+            <ExpectedResponse>
+                <SuccessResponse> 
+                    <OutArgsList> 
+                        <argument_name [ [[SaveAs='variableName'] 
+                                          [MatchWith='variableName']] 
+                                          dataType='X']>argument_value</argument_name>
+                        ...
+                    </OutArgsList>
+                    <RetVal> 
+                        <argument_name [ [[SaveAs='variableName'] 
+                                          [MatchWith='variableName']] 
+                                          dataType='X']>argument_value</argument_name>
+                    </RetVal>
+                    <FormatArg SaveAs='variableName'> 
+                        <Format>format_string</Format>
+                        <variableName/> 
+                        ... 
+                    </FormatArg>
+                </SuccessResponse> 
+                        OR 
+                <FailureResponse> 
+                    <FaultCode dataType="ui2">fault_code</FaultCode> 
+                </FailureResponse>
+
+                <OptionalAllowedFaultCodes> 
+                    <FaultCode dataType="ui2">fault_code</FaultCode> 
+                    ...
+                </OptionalAllowedFaultCodes>       
+            </ExpectedResponse>
+        </TestCase>
+
+
+The following template applies to a syntax test case with category_name 
+ of "Extra Headers And Extra Control Message".
+        <TestCase>
+            <Id>2</Id>
+            <Category>Extra Headers And Extra Control Message</Category>
+            <ActionName>action_name</ActionName>
+            <ControlMessageAction>
+                <Message>
+                    <Headers> 
+                        <Header>header:value</Header>
+                        <Header>header:value</Header>
+                        ...
+                    </Headers>
+                    <MessageBody>
+                            // SOAP Envelope goes here 
+                    </MessageBody>
+                </Message>
+            </ControlMessageAction>
+            <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+        </TestCase>
+    </TestCaseList>
+</ServiceControlSyntaxTestCases>
+
+
+
+
+A TestCaseList element must have one or more TestCase elements.
+
+A TestCase element must have an Id, Category and ActionName element.
+
+<InArgs> Node has the InArg list for the Action.
+
+    <InArgs> 
+            // Required if the Action takes input arguments.
+            // Must be Ordered List.
+        <argument_name [[LoadAs='variableName'] 
+                        [SaveAs='variableName' dataType='X']]>argument_value</argument_name>
+
+        Eg.
+        <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>
+                            // Load a previously stored variable for input argument.
+        <NewExternalPort SaveAs='NewExternalPortVariable' dataType='ui2'>157</NewExternalPort> 
+                            // Save the current input argument to a variable
+        <NewProtocol>TCP</NewProtocol>
+                            // Use the given value for input argument
+    </InArgs>
+
+Syntax Test Case supports following Categories:
+    <Category>Valid Action And Valid InArgs</Category
+    <Category>Valid Action And Check OutArgs</Category>
+    <Category>Invalid Action Or InArgs</Category>
+    <Category>Extra Headers And Extra Control Message</Category>
+
+Syntax Test Case Supports following <ExpectedReturnCode>
+    <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+    <ExpectedReturnCode>FAILURE_RESPONSE</ExpectedReturnCode>
+
+
+<ExpectedResponse> 
+    This node specifies whether the syntax test expects SuccessResponse or FailureResponse, 
+    whether cert tool should Compare, Match OutArgs/RetVal, Save OutArgs/RetVal, 
+    and/or to Format OutArgs/RetVal.
+
+    <ExpectedResponse>
+            <SuccessResponse> 
+                            // Required either <SuccessResponse> or <FailureResponse> node.
+                            // SuccessResponse node can be empty to indicate the action must succeed. 
+                            //   It can have Optional allowed fault codes.
+            <OutArgsList> 
+                            // Optional.
+                            // List of Out Args with optional 'SaveAs' or 'MatchWith' attributes.
+
+                <argument_name [ [[SaveAs='variableName'] 
+                                  [MatchWith='variableName']] 
+                                  dataType='X']>argument_value</argument_name>
+
+                Eg. 
+                <NewInternalPort MatchWith='InternalPort'></NewInternalPort>     
+                                // Matching the Out Arg with Saved variable 'InternalPort'.
+                <NewInternalClient/>                                             
+                                // Optional Compare Out Arg and this Out Arg will not be compared.
+                <NewEnabled dataType='boolean'>1</NewEnabled>                    
+                                // Compare the Out Arg with user given value in Syntax file. 
+                                // dataType attribute must be present.
+                <NewPortMappingDescription SaveAs='PortDesc'></NewPortMappingDescription> 
+                                // Saving the Out Arg to be used in subsequent Action.
+            </OutArgsList>
+
+            <RetVal> 
+                        // Optional.
+                        // Rules similar to Out Argument.
+            </RetVal>
+
+            <FormatArg SaveAs='variableName'> // Optional.
+                        // <FormatArg> Must have 'SaveAs' attribute to save the resulting formatted string. 
+
+                <Format> 
+                        // Required with in <FormatArg>.
+                        // Format string goes here. We support basic %s string data type formatting.
+
+                    Eg. <Format>Port Mapping - External: %s Internal: %s Description: %s Duration: %s</Format>
+                </Format>
+                <VariableName1/> // name of the variable where the result of previous Action is stored.
+                <VariableName2/>
+                ... 
+                        // Add as many variable as the <Format> node format has.
+            </FormatArg>
+        </SuccessResponse> 
+                    OR
+        <FailureResponse> 
+                        // Required either <SuccessResponse> or <FailureResponse> node.
+                        // Required exactly one <FaultCode> node.
+                        // Required 'dataType' attribute with ui2 dataType.
+            Eg. <FaultCode dataType="ui2">402</FaultCode> 
+        </FailureResponse>
+
+        <OptionalAllowedFaultCodes> 
+                        // Optional. Can be present with either SuccessResponse or FailureResponse.
+                        // Contains List of ordered <FaultCode> nodes.
+
+            Eg. <FaultCode dataType="ui2">402</FaultCode> // Required 'dataType' attribute with ui2 dataType.
+            Eg. <FaultCode dataType="ui2">501</FaultCode>
+        </OptionalAllowedFaultCodes>       
+    </ExpectedResponse>
+
+
+Syntax Test For flexible Extra Headers/ extra SOAP Envelope elements, attributes.
+    This <TestCase> requires user defined SOAP Envelope/Message and a list of extra HTTP headers 
+       to be sent to the device.
+    The template for <ControlMessageAction>
+
+    <ControlMessageAction> // Required.
+        <Message>                // Required.
+            <Headers>            // Required.
+                <Header></Header>
+                <Header></Header>
+                ...
+            </Headers>
+            <MessageBody> // Required.
+                    // SOAP Envelope with extra valid tags, attributes goes here.
+            </MessageBody>
+        </Message>
+    </ControlMessageAction>
+
+<Category>Valid Action And Valid InArgs</Category
+    In this syntax test category, cert tool will check if the device responds 
+      when invoking a valid action with valid in args. 
+    We don't process Out Args/RetVal in this category. We don't check if the action was successfully invoked. 
+    The device may not be in the required state for the action to be successful. 
+    We expect the device to respond to the invoke action. Response can be success or a valid failure response.
+    Expected Response Code: <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+
+    Eg. 
+    <TestCase>
+        <Id>1</Id> // Must be Present.
+        <Category>Valid Action And Valid InArgs</Category> 
+        <ActionName>SetPowerLevel</ActionName> // Must be Present.
+        <InArgs> //Must be Ordered List.
+            <PowerLevel>10</PowerLevel>
+        </InArgs>
+        <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode> // Must be Present.
+    </TestCase>
+
+
+<Category>Valid Action And Check OutArgs</Category>
+    In this syntax test category, cert tool passes valid in args and expects a success response.
+    The results can be compared or stored for subsequent usage.
+
+    The test expects success response. We can specify few optionally allowed fault codes. 
+    Valid In Args can be stored in user defined variable for subsequent use.
+    Compare Out Args/RetVal from default value in Syntax file. 
+    Compare Out Args/RetVal from previously stored value. 
+    Store Out Args/RetVal in user defined variable and use it for subsequent Action.
+    Format Out Args/RetVal and store the resulting formatted string in user defined variable.
+
+    Use default value in the syntax file for comparing user given value.
+    Use 'SaveAs' attribute to save the InArgs or OutArgs of an Action
+    Use 'LoadAs' attribute to load a saved value from previous Action
+    Use 'MatchWith' attribute to compare Out Args/RetVal
+    Use empty tag to indicate the OutArg/RetVal is optional for comparing.(==> don't compare this Argument)
+    Use <FormatArg> tag to format and store the formatted string 
+    Use <OptionalAllowedFaultCodes> node for acceptable failure codes from the device. 
+         In a failure case, Out Args/RetVal will not be compared.
+
+    <TestCase>
+        <Id>1</Id>
+        <Category>Valid Action And Check OutArgs</Category>
+        <ActionName>AddPortMapping</ActionName>
+            <InArgs>
+                <NewRemoteHost SaveAs='NewRemoteHostVariable' dataType='string'>157.56.32.24</NewRemoteHost> 
+                                //InArgs can be saved in Variable for subsequent usage.
+                <NewExternalPort SaveAs='NewExternalPortVariable' dataType='ui2'>157</NewExternalPort>
+                <NewProtocol SaveAs='NewExternalProtocolVariable' dataType='string'>TCP</NewProtocol>
+                <NewInternalPort SaveAs='InternalPort' dataType='ui2'>200</NewInternalPort>
+                <NewInternalClient>157.156.32.24</NewInternalClient>
+                <NewEnabled>1</NewEnabled>
+                <NewPortMappingDescription>MyNewPortMapping</NewPortMappingDescription>
+                <NewLeaseDuration SaveAs='LeaseDuration' dataType='ui4'>20</NewLeaseDuration>
+            </InArgs>
+        <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+        <ExpectedResponse>
+            <SuccessResponse/>
+            <OptionalAllowedFaultCodes>
+                <FaultCode dataType="ui2">718</FaultCode> 	
+                                //Possible failure code, when the port mapping already exists and/or 
+                                // there is a conflict with existing values.
+                <FaultCode dataType="ui2">725</FaultCode>
+            </OptionalAllowedFaultCodes>
+        </ExpectedResponse>
+    </TestCase>
+
+
+    <TestCase>
+        <Id>2</Id>
+        <Category>Valid Action And Check OutArgs</Category>
+        <ActionName>GetSpecificPortMappingEntry</ActionName>
+            <InArgs>
+                <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>  
+                                // In Args can be loaded from previously stored value.
+                <NewExternalPort LoadAs='NewExternalPortVariable'></NewExternalPort>
+                <NewProtocol>TCP</NewProtocol>	// default input arg value.
+            </InArgs>
+        <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+        <ExpectedResponse>
+            <SuccessResponse>
+                <OutArgsList>
+                    <NewInternalPort MatchWith='InternalPort'></NewInternalPort>  
+                                    //Matching the Out Arg with Saved variable 'InternalPort'.
+                    <NewInternalClient/>                                             
+                                    //Optional Compare Out Arg and this Out Arg will not be compared.
+                    <NewEnabled dataType='boolean'>1</NewEnabled>                   
+                                    //Compare the Out Arg with user given value( boolean value 1 ) in Syntax file. 
+                                    // dataType attribute must be present. 
+                    <NewPortMappingDescription SaveAs='PortDesc'></NewPortMappingDescription> 
+                                    //Saving the Out Arg to be used in subsequent Action.
+                </OutArgsList>
+                <FormatArg SaveAs='FormatVal'>
+                    <Format>Port Mapping - External: %s Internal: %s Description: %s Duration: %s</Format>
+                    <NewExternalPortVariable/>  //Specify variable names for each %s in the format string.
+                    <InternalPort/>
+                    <PortDesc/>
+                    <LeaseDuration/>
+                </FormatArg>
+            </SuccessResponse>
+        </ExpectedResponse>
+    </TestCase>
+ 
+  
+    // This test case will verify if the action invoked on the device actually succeeded. 
+    // If failed, then cert tool expects a specific error code form the device.
+
+    <TestCase>
+        <Id>3</Id>
+        <Category>Valid Action And Check OutArgs</Category>
+        <ActionName>DeletePortMapping</ActionName>
+        <InArgs>
+            <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>
+            <NewExternalPort LoadAs='NewExternalPortVariable'></NewExternalPort>
+            <NewProtocol>TCP</NewProtocol>
+        </InArgs>
+        <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+        <ExpectedResponse>
+            <SuccessResponse/> 
+                            // SuccessResponse node is required. 
+                            // Can be Empty to specify not to Compare Out Args/RetVal.
+            <OptionalAllowedFaultCodes>
+                <FaultCode dataType="ui2">714</FaultCode>
+            </OptionalAllowedFaultCodes>
+        </ExpectedResponse>
+    </TestCase>
+
+<Category>Invalid Action or Invalid Args</Category> 
+    This syntax test category is used to perform negative testing with illegal Args, 
+     or invalid arg value, or invalid Action and 
+     to verify if the device is responding with appropriate errors. 
+    Expected Return Code is either of 
+        <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+        <ExpectedReturnCode>FAILURE_RESPONSE</ExpectedReturnCode>
+
+    // This test case passes valid Args and expects success response. 
+    // Any failure response specified in <OptionalAllowedFaultCodes> is valid/OK for this test case.
+    
+    <TestCase>
+        <Id>1</Id>
+        <Category>Invalid Action or Invalid Args</Category>
+        <ActionName>DeletePortMapping</ActionName>
+        <InArgs>
+            <NewRemoteHost LoadAs='NewRemoteHostVariable'></NewRemoteHost>
+            <NewExternalPort LoadAs='NewExternalPortVariable'></NewExternalPort>
+            <NewProtocol>TCP</NewProtocol>
+        </InArgs>
+        <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+        <ExpectedResponse>
+            <SuccessResponse/> // Empty SuccessResponse node is required if success response is expected.
+            <OptionalAllowedFaultCodes>
+                <FaultCode dataType="ui2">714</FaultCode>
+            </OptionalAllowedFaultCodes>
+        </ExpectedResponse>
+    </TestCase>
+
+    //This test case passes an invalid Arg Value and cert tool expects the device to respond with failure code.
+
+    <TestCase>
+        <Id>2</Id>
+        <Category>Invalid Action or Invalid Args</Category>
+        <ActionName>DeletePortMapping</ActionName>
+        <InArgs>
+            <NewRemoteHost>257.56.32.24</NewRemoteHost>
+            <NewExternalPort>257</NewExternalPort>
+            <NewProtocol>TTT</NewProtocol>
+        </InArgs>
+        <ExpectedReturnCode>FAILURE_RESPONSE</ExpectedReturnCode>
+        <ExpectedResponse>
+            <FailureResponse>
+                <FaultCode dataType="ui2">402</FaultCode>
+            </FailureResponse>
+            <OptionalAllowedFaultCodes>
+                <FaultCode dataType="ui2">714</FaultCode>
+            </OptionalAllowedFaultCodes>
+        </ExpectedResponse>
+    </TestCase>
+
+    // This test case invokes action with few in args than the defined number of in args for the action.
+    //Cert tool expects the device to respond with failure code.
+
+    <TestCase>
+        <Id>3</Id>
+        <Category>Invalid Action or Invalid Args</Category>
+        <ActionName>DeletePortMapping</ActionName>
+        <InArgs>
+            <NewRemoteHost>257.56.32.24</NewRemoteHost>
+            <NewExternalPort>257</NewExternalPort>
+        </InArgs>
+        <ExpectedReturnCode>FAILURE_RESPONSE</ExpectedReturnCode>
+        <ExpectedResponse>
+            <FailureResponse>
+                <FaultCode dataType="ui2">402</FaultCode>
+            </FailureResponse>
+            <OptionalAllowedFaultCodes>
+                <FaultCode dataType="ui2">714</FaultCode>
+            </OptionalAllowedFaultCodes>
+        </ExpectedResponse>
+    </TestCase>
+
+
+<Category>Extra Headers And Extra Control Message</Category>
+    This Syntax Test Category allows you to send additional HTTP headers and additional XML elements 
+     and attributes in the HTTP SOAP message body. 
+    User can add any valid SOAP envelope with additional valid tags, attributes and soap message body.
+    Expected Return Code: <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+    No <ExpectedResponse> node is required and will be ignored.
+
+    <TestCase>
+        <Id>1</Id>
+        <Category>Extra Headers And Extra Control Message</Category>
+        <ActionName>SetTarget</ActionName>
+            <ControlMessageAction>
+                <Message>
+                    <Headers> // List of ordered <Header> elements.
+                        <Header>JUNK: Test Header!</Header> 
+                        <Header>JUNK2: Test Header!</Header>
+                                        // Add any number of Headers in HTTP header format "header:value".
+                    </Headers>
+                    <MessageBody> 
+                        // Add user defined SOAP ENVELOPE message here.
+
+                        <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" 
+                          s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                            <s:Body Id="Body">
+                                <u:SetTarget xmlns:u="urn:schemas-upnp-org:seice:SwitchPower:1">
+                                    <newTargetValue>1</newTargetValue>
+                                </u:SetTarget>
+                            </s:Body>
+                        </s:Envelope>
+                        
+                        // END user defined SOAP ENEVELOPE message.
+                    </MessageBody>
+                </Message>
+            </ControlMessageAction>
+        <ExpectedReturnCode>SUCCESS_RESPONSE</ExpectedReturnCode>
+    </TestCase>
+    

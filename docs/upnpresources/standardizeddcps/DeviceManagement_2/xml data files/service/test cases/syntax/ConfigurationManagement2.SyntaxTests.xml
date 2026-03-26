@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<ServiceControlSyntaxTestCases>
+  <ServiceType>ConfigurationManagement</ServiceType>
+  <ServiceVersion>1</ServiceVersion>
+  <TestCaseList>
+    <TestCase>
+      <Id>0</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSupportedDataModels</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>1</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSupportedParameters</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <StartingNode>/</StartingNode>
+        <SearchDepth>0</SearchDepth>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>2</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetInstances</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <StartingNode>/</StartingNode>
+        <SearchDepth>0</SearchDepth>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>3</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetValues</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Parameters></Parameters>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>4</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSelectedValues</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <StartingNode>/</StartingNode>
+        <Filter></Filter>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>5</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetValues</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <ParameterValueList>/</ParameterValueList>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>6</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>CreateInstance</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <MultiInstanceName></MultiInstanceName>
+        <ChildrenInitialization>X</ChildrenInitialization>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>7</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>DeleteInstance</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <InstanceIdentifier></InstanceIdentifier>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>8</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetAttributes</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <Parameters></Parameters>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>9</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetAttributes</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <NodeAttributeValueList>X</NodeAttributeValueList>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>10</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetInconsistentStatus</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>11</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetConfigurationUpdate</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>12</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetCurrentConfigurationVersion</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>13</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSupportedDataModelsUpdate</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>14</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetSupportedParametersUpdate</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>15</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetAttributeValuesUpdate</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>16</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetAlarmsEnabled</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+    </TestCase>
+    <TestCase>
+      <Id>17</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>SetAlarmsEnabled</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <StateVariableValue>0</StateVariableValue>
+      </InArgs>
+    </TestCase>
+    <TestCase>
+      <Id>18</Id>
+      <Category>Valid Action And Valid InArgs</Category>
+      <ActionName>GetACLData</ActionName>
+      <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      <InArgs>
+        <StartingNodes></StartingNodes>
+      </InArgs>
+    </TestCase>
+  </TestCaseList>
+</ServiceControlSyntaxTestCases>

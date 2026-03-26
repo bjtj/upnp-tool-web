@@ -1,0 +1,16 @@
+<!--
+      An example of the datatype MediaSize of UPnP PrintEnhanced:1.
+
+      Copyright (c) 2004, 2005 Hewlett-Packard Development Company, L.P.
+      All Rights Reserved.
+  -->
+<MediaSize
+	xmlns="urn:schemas-upnp-org:service:PrintEnhanced:1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:schemas-upnp-org:service:PrintEnhanced:1 PrintEnhanced.xsd"
+	MediaType="device-setting">
+	device-setting
+	na_letter_8.5x11in
+	na_legal_8.5x14in
+	iso_a4_210x297mm
+</MediaSize>

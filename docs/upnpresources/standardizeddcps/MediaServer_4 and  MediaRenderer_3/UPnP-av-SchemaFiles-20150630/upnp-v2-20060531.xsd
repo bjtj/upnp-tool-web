@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:schemas-upnp-org:metadata-1-0/upnp/"
+	xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"
+	xmlns:av="urn:schemas-upnp-org:av:av"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="2-20060531">
+	
+	<!-- This schema defines the upnp namespace tags that are employed
+		as descriptors by the DIDL-Lite schema -->
+	
+	<xsd:import namespace="urn:schemas-upnp-org:av:av"
+		schemaLocation="http://www.upnp.org/schemas/av/av-v1-20060531.xsd"/>
+	
+	<xsd:group name="class.group">
+		<xsd:sequence>
+			<xsd:element name="class" type="upnp:class.type"/>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:group name="upnpForContainer">
+		<xsd:choice>
+			<!--=============================-=============================-->
+			<!--                      Base Properties                      -->
+			<!--=============================-=============================-->
+			<xsd:element name="searchClass" type="upnp:searchClass.type"/>
+			<xsd:element name="createClass" type="upnp:searchClass.type"/>
+			<xsd:element name="writeStatus" type="upnp:status.type"/>
+			<!--=============================-=============================-->
+			<!--               Contributor Related Properties              -->
+			<!--=============================-=============================-->
+			<xsd:element name="artist" type="upnp:personWithRole.type"/>
+			<xsd:element name="actor" type="upnp:personWithRole.type"/>
+			<xsd:element name="author" type="upnp:personWithRole.type"/>
+			<xsd:element name="producer" type="upnp:person.type"/>
+			<xsd:element name="director" type="upnp:person.type"/>
+			<!--=============================-=============================-->
+			<!--               Affiliation Related Properties              -->
+			<!--=============================-=============================-->
+			<xsd:element name="genre" type="upnp:genre.type"/>
+			<xsd:element name="album" type="av:_title.type"/>
+			<xsd:element name="playlist" type="av:_title.type"/>
+			<!--=============================-=============================-->
+			<!--              Associated Resources Properties              -->
+			<!--=============================-=============================-->
+			<xsd:element name="albumArtURI" type="xsd:anyURI"/>
+			<xsd:element name="artistDiscographyURI" type="xsd:anyURI"/>
+			<xsd:element name="lyricsURI" type="xsd:anyURI"/>
+			<!-- Should have something restricting dc:relation to a URI. -->
+			<!--=============================-=============================-->
+			<!--                 Storage Related Properties                -->
+			<!--=============================-=============================-->
+			<xsd:element name="storageTotal" type="av:long.-1_"/>
+			<xsd:element name="storageUsed" type="av:long.-1_"/>
+			<xsd:element name="storageFree" type="av:long.-1_"/>
+			<xsd:element name="storageMaxPartition" type="av:long.-1_"/>
+			<xsd:element name="storageMedium" type="av:storageMedium.values"/>
+			<!--=============================-=============================-->
+			<!--               General Description Properties              -->
+			<!--                   (mainly for UI purposes)                -->
+			<!--=============================-=============================-->
+			<xsd:element name="longDescription" type="xsd:string"/>
+			<xsd:element name="icon" type="xsd:anyURI"/>
+			<xsd:element name="region" type="xsd:string"/>
+			<xsd:element name="rights" type="xsd:string"/>
+			<xsd:element name="playbackCount" type="av:int.-1_"/>
+			<xsd:element name="lastPlaybackTime" type="av:dateTime"/>
+			<xsd:element name="lastPlaybackPosition" type="av:unsignedDuration"/>
+			<xsd:element name="recordedStartDateTime" type="av:dateTime"/>
+			<xsd:element name="recordedDuration" type="av:unsignedDuration"/>
+			<xsd:element name="recordedDayOfWeek" type="av:dayOfWeek.en.len.3"/>
+			<xsd:element name="srsRecordScheduleID" type="av:srs_COLON_at_id.vd.type"/>
+			<xsd:element name="srsRecordTaskID" type="av:srs_COLON_at_id.vd.type"/>
+			<xsd:element name="recordable" type="xsd:boolean"/>
+			<!--=============================-=============================-->
+			<!--            Recorded Object Related Properties             -->
+			<!--=============================-=============================-->
+			<xsd:element name="programTitle" type="xsd:string"/>
+			<xsd:element name="seriesTitle" type="xsd:string"/>
+			<xsd:element name="programID" type="av:programID.type"/>
+			<xsd:element name="seriesID" type="av:programID.type"/>
+			<xsd:element name="channelID" type="av:channelID.type"/>
+			<xsd:element name="episodeCount" type="xsd:unsignedInt"/>
+			<xsd:element name="episodeNumber" type="xsd:unsignedInt"/>
+			<xsd:element name="programCode" type="av:programCode.type"/>
+			<xsd:element name="rating" type="av:rating.type"/>
+			<xsd:element name="episodeType" type="av:FIRST-RUN.or.REPEAT"/>
+			<!--=============================-=============================-->
+			<!--          User Channel and EPG Related Properties          -->
+			<!--=============================-=============================-->
+			<xsd:element name="channelGroupName" type="av:channelGroupName.type"/>
+			<xsd:element name="callSign" type="av:stationCallSign.type"/>
+			<xsd:element name="networkAffiliation" type="xsd:string"/>
+			<xsd:element name="serviceProvider" type="xsd:string"/>
+			<xsd:element name="price" type="upnp:price.type"/>
+			<xsd:element name="payPerView" type="xsd:boolean"/>
+			<xsd:element name="epgProviderName" type="xsd:string"/>
+			<xsd:element name="dateTimeRange" type="av:dateTime-range"/>
+			<!--=============================-=============================-->
+			<!--                 Radio Broadcast Properties                -->
+			<!--=============================-=============================-->
+			<xsd:element name="radioCallSign" type="av:stationCallSign.type"/>
+			<xsd:element name="radioStationID" type="xsd:string"/>
+			<xsd:element name="radioBand" type="av:radioBand.type"/>
+			<!--=============================-=============================-->
+			<!--                 Video Broadcast Properties                -->
+			<!--=============================-=============================-->
+			<xsd:element name="channelNr" type="xsd:int"/>
+			<xsd:element name="channelName" type="xsd:string"/>
+			<xsd:element name="scheduledStartTime" type="xsd:string"/>
+			<xsd:element name="scheduledEndTime" type="xsd:string"/>
+			<!--=============================-=============================-->
+			<!--          Physical Tuner Status-related Properties         -->
+			<!--=============================-=============================-->
+			<xsd:element name="signalStrength" type="av:signalStrength.type"/>
+			<xsd:element name="signalLocked" type="xsd:boolean"/>
+			<xsd:element name="tuned" type="xsd:boolean"/>
+			<!--=============================-=============================-->
+			<!--                Bookmark Related Properties                -->
+			<!--=============================-=============================-->
+			<xsd:element name="bookmarkID" type="av:didl-lite_COLON_at_id.vd.type"/>
+			<xsd:element name="bookmarkedObjectID" type="av:didl-lite_COLON_at_id.vd.type"/>
+			<xsd:element name="deviceUDN" type="av:deviceUDN.type"/>
+			<xsd:element name="stateVariableCollection" type="upnp:stateVariableCollection.type"/>
+			<!--=============================-=============================-->
+			<!--                 Miscellaneous Properties                  -->
+			<!--=============================-=============================-->
+			<xsd:element name="DVDRegionCode" type="xsd:int"/>
+			<xsd:element name="originalTrackNumber" type="xsd:int"/>
+			<xsd:element name="toc" type="xsd:string"/>
+			<xsd:element name="userAnnotation" type="xsd:string"/>
+			
+			
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="upnpForItem">
+		<xsd:choice>
+			<xsd:group ref="upnp:upnpForContainer"/>
+		</xsd:choice>
+	</xsd:group>
+	
+	<!--=============================-=============================-->
+	<!--                      Base Properties                      -->
+	<!--=============================-=============================-->
+	<xsd:simpleType name="className.base.type">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:pattern value="object\.(item|container)(\.[\i-[:]][\c-[\.:]]*)*">
+				<xsd:annotation>
+					<xsd:documentation>
+						This pattern exactly matches the definition for class name syntax
+						given in CDS:2 Section C.1.1.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+			<xsd:minLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="className.wc.type">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:enumeration value="object.item"/>
+			<xsd:enumeration value="object.item.imageItem"/>
+			<xsd:enumeration value="object.item.imageItem.photo"/>
+			<xsd:enumeration value="object.item.audioItem"/>
+			<xsd:enumeration value="object.item.audioItem.musicTrack"/>
+			<xsd:enumeration value="object.item.audioItem.audioBroadcast"/>
+			<xsd:enumeration value="object.item.audioItem.audioBook"/>
+			<xsd:enumeration value="object.item.videoItem "/>
+			<xsd:enumeration value="object.item.videoItem.movie"/>
+			<xsd:enumeration value="object.item.videoItem.videoBroadcast"/>
+			<xsd:enumeration value="object.item.videoItem.musicVideoClip"/>
+			<xsd:enumeration value="object.item.playlistItem"/>
+			<xsd:enumeration value="object.item.textItem"/>
+			<xsd:enumeration value="object.item.bookmarkItem"/>
+			<xsd:enumeration value="object.item.epgItem"/>
+			<xsd:enumeration value="object.item.epgItem.audioProgram"/>
+			<xsd:enumeration value="object.item.epgItem.videoProgram"/>
+			<xsd:enumeration value="object.container.person"/>
+			<xsd:enumeration value="object.container.person.musicArtist"/>
+			<xsd:enumeration value="object.container.playlistContainer"/>
+			<xsd:enumeration value="object.container.album"/>
+			<xsd:enumeration value="object.container.album.musicAlbum"/>
+			<xsd:enumeration value="object.container.album.photoAlbum"/>
+			<xsd:enumeration value="object.container.genre"/>
+			<xsd:enumeration value="object.container.genre.musicGenre"/>
+			<xsd:enumeration value="object.container.genre.movieGenre"/>
+			<xsd:enumeration value="object.container.channelGroup"/>
+			<xsd:enumeration value="object.container.channelGroup.audioChannelGroup"/>
+			<xsd:enumeration value="object.container.channelGroup.videoChannelGroup"/>
+			<xsd:enumeration value="object.container.epgContainer"/>
+			<xsd:enumeration value="object.container.storageSystem"/>
+			<xsd:enumeration value="object.container.storageVolume"/>
+			<xsd:enumeration value="object.container.storageFolder"/>
+			<xsd:enumeration value="object.container.bookmarkFolder"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="_className.type">
+		<xsd:union memberTypes="upnp:className.wc.type upnp:className.vx.type"/>
+	</xsd:simpleType>	
+	<xsd:simpleType name="className.type">
+		<xsd:restriction base="upnp:_className.type">
+			<xsd:pattern value="object\.(item|container)(\.[\i-[:]][\c-[\.:]]*)*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="class.type">
+		<xsd:simpleContent>
+			<xsd:extension base="upnp:className.type">
+				<xsd:attribute name="name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="searchClass.type">
+		<xsd:simpleContent>
+			<xsd:extension base="upnp:class.type">
+				<xsd:attribute name="includeDerived" type="xsd:boolean" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="status.type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="WRITABLE"/>
+			<xsd:enumeration value="PROTECTED"/>
+			<xsd:enumeration value="NOT_WRITABLE"/>
+			<xsd:enumeration value="UNKNOWN"/>
+			<xsd:enumeration value="MIXED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--=============================-=============================-->
+	<!--               Contributor Related Properties              -->
+	<!--=============================-=============================-->
+	<xsd:complexType name="personWithRole.type">
+		<xsd:simpleContent>
+			<xsd:extension base="upnp:person.type">
+				<xsd:attribute name="role" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="person.type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<!--=============================-=============================-->
+	<!--               Affiliation Related Properties              -->
+	<!--=============================-=============================-->
+	<xsd:complexType name="genre.type">
+		<xsd:simpleContent>
+			<xsd:extension base="av:_title.type">
+				<xsd:attribute name="id" type="av:string.domainNamePrefixed"/>
+				<xsd:attribute name="extended"
+					type="av:csv.1_.string.len.1_"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!--=============================-=============================-->
+	<!--              Associated Resources Properties              -->
+	<!--=============================-=============================-->
+	<!--           This section intentionally left blank           -->
+	
+	<!--=============================-=============================-->
+	<!--                 Storage Related Properties                -->
+	<!--=============================-=============================-->
+	<!--           This section intentionally left blank           -->
+	
+	<!--=============================-=============================-->
+	<!--               General Description Properties              -->
+	<!--                   (mainly for UI purposes)                -->
+	<!--=============================-=============================-->
+	<!--           This section intentionally left blank           -->
+	
+	<!--=============================-=============================-->
+	<!--            Recorded Object Related Properties             -->
+	<!--=============================-=============================-->
+	<!--           This section intentionally left blank           -->
+	
+	<!--=============================-=============================-->
+	<!--          User Channel and EPG Related Properties          -->
+	<!--=============================-=============================-->
+	<xsd:complexType name="price.type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:float">
+				<xsd:attribute name="currency" type="xsd:string" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<!--=============================-=============================-->
+	<!--                 Radio Broadcast Properties                -->
+	<!--=============================-=============================-->
+	
+	<!--=============================-=============================-->
+	<!--                 Video Broadcast Properties                -->
+	<!--=============================-=============================-->
+	
+	<!--=============================-=============================-->
+	<!--          Physical Tuner Status-related Properties         -->
+	<!--=============================-=============================-->
+	
+	<!--=============================-=============================-->
+	<!--                Bookmark Related Properties                -->
+	<!--=============================-=============================-->
+	<xsd:complexType name="stateVariableCollection.type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="upnp:serviceAttrGrp"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:attributeGroup name="serviceAttrGrp">
+		<xsd:attribute name="serviceName" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="AVTransport"/>
+					<xsd:enumeration value="RenderingControl"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="rcsInstanceType">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="pre-mix"/>
+					<xsd:enumeration value="post-mix"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+	<xsd:complexType name="stateVariable.type">
+		<xsd:attribute name="variableName" type="xsd:string" use="required"/>
+		<xsd:attribute name="channel" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	
+	
+	<!--===================================================================-->
+	<!--                                                                   -->
+	<!--                   Extension Component Datatypes                   -->
+	<!--                                                                   -->
+	<!--===================================================================-->
+	
+	<xsd:simpleType name="className.vx.type">
+		<xsd:restriction base="upnp:className.base.type"/>
+	</xsd:simpleType>
+	
+</xsd:schema>

@@ -1,0 +1,53 @@
+<ServiceControlSyntaxTest>
+	<ServiceType>Scan</ServiceType>
+	<ServiceVersion>1</ServiceVersion>
+	<TestCaseList>
+		<TestCase>
+			<Id>0</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>StartScan</ActionName>
+			<InArgs>
+				<RegistrationIDIn>0</RegistrationIDIn>
+				<UseFeederIn>device-setting</UseFeederIn>
+				<SideCountIn>1</SideCountIn>
+				<JobNameIn>Syntax Test</JobNameIn>
+				<ResolutionIn>device-setting</ResolutionIn>
+				<ImageXOffsetIn>-1</ImageXOffsetIn>
+				<ImageYOffsetIn>-1</ImageYOffsetIn>
+				<ImageWidthIn>-1</ImageWidthIn>
+				<ImageHeightIn>-1</ImageHeightIn>
+				<ImageFormatIn>device-setting</ImageFormatIn>
+				<CompressionFactorIn>-1</CompressionFactorIn>
+				<ImageTypeIn>device-setting</ImageTypeIn>
+				<ColorTypeIn>device-setting</ColorTypeIn>
+				<BitDepthIn>device-setting</BitDepthIn>
+				<ColorSpaceIn>device-setting</ColorSpaceIn>
+				<BaseNameIn>buffer</BaseNameIn>
+				<AppendSideNumberIn>device-setting</AppendSideNumberIn>
+				<TimeoutIn>-1</TimeoutIn>
+			</InArgs>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>1</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetConfiguration</ActionName>
+			<InArgs/>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>2</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetSideInformation</ActionName>
+			<InArgs/>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+		<TestCase>
+			<Id>3</Id>
+			<Category>Valid Action And Valid InArgs</Category>
+			<ActionName>GetState</ActionName>
+			<InArgs/>
+			<ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+		</TestCase>
+	</TestCaseList>
+</ServiceControlSyntaxTest>

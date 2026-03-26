@@ -1,0 +1,24 @@
+<!--============================================================
+Title: UPnP AV MediaServer:2 Device Template
+
+Purpose:
+To identify the required and optional services
+defined by this device type.
+
+NOTE: This file uses tabs (not spaces) for block indentation.
+Any updates to this file should maintain this convention.
+This includes disabling any automatic tab-to-space conversion
+feature enabled by your editor. 
+============================================================-->
+<device>
+	<serviceList>
+		<service>
+			<serviceType>urn:schemas-upnp-org:service:ContentDirectory:2</serviceType>
+			<serviceId>urn:upnp-org:serviceId:SamsungContentDirectory</serviceId>
+		</service>
+		<service>
+			<serviceType>urn:schemas-upnp-org:service:ContentSync:1</serviceType>
+			<serviceId>urn:upnp-org:serviceId:SamsungContentSync</serviceId>
+		</service>
+	</serviceList>
+</device>

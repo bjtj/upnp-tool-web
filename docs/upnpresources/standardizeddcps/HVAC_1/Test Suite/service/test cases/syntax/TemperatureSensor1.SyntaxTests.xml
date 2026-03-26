@@ -1,0 +1,43 @@
+<ServiceControlSyntaxTestCases>
+   <ServiceType>TemperatureSensor</ServiceType>
+   <ServiceVersion>1</ServiceVersion>
+   <TestVersion>0.9</TestVersion>
+   <TestCaseList>
+      <TestCase>
+         <Id>0</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetApplication</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>2</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetApplication</ActionName>
+         <InArgs>
+            <NewApplication>Room</NewApplication>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>2</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetCurrentTemperature</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>3</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>GetName</ActionName>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+      <TestCase>
+         <Id>4</Id>
+         <Category>Valid Action And Valid InArgs</Category>
+         <ActionName>SetName</ActionName>
+         <InArgs>
+            <NewName>Fred</NewName>
+         </InArgs>
+         <ExpectedReturnCode>ACTION_AND_INARGS_ARE_VALID</ExpectedReturnCode>
+      </TestCase>
+   </TestCaseList>
+</ServiceControlSyntaxTestCases>
